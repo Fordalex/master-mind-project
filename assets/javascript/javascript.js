@@ -5,7 +5,7 @@ const redCounter = '<div class="red-counter"></div>';
 const greenCounter = '<div class="green-counter"></div>';
 const yellowCounter = '<div class="yellow-counter"></div>';
 const blueCounter = '<div class="blue-counter"></div>';
-const holeCounter = '<div class="hole-counter"></div>';
+const holeCounter = '';
 
 var playerLocationOne = 0;
 var playerLocationTwo = 0;
@@ -17,8 +17,6 @@ var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
 
-
-
 generateCounters();
 
 function generateCounters() {
@@ -29,56 +27,40 @@ function generateCounters() {
     console.log(masterLocationOne,masterLocationTwo,masterLocationThree,masterLocationFour);
 };
 
-
 function chooseColour(chosenColour,colourNum) {
-    if (round == 1 && holeSelect == 1) {
-        $('#r-one-c-one').html(chosenColour);
+    var countHoleSelector = '#r-' + round;
+    if (holeSelect == 1) {
+        $(countHoleSelector + '-c-one').html(chosenColour);
         holeSelect++;
         playerLocationOne = colourNum;
-    } else if (round == 1 && holeSelect == 2) {
-        $('#r-one-c-two').html(chosenColour);
+    } else if (holeSelect == 2) {
+        $(countHoleSelector + '-c-two').html(chosenColour);
         holeSelect++;
         playerLocationTwo = colourNum;
-    } else if (round == 1 && holeSelect == 3) {
-        $('#r-one-c-three').html(chosenColour);
+    } else if (holeSelect == 3) {
+        $(countHoleSelector + '-c-three').html(chosenColour);
         holeSelect++;
         playerLocationThree = colourNum;
-    } else if (round == 1 && holeSelect == 4) {
-        $('#r-one-c-four').html(chosenColour);
-        holeSelect++;
-        playerLocationFour = colourNum;
-    } else if (round == 2 && holeSelect == 1) {
-        $('#r-two-c-one').html(chosenColour);
-        holeSelect++;
-        playerLocationOne = colourNum;
-    } else if (round == 2 && holeSelect == 2) {
-        $('#r-two-c-two').html(chosenColour);
-        holeSelect++;
-        playerLocationTwo = colourNum;
-    } else if (round == 2 && holeSelect == 3) {
-        $('#r-two-c-three').html(chosenColour);
-        holeSelect++;
-        playerLocationThree = colourNum;
-    } else if (round == 2 && holeSelect == 4) {
-        $('#r-two-c-four').html(chosenColour);
+    } else if (holeSelect == 4) {
+        $(countHoleSelector + '-c-four').html(chosenColour);
         holeSelect++;
         playerLocationFour = colourNum;
     }
-    console.log(playerLocationOne,playerLocationTwo,playerLocationThree,playerLocationFour)
+    console.log(playerLocationOne,playerLocationTwo,playerLocationThree,playerLocationFour,countHoleSelector)
 };
 
 function removeCounter() {
     if (round == 1 && holeSelect == 2) {
-        $('#one-one').html('');
+        $('#r-one-c-one').html('');
         holeSelect--;
     } else if (round == 1 && holeSelect == 3) {
-        $('#one-two').html('');
+        $('#r-one-c-two').html('');
         holeSelect--;
     } else if (round == 1 && holeSelect == 4) {
-        $('#one-three').html('');
+        $('#r-one-c-three').html('');
         holeSelect--;
     } else if (round == 1 && holeSelect == 5) {
-        $('#one-four').html('');
+        $('#r-one-c-four').html('');
         holeSelect--;
     }
 };
