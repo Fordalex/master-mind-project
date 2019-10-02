@@ -22,4 +22,19 @@ Choosing Colours - The user is able to select the colours of the pegs and put th
 
 Computers coloured pegs to be generated.
 
+## Testing
+
+Selecting Colours
+Click on four different colors on the right of the board:
+Try to submit the empty form and verify that an error message about the required fields appears
+Try to submit the form with an invalid email address and verify that a relevant error message appears
+Try to submit the form with all inputs valid and verify that a success message appears.
+In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+
+### Bugs (Solved)
+
+### Bugs (Un-Solved)
+
+Currently, as the computer is marking a row it uses the first location of the master peg and its colour represented as a number to check the user's four coloured pegs to see if the colour is the same as the colour directly above it or if the colour is in that row. If the colour is the same as what the user had inputted and in the right location it will return a black peg and if the colour isn't in the right location but is the same colour as one in that row it will return a white peg. I have found a problem with this logic, if the computer has generated two pegs of the same colour and the user has selected one of said colour then it will return one black and one white. 
+
 
