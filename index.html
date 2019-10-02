@@ -40,10 +40,10 @@
                         <div class="col-9 p-0 m-0">
                             <div class="row board-row-height m-0 p-0 mt-3 bottom-border-divider">
                                 <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
+                                    <div class="counter-black-hole" id="one-one"></div>
+                                    <div class="counter-black-hole" id="one-two"></div>
+                                    <div class="counter-black-hole" id="one-three"></div>
+                                    <div class="counter-black-hole" id="one-four"></div>
                                 </div>
                                 <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
                                     <div class="marker-container">
@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-red"></div>
+                            <div id="choose-red" onclick="chooseColour(redCounter)"></div>
                         </div>
                     </div>
                     <div class="row m-0 p-0">
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-green"></div>
+                            <div id="choose-green" onclick="chooseColour(greenCounter)"></div>
                         </div>
                     </div>
                     <div class="row m-0 p-0">
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-yellow"></div>
+                            <div id="choose-yellow" onclick="chooseColour(yellowCounter)"></div>
                         </div>
                     </div>
                     <div class="row m-0 p-0">
@@ -159,7 +159,7 @@
                             </div>
                         </div>
                         <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-blue"></div>
+                            <div id="choose-blue" onclick="chooseColour(blueCounter)"></div>
                         </div>
                     </div>
                     <div class="row m-0 p-0">
@@ -184,7 +184,7 @@
                             </div>
                         </div>
                         <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-hole"></div>
+                            <div id="choose-hole" onclick="chooseColour(holeCounter)"></div>
                         </div>
                     </div>
                     <div class="row m-0 p-0">
@@ -209,7 +209,7 @@
                             </div>
                         </div>
                         <div class="col-3 m-0 p-0 side-border-divider">
-                            <i class="fas fa-times"></i>
+                                <button class="check-round-button" onclick="removeCounter()">Remove</button>
                         </div>
                     </div>
                     <div class="row m-0 p-0">
