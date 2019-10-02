@@ -29,21 +29,38 @@ function generateCounters() {
     console.log(masterLocationOne,masterLocationTwo,masterLocationThree,masterLocationFour);
 };
 
+
 function chooseColour(chosenColour,colourNum) {
     if (round == 1 && holeSelect == 1) {
-        $('#one-one').html(chosenColour);
+        $('#r-one-c-one').html(chosenColour);
         holeSelect++;
         playerLocationOne = colourNum;
     } else if (round == 1 && holeSelect == 2) {
-        $('#one-two').html(chosenColour);
+        $('#r-one-c-two').html(chosenColour);
         holeSelect++;
         playerLocationTwo = colourNum;
     } else if (round == 1 && holeSelect == 3) {
-        $('#one-three').html(chosenColour);
+        $('#r-one-c-three').html(chosenColour);
         holeSelect++;
         playerLocationThree = colourNum;
     } else if (round == 1 && holeSelect == 4) {
-        $('#one-four').html(chosenColour);
+        $('#r-one-c-four').html(chosenColour);
+        holeSelect++;
+        playerLocationFour = colourNum;
+    } else if (round == 2 && holeSelect == 1) {
+        $('#r-two-c-one').html(chosenColour);
+        holeSelect++;
+        playerLocationOne = colourNum;
+    } else if (round == 2 && holeSelect == 2) {
+        $('#r-two-c-two').html(chosenColour);
+        holeSelect++;
+        playerLocationTwo = colourNum;
+    } else if (round == 2 && holeSelect == 3) {
+        $('#r-two-c-three').html(chosenColour);
+        holeSelect++;
+        playerLocationThree = colourNum;
+    } else if (round == 2 && holeSelect == 4) {
+        $('#r-two-c-four').html(chosenColour);
         holeSelect++;
         playerLocationFour = colourNum;
     }
@@ -68,24 +85,27 @@ function removeCounter() {
 
 function checkCounters() {
     if (masterLocationOne == playerLocationOne) {
-        console.log('one-black');
+        $('#r-one-m-one').html('<div class="black-marker-peg"></div>');
     } else if (masterLocationOne == playerLocationTwo || masterLocationOne == playerLocationThree || masterLocationOne == playerLocationFour) {
-        console.log('one-white');
+        $('#r-one-m-one').html('<div class="white-marker-peg"></div>');
     }
     if (masterLocationTwo == playerLocationTwo) {
-        console.log('two-black');
+        $('#r-one-m-two').html('<div class="black-marker-peg"></div>');
     } else if (masterLocationTwo == playerLocationOne || masterLocationTwo == playerLocationTwo || masterLocationTwo == playerLocationThree) {
-        console.log('two-white');
+        $('#r-one-m-two').html('<div class="white-marker-peg"></div>');
     }
     if (masterLocationThree == playerLocationThree) {
-        console.log('three-black');
+        $('#r-one-m-three').html('<div class="black-marker-peg"></div>');
     } else if (masterLocationThree == playerLocationOne || masterLocationThree == playerLocationTwo || masterLocationThree == playerLocationFour) {
-        console.log('three-white');
+        $('#r-one-m-three').html('<div class="white-marker-peg"></div>');
     }
     if (masterLocationFour == playerLocationFour) {
-        console.log('four-black');
+        $('#r-one-m-four').html('<div class="black-marker-peg"></div>');
     } else if (masterLocationFour == playerLocationOne || masterLocationFour == playerLocationTwo || masterLocationFour == playerLocationThree) {
-        console.log('four-white');
+        $('#r-one-m-four').html('<div class="white-marker-peg"></div>');
     }
+
+    round++;
+    holeSelect = 1;
 };
 

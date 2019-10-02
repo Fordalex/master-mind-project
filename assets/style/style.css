@@ -193,3 +193,25 @@ body {
     right:6px;
     bottom:6px;
 }
+
+/* marker peg  */
+
+.black-marker-peg {
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background-color:black;
+    position:relative;
+    right:3px;
+    bottom:3px;
+}
+
+.white-marker-peg {
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background-color:white;
+    position:relative;
+    right:3px;
+    bottom:3px;
+}
