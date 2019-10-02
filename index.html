@@ -14,15 +14,6 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <!-- DC.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
-    <!-- D3 -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"> </script>
-    <!-- Crossfilter -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"> </script>
-    <!-- DC -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"> </script>
 
     <title>Master Mind</title>
 
@@ -35,302 +26,299 @@
     <div class="row m-0 p-0">
         <div class="col-sm-12 col-lg-6">
             <div class="mastermind-board-container">
-                <div class="game-alpha">
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-3 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one-one"></div>
-                                    <div class="counter-black-hole" id="one-two"></div>
-                                    <div class="counter-black-hole" id="one-three"></div>
-                                    <div class="counter-black-hole" id="one-four"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-                            <h6 class="p-2 m-0">Choose Counter</h6>
 
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0  ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-3 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one-one"></div>
+                                <div class="counter-black-hole" id="one-two"></div>
+                                <div class="counter-black-hole" id="one-three"></div>
+                                <div class="counter-black-hole" id="one-four"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-red" onclick="chooseColour(redCounter)"></div>
-                        </div>
                     </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-green" onclick="chooseColour(greenCounter)"></div>
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 p-0 ml-2 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-yellow" onclick="chooseColour(yellowCounter)"></div>
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-blue" onclick="chooseColour(blueCounter)"></div>
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-hole" onclick="chooseColour(holeCounter)"></div>
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-                                <button class="check-round-button" onclick="removeCounter()">Remove</button>
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-                            <button class="check-round-button">Check</button>
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
+                    <div class="col-3 m-0 p-0 side-border-divider">
+                        <h6 class="p-2 m-0">Choose Counter</h6>
 
-
-                        </div>
                     </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-
-
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-9 p-0 m-0">
-                            <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
-                                <div class=" d-flex align-items-center m-0 p-0 pl-4">
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                    <div class="counter-black-hole" id="one"></div>
-                                </div>
-                                <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
-                                    <div class="marker-container">
-                                        <div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                            <div class="marker-black-hole" id="one"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 m-0 p-0 side-border-divider">
-
-
-                        </div>
-                    </div>
-                    <div class="row m-0 p-0 answer-container">
-                        <div class="col-9 m-0 p-0 answer-wrapper">
-                            <div class="master-mind-cover ml-2 d-none">Master Mind</div>
-                            <div class="d-flex align-items-center m-0 p-0 pl-4 mt-3">
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
                                 <div class="counter-black-hole" id="one"></div>
                                 <div class="counter-black-hole" id="one"></div>
                                 <div class="counter-black-hole" id="one"></div>
                                 <div class="counter-black-hole" id="one"></div>
                             </div>
-                        </div>
-                        <div class="col-3 side-border-divider p-0 m-0">
-                            <p>Round: 1</p>
+                            <div class="m-0  ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+                        <div id="choose-red" onclick="chooseColour(redCounter)"></div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+                        <div id="choose-green" onclick="chooseColour(greenCounter)"></div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 p-0 ml-2 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+                        <div id="choose-yellow" onclick="chooseColour(yellowCounter)"></div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+                        <div id="choose-blue" onclick="chooseColour(blueCounter)"></div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+                        <div id="choose-hole" onclick="chooseColour(holeCounter)"></div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+                        <button class="check-round-button" onclick="removeCounter()">Remove</button>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+                        <button class="check-round-button" onclick="checkCounters()">Check</button>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
 
 
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+
+
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-9 p-0 m-0">
+                        <div class="row board-row-height m-0 p-0 mt-0 bottom-border-divider">
+                            <div class=" d-flex align-items-center m-0 p-0 pl-4">
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                                <div class="counter-black-hole" id="one"></div>
+                            </div>
+                            <div class="m-0 ml-2 p-0 d-flex justify-content-center align-items-center">
+                                <div class="marker-container">
+                                    <div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                        <div class="marker-black-hole" id="one"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 p-0 side-border-divider">
+
+
+                    </div>
+                </div>
+                <div class="row m-0 p-0 answer-container">
+                    <div class="col-9 m-0 p-0 answer-wrapper">
+                        <div class="master-mind-cover ml-2 d-none">Master Mind</div>
+                        <div class="d-flex align-items-center m-0 p-0 pl-4 mt-3">
+                            <div class="counter-black-hole" id="master-one"></div>
+                            <div class="counter-black-hole" id="master-two"></div>
+                            <div class="counter-black-hole" id="master-three"></div>
+                            <div class="counter-black-hole" id="master-four"></div>
+                        </div>
+                    </div>
+                    <div class="col-3 side-border-divider p-0 m-0">
+                        <p>Round: 1</p>
+                    </div>
                 </div>
             </div>
         </div>

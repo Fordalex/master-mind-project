@@ -2,12 +2,6 @@ body {
     background-image: linear-gradient(rgb(200,200,200), rgb(180,180,180));
 }
 
-.game-alpha {
-    background-color:rgba(0,0,0,0);
-    width:300px;
-    height:525px;
-    border-radius:10px;
-}
 
 .bottom-border-divider {
     border-bottom:solid 1px rgba(167,152,62,0.3);
