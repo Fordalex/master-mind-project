@@ -1,3 +1,0 @@
-# Master Mind Project
-
-## 
