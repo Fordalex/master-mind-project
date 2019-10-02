@@ -68,6 +68,7 @@ body {
     border-radius:0px 0px 5px 5px;
     box-shadow:rgba(0,0,0,0.2) 4px 4px 4px;
     position:absolute;
+    z-index:50;
 }
 
 .check-round-button {

@@ -24,7 +24,45 @@ function generateCounters() {
     masterLocationTwo = Math.floor(Math.random() * 5);
     masterLocationThree = Math.floor(Math.random() * 5);
     masterLocationFour = Math.floor(Math.random() * 5);
-    console.log(masterLocationOne,masterLocationTwo,masterLocationThree,masterLocationFour);
+    if (masterLocationOne == 1) {
+        $('#master-one').html(redCounter);
+    } else if (masterLocationOne == 2) {
+        $('#master-one').html(greenCounter);
+    } else if (masterLocationOne == 3) {
+        $('#master-one').html(yellowCounter);
+    } else if (masterLocationOne == 4) {
+        $('#master-one').html(blueCounter);
+    }
+    if (masterLocationTwo == 1) {
+        $('#master-two').html(redCounter);
+    } else if (masterLocationTwo == 2) {
+        $('#master-two').html(greenCounter);
+    } else if (masterLocationTwo == 3) {
+        $('#master-two').html(yellowCounter);
+    } else if (masterLocationTwo == 4) {
+        $('#master-two').html(blueCounter);
+    }
+    if (masterLocationThree == 1) {
+        $('#master-three').html(redCounter);
+    } else if (masterLocationThree == 2) {
+        $('#master-three').html(greenCounter);
+    } else if (masterLocationThree == 3) {
+        $('#master-three').html(yellowCounter);
+    } else if (masterLocationThree == 4) {
+        $('#master-three').html(blueCounter);
+    }
+    if (masterLocationFour == 1) {
+        $('#master-four').html(redCounter);
+    } else if (masterLocationFour == 2) {
+        $('#master-four').html(greenCounter);
+    } else if (masterLocationFour == 3) {
+        $('#master-four').html(yellowCounter);
+    } else if (masterLocationFour == 4) {
+        $('#master-four').html(blueCounter);
+    }
+
+
+    console.log(masterLocationOne,masterLocationTwo,masterLocationThree,masterLocationFour)
 };
 
 function chooseColour(chosenColour,colourNum) {
@@ -50,44 +88,62 @@ function chooseColour(chosenColour,colourNum) {
 };
 
 function removeCounter() {
-    if (round == 1 && holeSelect == 2) {
-        $('#r-one-c-one').html('');
+    var countHoleSelector = '#r-' + round;
+    if (holeSelect == 2) {
+        $(countHoleSelector + '-c-one').html('');
         holeSelect--;
-    } else if (round == 1 && holeSelect == 3) {
-        $('#r-one-c-two').html('');
+        playerLocationOne = colourNum;
+    } else if (holeSelect == 3) {
+        $(countHoleSelector + '-c-two').html('');
         holeSelect--;
-    } else if (round == 1 && holeSelect == 4) {
-        $('#r-one-c-three').html('');
+        playerLocationTwo = colourNum;
+    } else if (holeSelect == 4) {
+        $(countHoleSelector + '-c-three').html('');
         holeSelect--;
-    } else if (round == 1 && holeSelect == 5) {
-        $('#r-one-c-four').html('');
+        playerLocationThree = colourNum;
+    } else if (holeSelect == 5) {
+        $(countHoleSelector + '-c-four').html('');
         holeSelect--;
+        playerLocationFour = colourNum;
     }
 };
 
 function checkCounters() {
+    var countHoleSelector = '#r-' + round;
     if (masterLocationOne == playerLocationOne) {
-        $('#r-one-m-one').html('<div class="black-marker-peg"></div>');
+        $(countHoleSelector + '-m-one').html('<div class="black-marker-peg"></div>');
     } else if (masterLocationOne == playerLocationTwo || masterLocationOne == playerLocationThree || masterLocationOne == playerLocationFour) {
-        $('#r-one-m-one').html('<div class="white-marker-peg"></div>');
+        $(countHoleSelector + '-m-one').html('<div class="white-marker-peg"></div>');
+    } else {
+        $(countHoleSelector + '-m-one').html('');
     }
     if (masterLocationTwo == playerLocationTwo) {
-        $('#r-one-m-two').html('<div class="black-marker-peg"></div>');
-    } else if (masterLocationTwo == playerLocationOne || masterLocationTwo == playerLocationTwo || masterLocationTwo == playerLocationThree) {
-        $('#r-one-m-two').html('<div class="white-marker-peg"></div>');
+        $(countHoleSelector + '-m-two').html('<div class="black-marker-peg"></div>');
+    } else if (masterLocationTwo == playerLocationOne || masterLocationTwo == playerLocationFour || masterLocationTwo == playerLocationThree) {
+        $(countHoleSelector + '-m-two').html('<div class="white-marker-peg"></div>');
+    } else {
+        $(countHoleSelector + '-m-two').html('');
     }
     if (masterLocationThree == playerLocationThree) {
-        $('#r-one-m-three').html('<div class="black-marker-peg"></div>');
+        $(countHoleSelector + '-m-three').html('<div class="black-marker-peg"></div>');
     } else if (masterLocationThree == playerLocationOne || masterLocationThree == playerLocationTwo || masterLocationThree == playerLocationFour) {
-        $('#r-one-m-three').html('<div class="white-marker-peg"></div>');
+        $(countHoleSelector + '-m-three').html('<div class="white-marker-peg"></div>');
+    } else {
+        $(countHoleSelector + '-m-three').html('');
     }
     if (masterLocationFour == playerLocationFour) {
-        $('#r-one-m-four').html('<div class="black-marker-peg"></div>');
+        $(countHoleSelector + '-m-four').html('<div class="black-marker-peg"></div>');
     } else if (masterLocationFour == playerLocationOne || masterLocationFour == playerLocationTwo || masterLocationFour == playerLocationThree) {
-        $('#r-one-m-four').html('<div class="white-marker-peg"></div>');
+        $(countHoleSelector + '-m-four').html('<div class="white-marker-peg"></div>');
+    } else {
+        $(countHoleSelector + '-m-four').html('');
     }
-
     round++;
     holeSelect = 1;
+    $('#round-counter').html(round);
+    playerLocationOne = 0;
+    playerLocationTwo = 0;
+    playerLocationThree = 0;
+    playerLocationFour = 0;
 };
 
