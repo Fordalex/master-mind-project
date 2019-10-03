@@ -65,7 +65,7 @@ h2,h5 {
     width:180px;
     height:50px;
     background-image: linear-gradient(to bottom, #C99C56 , #DFB370);
-    opacity:0.3;
+    opacity:0;
     display:flex;
     justify-content:center;
     align-items:center;
