@@ -8,14 +8,14 @@ body {
 }
 
 .board-row-height {
-    height:40px;
+    height:44px;
 }
 
 .mastermind-board-container {
     width:300px;
     height:525px;
     border-radius:10px;
-    background-image: linear-gradient(to right, rgb(243, 215, 149) , #F7DB99, rgb(231, 201, 130));
+    background-image: url('../images/wood-background.png');
     border:solid 1px #707070;
     box-shadow:rgba(0,0,0,0.2) 4px 4px 8px;
 }

@@ -5,6 +5,8 @@ const redCounter = '<img src="assets/images/red-counter.png" class="counter">';
 const greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
 const yellowCounter = '<img src="assets/images/yellow-counter.png" class="counter">';
 const blueCounter = '<img src="assets/images/blue-counter.png" class="counter">';
+const orangeCounter = '<img src="assets/images/orange-counter.png" class="counter">';
+const whiteCounter = '<img src="assets/images/white-counter.png" class="counter">';
 const holeCounter = '';
 
 var playerLocationOne = 0;
