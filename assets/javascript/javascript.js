@@ -26,6 +26,7 @@ function start() {
     gameStarted = true;
     selectedHole();
     generateCounters();
+    $('#master-cover').addClass('fade-in');
 }
 
 function loop() {

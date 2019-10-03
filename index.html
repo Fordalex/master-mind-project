@@ -286,7 +286,7 @@
 
                 <div class="row m-0 p-0 answer-container">
                     <div class="col-9 m-0 p-0 answer-wrapper">
-                        <div class="master-mind-cover ml-2 ">Master Mind</div>
+                        <div id="master-cover" class="master-mind-cover ml-2">Master Mind</div>
                         <div class="d-flex align-items-center m-0 p-0 pl-4 mt-3">
                             <div class="counter-black-hole" id="master-one"></div>
                             <div class="counter-black-hole" id="master-two"></div>
@@ -301,7 +301,12 @@
             </div>
         </div>
         <div class="col-sm-12 col-lg-6 px-3 d-flex justify-content-start">
-            <div class="mastermind-stats-container"></div>
+            <div>
+                <div class="mastermind-menu">
+                    <button onclick="start()">Play</button>
+                </div>
+                <div class="mastermind-stats-container"></div>
+            </div>
         </div>
     </div>
 

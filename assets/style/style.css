@@ -77,6 +77,18 @@ h2,h5 {
     z-index:50;
 }
 
+.fade-in {
+    animation-name: fadein;
+    animation-duration:4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
 .check-round-button {
     font-size:10px;
     border:solid black 1px;
@@ -101,6 +113,10 @@ h2,h5 {
     width:26px;
     height:26px;
     border-radius:50%;
+}
+
+.choose-button:hover {
+    cursor:pointer;
 }
 
 .choose-red {
@@ -213,9 +229,18 @@ h2,h5 {
 
 /* mastermind stats */
 
+.mastermind-menu {
+    width:280px;
+    height:220px;
+    border-radius:10px;
+    border:solid #707070 1px;
+    margin-bottom:32px;
+}
+
 .mastermind-stats-container {
     width:280px;
-    height:525px;
+    height:275px;
     border-radius:10px;
     background-color:#9BD980;
+    border:solid #707070 1px;
 }
