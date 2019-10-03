@@ -1,5 +1,6 @@
 var round = 1;
 var holeSelect = 1;
+var gameStarted = false;
 
 const redCounter = '<img src="assets/images/red-counter.png" class="counter">';
 const greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
@@ -22,13 +23,19 @@ var masterLocationFour = 0;
 selectedHole();
 loop();
 
-function loop() {    
-        setTimeout(function() {
-            console.log('looped');
+function start() {
+    gameStarted = true;
+    generateCounters();
+}
+
+function loop() {
+    if (gameStarted == false) {
+        setTimeout(function () {
             loop();
             generateCounters();
         }, 2000);
-}
+    }
+};
 
 function generateCounters() {
     masterLocationOne = Math.floor(Math.random() * 5);
@@ -76,12 +83,11 @@ function generateCounters() {
     console.log(masterLocationOne, masterLocationTwo, masterLocationThree, masterLocationFour)
 };
 
-
 function chooseColour(chosenColour, colourNum) {
     var countHoleSelector = '#r-' + round;
 
     $('.hole-selector').remove();
-    
+
     if (holeSelect == 1) {
         $(countHoleSelector + '-c-one').append(chosenColour);
         $(countHoleSelector + '-c-two').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
@@ -105,7 +111,7 @@ function chooseColour(chosenColour, colourNum) {
     };
     selectedHole();
     console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector);
-    
+
 };
 
 function selectedHole() {
