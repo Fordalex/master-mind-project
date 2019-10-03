@@ -19,6 +19,17 @@ var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
 
+selectedHole();
+loop();
+
+function loop() {    
+        setTimeout(function() {
+            console.log('looped');
+            loop();
+            generateCounters();
+        }, 2000);
+}
+
 function generateCounters() {
     masterLocationOne = Math.floor(Math.random() * 5);
     masterLocationTwo = Math.floor(Math.random() * 5);
@@ -65,7 +76,6 @@ function generateCounters() {
     console.log(masterLocationOne, masterLocationTwo, masterLocationThree, masterLocationFour)
 };
 
-selectedHole();
 
 function chooseColour(chosenColour, colourNum) {
     var countHoleSelector = '#r-' + round;
