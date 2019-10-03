@@ -25,8 +25,10 @@ loop();
 function start() {
     gameStarted = true;
     selectedHole();
-    generateCounters();
     $('#master-cover').addClass('fade-in');
+    setTimeout(function () {
+        generateCounters();
+    }, 3100);
 }
 
 function loop() {
@@ -34,7 +36,7 @@ function loop() {
         setTimeout(function () {
             loop();
             generateCounters();
-        }, 2000);
+        }, 1000);
     }
 };
 
@@ -51,6 +53,8 @@ function generateCounters() {
         $('#master-one').html(yellowCounter);
     } else if (masterLocationOne == 4) {
         $('#master-one').html(blueCounter);
+    } else {
+        $('#master-one').html('');
     }
     if (masterLocationTwo == 1) {
         $('#master-two').html(redCounter);
@@ -60,6 +64,8 @@ function generateCounters() {
         $('#master-two').html(yellowCounter);
     } else if (masterLocationTwo == 4) {
         $('#master-two').html(blueCounter);
+    } else {
+        $('#master-two').html('');
     }
     if (masterLocationThree == 1) {
         $('#master-three').html(redCounter);
@@ -69,6 +75,8 @@ function generateCounters() {
         $('#master-three').html(yellowCounter);
     } else if (masterLocationThree == 4) {
         $('#master-three').html(blueCounter);
+    } else {
+        $('#master-three').html('');
     }
     if (masterLocationFour == 1) {
         $('#master-four').html(redCounter);
@@ -78,6 +86,8 @@ function generateCounters() {
         $('#master-four').html(yellowCounter);
     } else if (masterLocationFour == 4) {
         $('#master-four').html(blueCounter);
+    } else {
+        $('#master-four').html('');
     }
 
 
@@ -249,6 +259,10 @@ function checkCounters() {
         }
     };
 
+    if (masterLocationOne == playerLocationOne && masterLocationTwo == playerLocationTwo && masterLocationThree == playerLocationThree && masterLocationFour == playerLocationFour) {
+        levelComplete();
+    };
+
     round++;
     holeSelect = 1;
     $('#round-counter').html(round);
@@ -259,3 +273,7 @@ function checkCounters() {
     selectedHole();
 };
 
+function levelComplete() {
+    $('#master-cover').removeClass('fade-in');
+    $('#master-cover').addClass('fade-out');
+};

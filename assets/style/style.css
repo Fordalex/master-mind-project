@@ -84,6 +84,14 @@ h2,h5 {
     animation-fill-mode: forwards;
 }
 
+.fade-out {
+    animation-name: fadein;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-direction: reverse;
+}
+
 @keyframes fadein {
     0% {opacity:0;}
     100% {opacity:1;}
