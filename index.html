@@ -14,7 +14,8 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
+        
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
     <title>Master Mind</title>
 
 </head>
@@ -49,7 +50,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                        <h6 class="p-2 m-0">Choose Counter</h6>
+                        <h5 class="p-2 m-0">Choose Counter</h5>
 
                     </div>
                 </div>
@@ -75,7 +76,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                        <div id="choose-red" onclick="chooseColour(redCounter,1)"></div>
+                        <div class="choose-red choose-button" onclick="chooseColour(redCounter,1)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -100,7 +101,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                        <div id="choose-green" onclick="chooseColour(greenCounter,2)"></div>
+                        <div class="choose-green choose-button" onclick="chooseColour(greenCounter,2)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -125,7 +126,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                        <div id="choose-yellow" onclick="chooseColour(yellowCounter,3)"></div>
+                        <div class="choose-yellow choose-button" onclick="chooseColour(yellowCounter,3)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -150,7 +151,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                        <div id="choose-blue" onclick="chooseColour(blueCounter,4)"></div>
+                        <div class="choose-blue choose-button" onclick="chooseColour(blueCounter,4)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -281,7 +282,7 @@
 
                 <div class="row m-0 p-0 answer-container">
                     <div class="col-9 m-0 p-0 answer-wrapper">
-                        <div class="master-mind-cover ml-2 d-none">Master Mind</div>
+                        <div class="master-mind-cover ml-2 ">Master Mind</div>
                         <div class="d-flex align-items-center m-0 p-0 pl-4 mt-3">
                             <div class="counter-black-hole" id="master-one"></div>
                             <div class="counter-black-hole" id="master-two"></div>
