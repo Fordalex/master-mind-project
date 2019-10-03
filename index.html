@@ -14,8 +14,11 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        
+
+        <script src="https://kit.fontawesome.com/d4ed0579d0.js" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+
     <title>Master Mind</title>
 
 </head>
@@ -25,7 +28,7 @@
     <h2 class="text-center my-3">Master Mind</h2>
 
     <div class="row m-0 p-0">
-        <div class="col-sm-12 col-lg-6">
+        <div class="col-sm-12 col-lg-6 d-flex justify-content-center">
             <div class="mastermind-board-container">
 
                 <div class="row m-0 p-0">
@@ -51,7 +54,7 @@
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
                         <h5 class="p-2 m-0">Choose Counter</h5>
-
+                        
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -276,6 +279,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
+                        <div id="check-round-arrow"></div>
                         <button class="check-round-button" onclick="checkCounters()">Check</button>
                     </div>
                 </div>

@@ -19,8 +19,6 @@ var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
 
-generateCounters();
-
 function generateCounters() {
     masterLocationOne = Math.floor(Math.random() * 5);
     masterLocationTwo = Math.floor(Math.random() * 5);
@@ -67,26 +65,37 @@ function generateCounters() {
     console.log(masterLocationOne, masterLocationTwo, masterLocationThree, masterLocationFour)
 };
 
+var countHoleSelector = '#r-' + round;
+$(countHoleSelector + '-c-one').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+
 function chooseColour(chosenColour, colourNum) {
     var countHoleSelector = '#r-' + round;
+
+    $('.hole-selector').remove();
+
     if (holeSelect == 1) {
-        $(countHoleSelector + '-c-one').html(chosenColour);
+        $(countHoleSelector + '-c-one').append(chosenColour);
+        $(countHoleSelector + '-c-two').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
         holeSelect++;
         playerLocationOne = colourNum;
     } else if (holeSelect == 2) {
         $(countHoleSelector + '-c-two').html(chosenColour);
+        $(countHoleSelector + '-c-three').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
         holeSelect++;
         playerLocationTwo = colourNum;
     } else if (holeSelect == 3) {
         $(countHoleSelector + '-c-three').html(chosenColour);
+        $(countHoleSelector + '-c-four').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
         holeSelect++;
         playerLocationThree = colourNum;
     } else if (holeSelect == 4) {
         $(countHoleSelector + '-c-four').html(chosenColour);
+        $('#check-round-arrow').append('<i class="fas fa-long-arrow-alt-right hole-selector hole-selector-check"></i>');
         holeSelect++;
         playerLocationFour = colourNum;
-    }
-    console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector)
+    };
+    console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector);
+    
 };
 
 function removeCounter() {
