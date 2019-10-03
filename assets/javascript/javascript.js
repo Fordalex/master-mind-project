@@ -3,8 +3,8 @@ var holeSelect = 1;
 
 const redCounter = '<img src="assets/images/red-counter.png" class="counter">';
 const greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
-const yellowCounter = '<div class="yellow-counter"></div>';
-const blueCounter = '<div class="blue-counter"></div>';
+const yellowCounter = '<img src="assets/images/yellow-counter.png" class="counter">';
+const blueCounter = '<img src="assets/images/blue-counter.png" class="counter">';
 const holeCounter = '';
 
 var playerLocationOne = 0;
