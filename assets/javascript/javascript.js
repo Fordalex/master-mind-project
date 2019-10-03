@@ -95,34 +95,34 @@ function generateCounters() {
 };
 
 function chooseColour(chosenColour, colourNum) {
-    var countHoleSelector = '#r-' + round;
+    if (gameStarted == true) {
+        var countHoleSelector = '#r-' + round;
+        $('.hole-selector').remove();
 
-    $('.hole-selector').remove();
-
-    if (holeSelect == 1) {
-        $(countHoleSelector + '-c-one').append(chosenColour);
-        $(countHoleSelector + '-c-two').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
-        holeSelect++;
-        playerLocationOne = colourNum;
-    } else if (holeSelect == 2) {
-        $(countHoleSelector + '-c-two').html(chosenColour);
-        $(countHoleSelector + '-c-three').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
-        holeSelect++;
-        playerLocationTwo = colourNum;
-    } else if (holeSelect == 3) {
-        $(countHoleSelector + '-c-three').html(chosenColour);
-        $(countHoleSelector + '-c-four').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
-        holeSelect++;
-        playerLocationThree = colourNum;
-    } else if (holeSelect == 4) {
-        $(countHoleSelector + '-c-four').html(chosenColour);
-        $('#check-round-arrow').append('<i class="fas fa-long-arrow-alt-right hole-selector hole-selector-check"></i>');
-        holeSelect++;
-        playerLocationFour = colourNum;
-    };
-    selectedHole();
-    console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector);
-
+        if (holeSelect == 1) {
+            $(countHoleSelector + '-c-one').append(chosenColour);
+            $(countHoleSelector + '-c-two').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+            holeSelect++;
+            playerLocationOne = colourNum;
+        } else if (holeSelect == 2) {
+            $(countHoleSelector + '-c-two').html(chosenColour);
+            $(countHoleSelector + '-c-three').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+            holeSelect++;
+            playerLocationTwo = colourNum;
+        } else if (holeSelect == 3) {
+            $(countHoleSelector + '-c-three').html(chosenColour);
+            $(countHoleSelector + '-c-four').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+            holeSelect++;
+            playerLocationThree = colourNum;
+        } else if (holeSelect == 4) {
+            $(countHoleSelector + '-c-four').html(chosenColour);
+            $('#check-round-arrow').append('<i class="fas fa-long-arrow-alt-right hole-selector hole-selector-check"></i>');
+            holeSelect++;
+            playerLocationFour = colourNum;
+        };
+        selectedHole();
+        console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector);
+    }
 };
 
 function selectedHole() {
@@ -275,5 +275,6 @@ function checkCounters() {
 
 function levelComplete() {
     $('#master-cover').removeClass('fade-in');
-    $('#master-cover').addClass('fade-out');
+    $('#master-cover').addClass('d-none');
+    $('.hole-selector').remove();
 };
