@@ -17,6 +17,11 @@ var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
 
+var playerLocationOneChecked = false;
+var playerLocationTwoChecked = false;
+var playerLocationThreeChecked = false;
+var playerLocationFourChecked = false;
+
 generateCounters();
 
 function generateCounters() {

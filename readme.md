@@ -16,7 +16,7 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ## Features
 
-Choosing Colours - The user is able to select the colours of the pegs and put them in order on the virtual board to allow the user to guess the computers coloured pegs.
+Choosing Colours - The user is able to select the colours of the pegs and put them in order on the virtual board to allow the user to guess the computers coloured pegs, and remove them if a mistake is made.
 
 ### Features Left to Implement
 
