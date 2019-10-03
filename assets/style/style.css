@@ -1,5 +1,6 @@
 body {
     background-image: linear-gradient(rgb(200,200,200), rgb(180,180,180));
+    height:100vh;
 }
 
 h2,h5 {
@@ -210,3 +211,11 @@ h2,h5 {
     left:-3px;
 }
 
+/* mastermind stats */
+
+.mastermind-stats-container {
+    width:280px;
+    height:525px;
+    border-radius:10px;
+    background-color:#9BD980;
+}

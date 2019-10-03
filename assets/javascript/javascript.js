@@ -20,11 +20,11 @@ var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
 
-selectedHole();
 loop();
 
 function start() {
     gameStarted = true;
+    selectedHole();
     generateCounters();
 }
 
@@ -150,6 +150,7 @@ function removeCounter() {
         holeSelect--;
         playerLocationFour = colourNum;
     }
+    selectedHole();
 };
 
 function checkCounters() {
