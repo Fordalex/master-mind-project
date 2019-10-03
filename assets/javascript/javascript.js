@@ -65,14 +65,13 @@ function generateCounters() {
     console.log(masterLocationOne, masterLocationTwo, masterLocationThree, masterLocationFour)
 };
 
-var countHoleSelector = '#r-' + round;
-$(countHoleSelector + '-c-one').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+selectedHole();
 
 function chooseColour(chosenColour, colourNum) {
     var countHoleSelector = '#r-' + round;
 
     $('.hole-selector').remove();
-
+    
     if (holeSelect == 1) {
         $(countHoleSelector + '-c-one').append(chosenColour);
         $(countHoleSelector + '-c-two').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
@@ -94,8 +93,26 @@ function chooseColour(chosenColour, colourNum) {
         holeSelect++;
         playerLocationFour = colourNum;
     };
+    selectedHole();
     console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector);
     
+};
+
+function selectedHole() {
+    var countHoleSelector = '#r-' + round;
+    $('.hole-selector').remove();
+    if (holeSelect == 1) {
+        $(countHoleSelector + '-c-one').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+    } else if (holeSelect == 2) {
+        $(countHoleSelector + '-c-two').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+    } else if (holeSelect == 3) {
+        $(countHoleSelector + '-c-three').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+    } else if (holeSelect == 4) {
+        $(countHoleSelector + '-c-four').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
+    } else if (holeSelect == 5) {
+        $('#check-round-arrow').append('<i class="fas fa-long-arrow-alt-right hole-selector hole-selector-check"></i>');
+    };
+    console.log(holeSelect);
 };
 
 function removeCounter() {
@@ -221,5 +238,6 @@ function checkCounters() {
     playerLocationTwo = 0;
     playerLocationThree = 0;
     playerLocationFour = 0;
+    selectedHole();
 };
 
