@@ -44,7 +44,7 @@ Back to the drawing board. With the knowledge of the last two attempted function
 
 ### Resolution.
 
-Currently, when the function is now called the 'if statement' will check the first master counter with the user's first counter and return a black peg if these are the same. The 'if statement' will repeat this process for each counter. After knowing which counters have been markered, we can then run another 'if statement' to check for a variable that is the same as the masters variable but just in the wrong location returning a white peg if it finds one. So far I have found no errors with the approach.
+Currently, when the function is now called the 'if statement' will check the first master counter with the user's first counter and return a black peg if these are the same. The 'if statement' will repeat this process for each counter. After knowing which counters have been markered, we can then run another 'if statement' to check for a variable that is the same as the masters variable but just in the wrong location returning a white peg if it finds one. So far I have found no errors with this approach.
 
 
 
