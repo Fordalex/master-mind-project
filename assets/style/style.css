@@ -9,7 +9,7 @@ h2,h5 {
 }
 
 .bottom-border-divider {
-    border-bottom:solid 1px rgba(101, 76, 21, 0.4);
+   /* border-bottom:solid 1px rgba(101, 76, 21, 0.4);*/
 }
 
 .board-row-height {
