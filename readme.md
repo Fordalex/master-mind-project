@@ -24,17 +24,26 @@ Computers coloured pegs to be generated.
 
 ## Testing
 
-Selecting Colours
-Click on four different colors on the right of the board:
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+Checking if the counters are marked correctly:
+Try clicking the 'check' button with nothing inputted, making sure a black peg will be return if there are any holes.
+Try clicking the 'check' button with nothing inputted, making sure a black peg will be return if there are any holes.
+Try clicking the 'check' button with nothing inputted, making sure a black peg will be return if there are any holes.
 
-### Bugs (Solved)
+On desktop you will be able to see all of the content as its not a very big document. On mobile its broken down into three section you can scroll down for further information.
 
-### Bugs (Un-Solved)
+## Bug
 
-During coding I have encountered an issue which I have had to overcome. This issue was with a written function, the incorrect function was checking the user inputted pegs multiple times rather than as individual inputs, which in turn led to incorrect computer generated marking. I overcome this issue by coding a new function which allowed the algorithm to store, in a variable, which pegs have been already marked. This is issue was highlighted by a specific scenario, which led to incorrect marking by the algorithm.
+I created a function, which will check the user's coloured counters when the button 'check' calls for this function. The function I had created marks the user's counters, by checking the status of its own variable and then checking the variable of the players in that same location. If this is true the function will return a black peg, if this isn't then the 'if statement' will start to check the remaining three users counters, returning a white peg if it finds the variable is set the same to its own. The 'if statement' will repeat this process for each of the master counters. This I found worked great, until:
+[Appendix 1](https://github.com/Fordalex/master-mind-project/blob/master/testing/automatic-marking-problem.png)
+The function returned 3 black pegs and 1 white, I knew this couldn't be right. The computer had generated two of the same colour, the user only inputted one of that colour. The 'if statement' didn't take into consideration, that counter had already been marked. I now know that the approach I first took wasn't going to work.
+I went back to the drawing board, knowing that there will need to be a boolean variable to tell the 'if statement' not to check that variable if a peg had already been returned for that counter. This worked okay for a while until some further testing showed that if a white peg had already been returned. Then it would ignore that counter, as instructed. If on the second, third or fourth counter the users variable was the same as the masters variable it should return a black peg, but if a white peg had already been returned for that counter it would be ignored. Marking the row incorrectly.
+Back to the drawing board. With the knowledge of the last two attempted functions, I now know I will need a boolean variable to tell the 'if statement' when a counter has already been marked but to check for black pegs first, as these should take priority over white pegs.
+
+### Resolution.
+
+Currently, when the function is now called the 'if statement' will check the first master counter with the user's first counter and return a black peg if these are the same. The 'if statement' will repeat this process for each counter. After knowing which counters have been markered, we can then run another 'if statement' to check for a variable that is the same as the masters variable but just in the wrong location returning a white peg if it finds one. So far I have found no errors with the approach.
+
+
+
 
 
