@@ -114,8 +114,6 @@ function generateCounters() {
     } else {
         $('#master-four').html('');
     }
-
-
     console.log(masterLocationOne, masterLocationTwo, masterLocationThree, masterLocationFour)
 };
 
