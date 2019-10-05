@@ -324,4 +324,8 @@ function levelComplete() {
     $('.hole-selector').remove();
     gameWon.play();
     $('.hole-selector').remove();
+    setTimeout(function() {
+        alert("Winner!!");
+    }, 200);
+    
 };
