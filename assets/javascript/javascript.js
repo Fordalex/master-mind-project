@@ -148,21 +148,24 @@ function removeCounter() {
     if (holeSelect == 2) {
         $(countHoleSelector + '-c-one').html('');
         holeSelect--;
+        selectedHole();
         playerLocationOne = colourNum;
     } else if (holeSelect == 3) {
         $(countHoleSelector + '-c-two').html('');
         holeSelect--;
+        selectedHole();
         playerLocationTwo = colourNum;
     } else if (holeSelect == 4) {
         $(countHoleSelector + '-c-three').html('');
         holeSelect--;
+        selectedHole();
         playerLocationThree = colourNum;
     } else if (holeSelect == 5) {
         $(countHoleSelector + '-c-four').html('');
         holeSelect--;
+        selectedHole();
         playerLocationFour = colourNum;
     }
-    selectedHole();
 };
 
 function checkCounters() {

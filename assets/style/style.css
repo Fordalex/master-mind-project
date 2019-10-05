@@ -115,6 +115,8 @@ h2,h5 {
 
 .choose-button:hover {
     cursor:pointer;
+    width:28px;
+    height:28px;
 }
 
 .choose-red {
@@ -233,6 +235,7 @@ h2,h5 {
     border-radius:10px;
     border:solid #707070 1px;
     margin-bottom:32px;
+    background-color:white;
 }
 
 .mastermind-stats-container {
