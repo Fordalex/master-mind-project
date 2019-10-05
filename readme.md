@@ -20,7 +20,7 @@ Choosing Colours - The user is able to select the colours of the pegs and put th
 
 ### Features Left to Implement
 
-Computers coloured pegs to be generated.
+
 
 ## Testing
 
@@ -42,10 +42,24 @@ I went back to the drawing board, knowing that there will need to be a boolean v
 
 Back to the drawing board. With the knowledge of the last two attempted functions, I now know I will need a boolean variable to tell the 'if statement' when a counter has already been marked but to check for black pegs first, as these should take priority over white pegs.
 
-### Resolution.
+### Resolution
 
 Currently, when the function is now called the 'if statement' will check the first master counter with the user's first counter and return a black peg if these are the same. The 'if statement' will repeat this process for each counter. After knowing which counters have been markered, we can then run another 'if statement' to check for a variable that is the same as the masters variable but just in the wrong location returning a white peg if it finds one. So far I have found no errors with this approach.
 
+## Credits
+
+### Media
+
+The photos used in this site were taken from:
+
+* [Pexels](https://www.pexels.com/)
+
+
+### Acknowledgements
+
+I need some help with some of the git commands:
+
+* [stack overflow](https://stackoverflow.com/questions/10510462/force-git-push-to-overwrite-remote-files)
 
 
 
