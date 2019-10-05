@@ -26,18 +26,27 @@ loop();
 
 var startSound = new Audio();
 startSound.src = "assets/audio/futuristic--game-start.wav";
+
 var counterDown = new Audio();
 counterDown.src = "assets/audio/classic--counter-down.wav";
+var counterDownTwo = new Audio();
+counterDownTwo.src = "assets/audio/classic--counter-down2.wav";
+var counterDownThree = new Audio();
+counterDownThree.src = "assets/audio/classic--counter-down3.wav";
+
+
+var gameWon = new Audio();
+gameWon.src = "assets/audio/classic--game-won.wav";
 
 
 
 function start() {
-    gameStarted = true;
     selectedHole();
     startSound.play();
     $('#master-cover').addClass('fade-in');
     setTimeout(function () {
         generateCounters();
+        gameStarted = true;
     }, 3100);
 }
 
@@ -107,7 +116,7 @@ function generateCounters() {
 function chooseColour(chosenColour, colourNum) {
     if (gameStarted == true) {
         var countHoleSelector = '#r-' + round;
-        counterDown.play();
+        counterDownSound();
         $('.hole-selector').remove();
 
         if (holeSelect == 1) {
@@ -135,6 +144,20 @@ function chooseColour(chosenColour, colourNum) {
         console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector);
     }
 };
+
+
+function counterDownSound() {
+    var pick = Math.floor(Math.random() * 3);
+    console.log('pick ', pick)
+   if (pick == 0) {
+    counterDown.play();
+   } else if (pick == 1) {
+       counterDownTwo.play();
+   } else if (pick == 2) {
+       counterDownThree.play();
+   };
+}
+
 
 function selectedHole() {
     var countHoleSelector = '#r-' + round;
@@ -291,4 +314,5 @@ function levelComplete() {
     $('#master-cover').removeClass('fade-in');
     $('#master-cover').addClass('d-none');
     $('.hole-selector').remove();
+    gameWon.play();
 };
