@@ -1,6 +1,6 @@
 # Master Mind Project
 
-This is an old family game I used to play. Mastermind is a game that requires a player to use logic, guesses and reasoning skills to determine the sequence of colored pegs that the computer has secretly generated and the player will have eleven attempts to guess correctly or the computer will win! 
+Mastermind is a vintage family game from my childhood. It is a game that requires a player to use logic, speculation and reasoning skills to determine the sequence of colored pegs. The computer has secretly generated a sequence leaving players having 11 attempts to guess correctly, or the computer wins!
 
 ## Link
 
@@ -20,7 +20,7 @@ Choosing Colours - The user is able to select the colours of the pegs and put th
 
 ### Features Left to Implement
 
-
+At the end of the game, if the user wins I would like counters to be generated on the board in a moving pattern and a happy sound to be played, to give positive feed back to the user. If the player loses, all the pegs to turn red and be static, with a bad sound being played.
 
 ## Testing
 
@@ -54,6 +54,10 @@ The photos used in this site were taken from:
 
 * [Pexels](https://www.pexels.com/)
 
+Audio was taken from:
+
+* [Free Sounds](https://freesound.org/)
+
 
 ### Acknowledgements
 
@@ -61,6 +65,8 @@ I need some help with some of the git commands:
 
 * [stack overflow](https://stackoverflow.com/questions/10510462/force-git-push-to-overwrite-remote-files)
 
+For extra inforamtion:
 
+* [Adding Audio](https://www.youtube.com/watch?v=p4OHVJxd2FI)
 
 
