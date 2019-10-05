@@ -3,7 +3,7 @@ body {
     height:100vh;
 }
 
-h2,h5 {
+h2,h4,h5 {
     font-family: 'Slabo 27px', serif;
     color:#5D0B0B;
 }
@@ -230,7 +230,7 @@ h2,h5 {
 /* mastermind stats */
 
 .mastermind-menu {
-    width:280px;
+    width:350px;
     height:220px;
     border-radius:10px;
     border:solid #707070 1px;
@@ -238,10 +238,28 @@ h2,h5 {
     background-color:white;
 }
 
-.mastermind-stats-container {
-    width:280px;
-    height:275px;
+.table-border {
+    border:solid gray 1px;
     border-radius:10px;
+}
+
+table {
+    width:350px;
+    height:100px;
     background-color:#9BD980;
-    border:solid #707070 1px;
+    padding:15px;
+    border-radius: 10px;
+}
+
+.top-border {
+    border-top:solid black 1px;
+}
+
+td,th {
+    width:150px;
+    text-align:center;
+}
+
+td {
+    color:white;
 }

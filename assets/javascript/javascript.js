@@ -22,10 +22,19 @@ var masterLocationFour = 0;
 
 loop();
 
+/* audio */
+
+var startSound = new Audio();
+startSound.src = "assets/audio/futuristic--game-start.wav";
+var counterDown = new Audio();
+counterDown.src = "assets/audio/classic--counter-down.wav";
+
+
+
 function start() {
     gameStarted = true;
     selectedHole();
-    
+    startSound.play();
     $('#master-cover').addClass('fade-in');
     setTimeout(function () {
         generateCounters();
@@ -98,6 +107,7 @@ function generateCounters() {
 function chooseColour(chosenColour, colourNum) {
     if (gameStarted == true) {
         var countHoleSelector = '#r-' + round;
+        counterDown.play();
         $('.hole-selector').remove();
 
         if (holeSelect == 1) {
