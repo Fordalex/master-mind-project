@@ -65,7 +65,7 @@ I need some help with some of the git commands:
 
 * [stack overflow](https://stackoverflow.com/questions/10510462/force-git-push-to-overwrite-remote-files)
 
-For extra inforamtion:
+All audio taken from:
 
 * [Adding Audio](https://www.youtube.com/watch?v=p4OHVJxd2FI)
 

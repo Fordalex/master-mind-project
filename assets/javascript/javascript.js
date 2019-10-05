@@ -25,7 +25,7 @@ loop();
 /* audio */
 
 var startSound = new Audio();
-startSound.src = "assets/audio/futuristic--game-start.wav";
+startSound.src = "assets/audio/classic--game-start.wav";
 
 var counterDown = new Audio();
 counterDown.src = "assets/audio/classic--counter-down.wav";
@@ -34,11 +34,16 @@ counterDownTwo.src = "assets/audio/classic--counter-down2.wav";
 var counterDownThree = new Audio();
 counterDownThree.src = "assets/audio/classic--counter-down3.wav";
 
+var removeCounterSound = new Audio();
+removeCounterSound.src = "assets/audio/classic--remove.wav";
 
 var gameWon = new Audio();
 gameWon.src = "assets/audio/classic--game-won.wav";
 
+var lineCheckedSound = new Audio();
+lineCheckedSound.src = "assets/audio/classic--line-checked.wav";
 
+/* Functions */
 
 function start() {
     selectedHole();
@@ -47,7 +52,7 @@ function start() {
     setTimeout(function () {
         generateCounters();
         gameStarted = true;
-    }, 3100);
+    }, 2100);
 }
 
 function loop() {
@@ -178,6 +183,7 @@ function selectedHole() {
 
 function removeCounter() {
     var countHoleSelector = '#r-' + round;
+    removeCounterSound.play();
     if (holeSelect == 2) {
         $(countHoleSelector + '-c-one').html('');
         holeSelect--;
@@ -215,6 +221,8 @@ function checkCounters() {
     var masterLocationTwoChecked = false;
     var masterLocationThreeChecked = false;
     var masterLocationFourChecked = false;
+
+    lineCheckedSound.play();
 
     /* check to see if the colour is correct and in the right location */
 
@@ -315,4 +323,5 @@ function levelComplete() {
     $('#master-cover').addClass('d-none');
     $('.hole-selector').remove();
     gameWon.play();
+    $('.hole-selector').remove();
 };
