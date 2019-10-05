@@ -8,6 +8,16 @@ h2,h4,h5 {
     color:#5D0B0B;
 }
 
+.ready-button-container {
+    height:50px;
+    display:flex;
+    align-items:center;
+}
+
+#ready-button {
+    height:30px;
+}
+
 /* mastermind board */
 
 .board-row-height {

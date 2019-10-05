@@ -49,6 +49,7 @@ function start() {
     selectedHole();
     startSound.play();
     $('#master-cover').addClass('fade-in');
+    $('#ready-button').remove();
     setTimeout(function () {
         generateCounters();
         gameStarted = true;
