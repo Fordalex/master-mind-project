@@ -8,6 +8,10 @@ h2,h4,h5,h6 {
     color:#5D0B0B;
 }
 
+.p-smaller-font {
+    font-size:14px;
+}
+
 .ready-button-container {
     height:50px;
     display:flex;

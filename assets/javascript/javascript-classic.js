@@ -1,3 +1,18 @@
+$(document).ready(function() {
+    $('#enterNameModal').modal('show');
+});
+
+/* players name */
+
+var playerName = 'Player';
+
+$('#firstModal').on('click', function() {
+    playerName = $('#inputPlayerName').val();
+    $('#player-name-stats').text(playerName + "'s");
+});
+
+/* variables */
+
 var round = 1;
 var holeSelect = 1;
 var gameStarted = false;
@@ -102,7 +117,7 @@ function generateCounters() {
         $('#master-two').html(orangeCounter);
     } else if (masterLocationTwo == 6) {
         $('#master-two').html(whiteCounter);
-    }  else {
+    } else {
         $('#master-two').html('');
     }
     if (masterLocationThree == 1) {
@@ -329,7 +344,7 @@ function checkCounters() {
             levelComplete();
         };
 
-        if (round == 11) {
+        if (round == 10) {
             gameOverSound.play();
             alert("Loser!!");
         }
@@ -350,9 +365,11 @@ function levelComplete() {
     $('#master-cover').addClass('d-none');
     $('.hole-selector').remove();
     gameWon.play();
-    $('.hole-selector').remove();
+    gameStarted = false;
     setTimeout(function () {
-        alert("Winner!!");
+        $('.hole-selector').remove();
+        $('#player-name-winner').text(playerName);
+        $('#winnerModal').modal('show');
     }, 200);
 
 };

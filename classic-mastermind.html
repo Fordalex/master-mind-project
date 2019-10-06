@@ -29,7 +29,7 @@
 
     <div class="row m-0 p-0">
         <div class="col-12 m-0 p-0 d-flex justify-content-center ready-button-container">
-            <button onclick="start()" id="ready-button">Ready?</button>
+            <button onclick="start()" id="ready-button">Play!</button>
         </div>
     </div>
 
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-3 m-0 p-0 side-border-divider">
+                    <div class="col-3 m-0 pt-3 p-0 side-border-divider">
                         <div class="choose-red choose-button" onclick="chooseColour(redCounter,1)"></div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                            <div class="choose-green choose-button" onclick="chooseColour(greenCounter,2)"></div>
+                        <div class="choose-green choose-button" onclick="chooseColour(greenCounter,2)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                            <div class="choose-yellow choose-button" onclick="chooseColour(yellowCounter,3)"></div>
+                        <div class="choose-yellow choose-button" onclick="chooseColour(yellowCounter,3)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -157,7 +157,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                            <div class="choose-blue choose-button" onclick="chooseColour(blueCounter,4)"></div>
+                        <div class="choose-blue choose-button" onclick="chooseColour(blueCounter,4)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                            <div class="choose-orange choose-button" onclick="chooseColour(orangeCounter,5)"></div>
+                        <div class="choose-orange choose-button" onclick="chooseColour(orangeCounter,5)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                            <div class="choose-white choose-button" onclick="chooseColour(whiteCounter,6)"></div>
+                        <div class="choose-white choose-button" onclick="chooseColour(whiteCounter,6)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -232,7 +232,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="choose-hole" onclick="chooseColour(holeCounter,0)"></div>
+                        <div id="choose-hole" onclick="chooseColour(holeCounter,0)"></div>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -257,7 +257,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                       
+
                         <button class="check-round-button" onclick="removeCounter()">Remove</button>
                     </div>
                 </div>
@@ -283,10 +283,10 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                            <div id="check-round-arrow"></div>
-                            <button class="check-round-button" onclick="checkCounters()">Check</button>
-                            
-                       
+                        <div id="check-round-arrow"></div>
+                        <button class="check-round-button" onclick="checkCounters()">Check</button>
+
+
                     </div>
                 </div>
                 <div class="row m-0 p-0">
@@ -311,7 +311,7 @@
                         </div>
                     </div>
                     <div class="col-3 m-0 p-0 side-border-divider">
-                            <p>Round: <span id="round-counter">1</span></p>
+                        <p class="p-smaller-font">Round: <span id="round-counter">1</span></p>
                     </div>
                 </div>
 
@@ -327,7 +327,7 @@
 
         <div class="col-sm-12 col-lg-6 px-3 d-flex justify-content-center">
             <div>
-                <h4 class="text-center">End Of Game Stats</h4>
+                <h4 class="text-center"><span id="player-name-stats"></span> Stats</h4>
 
                 <div class="mx-5"></div>
                 <div class="d-flex justify-content-around">
@@ -361,12 +361,57 @@
 
     <!-- // Menu and game stats -->
 
+    <!-- First Modal for players name and difficulty -->
+    <div class="modal fade" id="enterNameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Welcome to Mastermind</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <h6>Please Enter Your Name:</h6>
+                    <input type="text" id="inputPlayerName">
+                    <h6 class="mt-2">Please Select You Difficulty:</h6>
+                    <label><input type="radio" name="difficulty"> Easy</label>
+                    <label><input type="radio" name="difficulty"> Medium</label>
+                    <label><input type="radio" name="difficulty"> Hard</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
+    <!-- Winner -->
+    <div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Winner</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>Well done <span id="player-name-winner"></span>!!</p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal">Play Again!</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="firstModal">Back To Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- link to javascript -->
-    <script src="assets/javascript/javascript.js"></script>
+    <script src="assets/javascript/javascript-classic.js"></script>
 
 
     <!-- Bootstrap js -->
