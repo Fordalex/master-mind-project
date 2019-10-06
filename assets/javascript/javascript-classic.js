@@ -16,6 +16,7 @@ $('#firstModal').on('click', function () {
 var round = 1;
 var holeSelect = 1;
 var gameStarted = false;
+var fullGames = 0;
 
 const redCounter = '<img src="assets/images/red-counter.png" class="counter">';
 const greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
@@ -63,9 +64,17 @@ lineCheckedSound.src = "assets/audio/classic--line-checked.wav";
 
 /* Functions */
 
+
+
 function start() {
+    fullGames++;
+    $('.counter').remove();
+    $('.marker-peg').remove();
+    round = 1;
+    holeSelect = 1;
     selectedHole();
     startSound.play();
+    $('#master-cover').removeClass('d-none');
     $('#master-cover').addClass('fade-in');
     $('#ready-button').remove();
     setTimeout(function () {
@@ -73,6 +82,8 @@ function start() {
         gameStarted = true;
     }, 1500);
 }
+
+/* generated counters animation before the game starts */
 
 function loop() {
     if (gameStarted == false) {
@@ -348,7 +359,10 @@ function checkCounters() {
 
         if (round == 10) {
             gameOverSound.play();
-            alert("Loser!!");
+            setTimeout(function () {
+                $('#loserModal').modal('show');
+            }, 200);
+
         }
 
         round++;
@@ -363,6 +377,7 @@ function checkCounters() {
 };
 
 function levelComplete() {
+    $('#attempts-round-' + fullGames).text(round);
     $('#master-cover').removeClass('fade-in');
     $('#master-cover').addClass('d-none');
     $('.hole-selector').remove();
