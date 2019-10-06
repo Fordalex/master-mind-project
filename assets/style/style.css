@@ -90,16 +90,15 @@ h2,h4,h5,h6 {
 
 .master-mind-cover {
     width:180px;
-    height:50px;
-    background-image: linear-gradient(to bottom, #C99C56 , #DFB370);
+    height:70px;
+    background: url('../images/mastermind-cover.png');
     opacity:0;
     display:flex;
     justify-content:center;
     align-items:center;
-    border:solid 1px #707070;
-    border-radius:0px 0px 5px 5px;
-    box-shadow:rgba(0,0,0,0.2) 4px 4px 4px;
     position:absolute;
+    top:12px;
+    left:1px;
     z-index:50;
 }
 
