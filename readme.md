@@ -26,8 +26,13 @@ At the end of the game, if the user wins I would like counters to be generated o
 
 Checking if the counters are marked correctly:
 Try clicking the 'check' button with nothing inputted, making sure a black peg will be return if there are any holes.
-Try clicking the 'check' button with nothing inputted, making sure a black peg will be return if there are any holes.
-Try clicking the 'check' button with nothing inputted, making sure a black peg will be return if there are any holes.
+Try clicking 'Add red counter' four times and press check. making sure the correct pegs are returned.
+Try clicking 'Add green counter' four times and press check. making sure the correct pegs are returned.
+Try clicking 'Add yellow counter' four times and press check. making sure the correct pegs are returned.
+Try clicking 'Add blue counter' four times and press check. making sure the correct pegs are returned.
+Try clicking 'Add orange counter' four times and press check. making sure the correct pegs are returned.
+Try clicking 'Add white counter' four times and press check. making sure the correct pegs are returned.
+
 
 On desktop you will be able to see all of the content as its not a very big document. On mobile its broken down into three section you can scroll down for further information.
 
