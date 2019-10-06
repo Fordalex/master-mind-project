@@ -40,6 +40,9 @@ removeCounterSound.src = "assets/audio/classic--remove.wav";
 var gameWon = new Audio();
 gameWon.src = "assets/audio/classic--game-won.wav";
 
+var gameOverSound = new Audio();
+gameOverSound.src = "assets/audio/classic--game-lose.wav";
+
 var lineCheckedSound = new Audio();
 lineCheckedSound.src = "assets/audio/classic--line-checked.wav";
 
@@ -325,6 +328,11 @@ function checkCounters() {
         if (masterLocationOne == playerLocationOne && masterLocationTwo == playerLocationTwo && masterLocationThree == playerLocationThree && masterLocationFour == playerLocationFour) {
             levelComplete();
         };
+
+        if (round == 11) {
+            gameOverSound.play();
+            alert("Loser!!");
+        }
 
         round++;
         holeSelect = 1;
