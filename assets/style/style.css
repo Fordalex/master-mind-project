@@ -28,7 +28,8 @@ h2,h4,h5,h6 {
     width:280px;
     height:525px;
     border-radius:10px;
-    background-image: url('../images/wood-background.png');
+    background-image: url('../images/wood-background-two.png');
+    background-size: 100% 100%;
     border:solid 1px #707070;
     box-shadow:rgba(0,0,0,0.2) 4px 4px 8px;
 }
@@ -92,6 +93,7 @@ h2,h4,h5,h6 {
     width:180px;
     height:70px;
     background: url('../images/mastermind-cover.png');
+    background-size:100% 100%;
     opacity:0;
     display:flex;
     justify-content:center;
@@ -100,6 +102,11 @@ h2,h4,h5,h6 {
     top:12px;
     left:1px;
     z-index:50;
+}
+
+.masters-counters-position {
+    margin-top:30px;
+    padding-left:40px;
 }
 
 .fade-in {
@@ -186,7 +193,7 @@ h2,h4,h5,h6 {
     position:relative;
     right:6px;
     bottom:6px;
-    box-shadow:2px 2px 2px 1px rgba(100,100,100,0.5);
+    box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .hole-counter {
