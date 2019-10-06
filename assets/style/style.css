@@ -227,7 +227,7 @@ h2,h4,h5,h6 {
 /* mastermind stats */
 
 .mastermind-menu {
-    width:350px;
+    width:100%;
     border-radius:10px;
     border:solid #707070 1px;
     margin-bottom:32px;
