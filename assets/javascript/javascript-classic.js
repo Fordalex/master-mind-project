@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('#enterNameModal').modal('show');
 });
 
@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 var playerName = 'Player';
 
-$('#firstModal').on('click', function() {
+$('#firstModal').on('click', function () {
     playerName = $('#inputPlayerName').val();
     $('#player-name-stats').text(playerName + "'s");
 });
@@ -217,28 +217,30 @@ function selectedHole() {
 };
 
 function removeCounter() {
-    var countHoleSelector = '#r-' + round;
-    removeCounterSound.play();
-    if (holeSelect == 2) {
-        $(countHoleSelector + '-c-one').html('');
-        holeSelect--;
-        selectedHole();
-        playerLocationOne = colourNum;
-    } else if (holeSelect == 3) {
-        $(countHoleSelector + '-c-two').html('');
-        holeSelect--;
-        selectedHole();
-        playerLocationTwo = colourNum;
-    } else if (holeSelect == 4) {
-        $(countHoleSelector + '-c-three').html('');
-        holeSelect--;
-        selectedHole();
-        playerLocationThree = colourNum;
-    } else if (holeSelect == 5) {
-        $(countHoleSelector + '-c-four').html('');
-        holeSelect--;
-        selectedHole();
-        playerLocationFour = colourNum;
+    if (gameStarted == true) {
+        var countHoleSelector = '#r-' + round;
+        removeCounterSound.play();
+        if (holeSelect == 2) {
+            $(countHoleSelector + '-c-one').html('');
+            holeSelect--;
+            selectedHole();
+            playerLocationOne = colourNum;
+        } else if (holeSelect == 3) {
+            $(countHoleSelector + '-c-two').html('');
+            holeSelect--;
+            selectedHole();
+            playerLocationTwo = colourNum;
+        } else if (holeSelect == 4) {
+            $(countHoleSelector + '-c-three').html('');
+            holeSelect--;
+            selectedHole();
+            playerLocationThree = colourNum;
+        } else if (holeSelect == 5) {
+            $(countHoleSelector + '-c-four').html('');
+            holeSelect--;
+            selectedHole();
+            playerLocationFour = colourNum;
+        }
     }
 };
 
