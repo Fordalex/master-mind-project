@@ -1,5 +1,9 @@
+/* on load */
+
 $(document).ready(function () {
     $('#enterNameModal').modal('show');
+    loop();
+    $('#player-coins').html(coins);
 });
 
 /* players name */
@@ -17,6 +21,7 @@ var round = 1;
 var holeSelect = 1;
 var gameStarted = false;
 var fullGames = 0;
+var coins = 0;
 
 const redCounter = '<img src="assets/images/red-counter.png" class="counter">';
 const greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
@@ -35,8 +40,6 @@ var masterLocationOne = 0;
 var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
-
-loop();
 
 /* audio */
 
@@ -64,7 +67,7 @@ lineCheckedSound.src = "assets/audio/classic--line-checked.wav";
 
 /* Functions */
 
-
+/* to start the game */
 
 function start() {
     fullGames++;
@@ -95,6 +98,8 @@ function loop() {
         }, 1000);
     }
 };
+
+/* computer generated counters */
 
 function generateCounters() {
     masterLocationOne = Math.floor(Math.random() * 7);
@@ -196,6 +201,7 @@ function chooseColour(chosenColour, colourNum) {
     }
 };
 
+/* sound randomised for when the player places a counter */
 
 function counterDownSound() {
     var pick = Math.floor(Math.random() * 3);
@@ -209,6 +215,7 @@ function counterDownSound() {
     };
 }
 
+/* A arrow showing the user where the next counter will go */
 
 function selectedHole() {
     var countHoleSelector = '#r-' + round;
@@ -380,11 +387,25 @@ function checkCounters() {
 
 function levelComplete() {
     $('#attempts-round-' + fullGames).text(round);
+    $('#attempts-round').html(round);
     $('#master-cover').removeClass('fade-in');
     $('#master-cover').addClass('d-none');
     $('.hole-selector').remove();
     gameWon.play();
     gameStarted = false;
+
+    /* adding coins */
+    var roundCoinBonus = (10 - round + 1) * 10;
+    var totalRoundCoins = 50 + roundCoinBonus;
+    for (i = 0; i < totalRoundCoins; i++) {
+        coins++;
+    }
+    $('#round-coin-bonus').html(roundCoinBonus);
+    $('#total-coins-round').html(totalRoundCoins);
+    $('#player-coins').html(coins);
+
+    /* winner modal */
+
     setTimeout(function () {
         $('.hole-selector').remove();
         $('#player-name-winner').text(playerName);
