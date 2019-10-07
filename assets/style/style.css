@@ -26,6 +26,17 @@ h2,h4,h5,h6 {
     max-width:1300px;
 }
 
+/* index.html */
+
+.mastermind-menu {
+    width:100%;
+    border-radius:10px;
+    border:solid #707070 1px;
+    margin-bottom:32px;
+    background-color:white;
+    padding:10px;
+}
+
 /* mastermind board */
 
 .board-row-height {
@@ -251,6 +262,8 @@ h2,h4,h5,h6 {
     transition-timing-function: ease-in-out;
 }
 
+
+
 .hole-selector-check {
     position:relative;
     top:0px;
@@ -265,15 +278,18 @@ h2,h4,h5,h6 {
 
 /* counter shop */
 
-
 /* inventory */
-
 
 /* stats */
 
 td,th {
     text-align:center;
 }
+
+
+
+
+
 
 /* Animations */ 
 
