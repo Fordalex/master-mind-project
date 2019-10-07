@@ -1,5 +1,5 @@
 body {
-    background: rgb(204, 228, 231);
+    background: rgb(235, 251, 255);
     height:100%;
 }
 
@@ -276,7 +276,16 @@ h2,h4,h5,h6 {
 
 
 
-/* counter shop */
+/* accessory shop */
+
+.dropdown-arrow {
+    font-size: 15px;
+    margin-left:5px;
+}
+
+.dropdown-arrow:hover {
+   cursor: pointer;
+}
 
 .shop-counter-container {
     border-radius:solid black 1px;
@@ -286,7 +295,26 @@ h2,h4,h5,h6 {
     text-align: center;
 }
 
+.shop-counter-container:hover {
+    cursor: pointer;
+}
+
+.shop-counter-container p {
+    margin-bottom:10px;
+}
+
 /* inventory */
+
+.Inventory-background {
+    width:50px;
+    height:50px;
+    background-color:blue;
+}
+
+.Inventory-background:hover {
+    cursor: pointer;
+    background-color:lightblue;
+}
 
 /* stats */
 

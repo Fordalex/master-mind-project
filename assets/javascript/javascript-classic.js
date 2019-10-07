@@ -41,6 +41,20 @@ var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
 
+/* difficulty setting */
+
+$('#easy').on('click', function() {
+    difficultySetting = 'easy';
+});
+$('#medium').on('click', function() {
+    difficultySetting = 'medium';
+});
+$('#hard').on('click', function() {
+    difficultySetting = 'hard';
+});
+
+var difficultySetting = '';
+
 /* audio */
 
 var startSound = new Audio();
@@ -386,8 +400,17 @@ function checkCounters() {
 };
 
 function levelComplete() {
+    if (difficultySetting == 'easy') {
+        difficultyBonus = 50;
+    } else if (difficultySetting == 'medium') {
+        difficultyBonus = 100;
+    } else if (difficultySetting == 'hard') {
+        difficultyBonus = 150;
+    };
+    console.log(difficultySetting, difficultyBonus);
+    var difficultyBonus 
     var roundCoinBonus = (10 - round + 1) * 10;
-    var totalRoundCoins = 50 + roundCoinBonus;
+    var totalRoundCoins = 50 + roundCoinBonus + difficultyBonus;
      /* adding stats */
      $('#stats-table').append(`
      <tr>
@@ -396,8 +419,7 @@ function levelComplete() {
      <td>0</td>
      <td>${totalRoundCoins}</td>
      </tr>
-     `)
-
+     `);
 
     $('#attempts-round-' + fullGames).text(round);
     $('#attempts-round').html(round);
@@ -415,6 +437,7 @@ function levelComplete() {
     $('#round-coin-bonus').html(roundCoinBonus);
     $('#total-coins-round').html(totalRoundCoins);
     $('#player-coins').html(coins);
+    $('#difficulty-bonus').html(difficultyBonus);
 
     /* winner modal */
 

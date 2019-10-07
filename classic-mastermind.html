@@ -324,11 +324,16 @@
                 <div class="col-sm-12 col-lg-6 px-3">
 
                     <div class="mastermind-menu mb-4">
-                        <h4 class="text-center">Counter Shop</h4>
+                        <h4 class="text-center mb-2">Accessory Shop</h4>
                         <div class="row m-0 p-0">
                             <div class="col-12 m-0 p-0 d-flex justify-content-end">
-                                <p><i class="fas fa-coins mx-2 text-warning"></i>Coins:<span id="player-coins"
-                                        class="mx-2"></span></p>
+                                <p class="m-0"><i class="fas fa-coins mx-2 text-warning"></i>Coins:<span
+                                        id="player-coins" class="mx-2"></span></p>
+                            </div>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 m-0 p-0">
+                                <h5 class="m-0">Counters<i class="fas fa-arrow-circle-down dropdown-arrow"></i></h5>
                             </div>
                         </div>
                         <div class="row m-0 p-0">
@@ -351,10 +356,36 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 m-0 p-0">
+                                <h5 class="m-0">Backgrounds<i class="fas fa-arrow-circle-down dropdown-arrow"></i></h5>
+                            </div>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col-4 m-0 p-2">
+                                <div class="shop-counter-container">
+                                    <p>Space</p>
+                                    <p class="m-0">100 Coins</p>
+                                </div>
+                            </div>
+                            <div class="col-4 m-0 p-2">
+                                <div class="shop-counter-container">
+                                    <p>Swirl</p>
+                                    <p class="m-0">200 Coins</p>
+                                </div>
+                            </div>
+                            <div class="col-4 m-0 p-2">
+                                <div class="shop-counter-container">
+                                    <p>Gems</p>
+                                    <p class="m-0">400 Coins</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="my-4 mastermind-menu">
-                        <h5 class="text-center">Inventory</h5>
+                        <h4 class="text-center">Inventory</h4>
+                        <h5>Counters<i class="fas fa-arrow-circle-down dropdown-arrow"></i></h5>
                         <div class="row m-0 p-0 d-flex justify-content-center">
                             <div class="col-2 m-0 p-0">
                                 <p>C</p>
@@ -370,6 +401,18 @@
                             </div>
                             <div class="col-2 m-0 p-0">
                                 <p>G</p>
+                            </div>
+                        </div>
+                        <h5>Backgrounds<i class="fas fa-arrow-circle-down dropdown-arrow"></i></h5>
+                        <div class="row m-0 p-0 d-flex justify-content-center">
+                            <div class="col-4 m-0 p-0 d-flex justify-content-center">
+                                <div class="Inventory-background"></div>
+                            </div>
+                            <div class="col-4 m-0 p-0 d-flex justify-content-center">
+                                <div class="Inventory-background"></div>
+                            </div>
+                            <div class="col-4 m-0 p-0 d-flex justify-content-center">
+                                <div class="Inventory-background"></div>
                             </div>
                         </div>
                     </div>
@@ -409,9 +452,9 @@
                             <h6>Please Enter Your Name:</h6>
                             <input type="text" id="inputPlayerName">
                             <h6 class="mt-2">Please Select Your Difficulty:</h6>
-                            <label><input type="radio" name="difficulty"> Easy</label>
-                            <label><input type="radio" name="difficulty"> Medium</label>
-                            <label><input type="radio" name="difficulty"> Hard</label>
+                            <label><input type="radio" name="difficulty" id="easy"> Easy</label>
+                            <label><input type="radio" name="difficulty" id="medium"> Medium</label>
+                            <label><input type="radio" name="difficulty" id="hard"> Hard</label>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-success" data-dismiss="modal"
@@ -436,10 +479,15 @@
                             <p>Well Done <span id="player-name-winner"></span>!!</p>
                             <p>You worked it out in <span id="attempts-round"></span> rounds.</p>
                             <p>And it only took you, N/A <span id="time-taken"></span></p>
-                            <p>The computer has rewarded you with <i class="fas fa-coins mx-2 text-warning"></i> <b>50</b> Coins:</p>
-                            <p>Round Bonus: <i class="fas fa-coins mx-2 text-warning"></i><span id="round-coin-bonus" class="font-weight-bold"></span> Coins</p>
+                            <p>The computer has rewarded you with <i class="fas fa-coins mx-2 text-warning"></i>
+                                <b>50</b> Coins</p>
+                            <p>Round Bonus: <i class="fas fa-coins mx-2 text-warning"></i><span id="round-coin-bonus"
+                                    class="font-weight-bold"></span> Coins</p>
                             <p>Time Bonus: N/A</p>
-                            <p>Total coins for that round: <i class="fas fa-coins mx-2 text-warning"></i><span id="total-coins-round" class="font-weight-bold"></span> Coins</p>
+                            <p>Difficulty Bonus: <i class="fas fa-coins mx-2 text-warning"></i><span
+                                    id="difficulty-bonus" class="font-weight-bold"></span> Coins</p>
+                            <p>Total coins for that round: <i class="fas fa-coins mx-2 text-warning"></i><span
+                                    id="total-coins-round" class="font-weight-bold"></span> Coins</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal"
