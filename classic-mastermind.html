@@ -41,7 +41,7 @@
 
                 <!-- Mastermind board -->
 
-                <div class="col-sm-12 col-lg-6 px-3 d-flex justify-content-center">
+                <div class="col-sm-12 col-lg-6 px-3 mb-4 d-flex justify-content-center">
                     <div class="mastermind-board-container">
 
                         <div class="row m-0 p-0 answer-container">
@@ -60,11 +60,6 @@
                         </div>
 
                         <div class="row m-0 p-0">
-
-
-
-
-
                             <div class="col-9 p-0 m-0">
                                 <div class="row board-row-height m-0 p-0 mt-3">
                                     <div class=" d-flex align-items-center m-0 p-0 pl-4">
@@ -318,15 +313,13 @@
                                 <p class="p-smaller-font">Round: <span id="round-counter">1</span></p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 
 
                 <!-- // Mastermind board -->
 
-                <!-- Menu and game stats -->
+                <!-- shop and stats -->
 
                 <div class="col-sm-12 col-lg-6 px-3">
 
@@ -334,21 +327,28 @@
                         <h4 class="text-center">Counter Shop</h4>
                         <div class="row m-0 p-0">
                             <div class="col-12 m-0 p-0 d-flex justify-content-end">
-                                <p>Coins:<span id="player-coins"></span></p>
+                                <p><i class="fas fa-coins mx-2 text-warning"></i>Coins:<span id="player-coins"
+                                        class="mx-2"></span></p>
                             </div>
                         </div>
                         <div class="row m-0 p-0">
-                            <div class="col-4 m-0 p-2 border">
-                                <p>Shapes</p>
-                                <p>500 Coins</p>
+                            <div class="col-4 m-0 p-2">
+                                <div class="shop-counter-container">
+                                    <p>Shapes</p>
+                                    <p class="m-0">500 Coins</p>
+                                </div>
                             </div>
-                            <div class="col-4 m-0 p-2 border">
-                                <p>Swirl</p>
-                                <p>1000 Coins</p>
+                            <div class="col-4 m-0 p-2">
+                                <div class="shop-counter-container">
+                                    <p>Swirl</p>
+                                    <p class="m-0">1000 Coins</p>
+                                </div>
                             </div>
-                            <div class="col-4 m-0 p-2 border">
-                                <p>Gems</p>
-                                <p>2000 Coins</p>
+                            <div class="col-4 m-0 p-2">
+                                <div class="shop-counter-container">
+                                    <p>Gems</p>
+                                    <p class="m-0">2000 Coins</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -379,26 +379,20 @@
 
                         <div class="mx-5"></div>
                         <div class="d-flex justify-content-around">
-                            <table>
+                            <table id="stats-table">
                                 <tr>
                                     <th></th>
                                     <th>Attempts</th>
                                     <th>Time</th>
                                     <th>Coins</th>
                                 </tr>
-                                <tr>
-                                    <th>Round 1</th>
-                                    <td id="attempts-round-1">0</td>
-                                </tr>
-
-
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- // Menu and game stats -->
+            <!-- // shop and ststa -->
 
             <!-- First Modal for players name and difficulty -->
             <div class="modal fade" id="enterNameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -442,10 +436,10 @@
                             <p>Well Done <span id="player-name-winner"></span>!!</p>
                             <p>You worked it out in <span id="attempts-round"></span> rounds.</p>
                             <p>And it only took you, N/A <span id="time-taken"></span></p>
-                            <p>The computer has rewarded you with 50 Coins:</p>
-                            <p>Round Bonus: <span id="round-coin-bonus"></span> Coins</p>
+                            <p>The computer has rewarded you with <i class="fas fa-coins mx-2 text-warning"></i> <b>50</b> Coins:</p>
+                            <p>Round Bonus: <i class="fas fa-coins mx-2 text-warning"></i><span id="round-coin-bonus" class="font-weight-bold"></span> Coins</p>
                             <p>Time Bonus: N/A</p>
-                            <p>Total coins for that round: <span id="total-coins-round"></span> Coins</p>
+                            <p>Total coins for that round: <i class="fas fa-coins mx-2 text-warning"></i><span id="total-coins-round" class="font-weight-bold"></span> Coins</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal"

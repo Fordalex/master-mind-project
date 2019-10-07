@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(rgb(200,200,200), rgb(180,180,180), rgb(200,200,200));
+    background: rgb(204, 228, 231);
     height:100%;
 }
 
@@ -50,7 +50,7 @@ h2,h4,h5,h6 {
     background-image: url('../images/wood-background-two.png');
     background-size: 100% 100%;
     border:solid 1px #707070;
-    box-shadow:rgba(0,0,0,0.2) 4px 4px 8px;
+    box-shadow:rgba(0,0,0,0.5) 4px 4px 8px;
 }
 
 .counter-black-hole {
@@ -278,18 +278,22 @@ h2,h4,h5,h6 {
 
 /* counter shop */
 
+.shop-counter-container {
+    border-radius:solid black 1px;
+    border-radius:10px;
+    background-color:red;
+    padding:5px;
+    text-align: center;
+}
+
 /* inventory */
 
 /* stats */
 
 td,th {
     text-align:center;
+    width:70px;
 }
-
-
-
-
-
 
 /* Animations */ 
 

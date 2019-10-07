@@ -386,6 +386,19 @@ function checkCounters() {
 };
 
 function levelComplete() {
+    var roundCoinBonus = (10 - round + 1) * 10;
+    var totalRoundCoins = 50 + roundCoinBonus;
+     /* adding stats */
+     $('#stats-table').append(`
+     <tr>
+     <th>Round ${fullGames}</th>
+     <td>${round}</td>
+     <td>0</td>
+     <td>${totalRoundCoins}</td>
+     </tr>
+     `)
+
+
     $('#attempts-round-' + fullGames).text(round);
     $('#attempts-round').html(round);
     $('#master-cover').removeClass('fade-in');
@@ -395,8 +408,7 @@ function levelComplete() {
     gameStarted = false;
 
     /* adding coins */
-    var roundCoinBonus = (10 - round + 1) * 10;
-    var totalRoundCoins = 50 + roundCoinBonus;
+   
     for (i = 0; i < totalRoundCoins; i++) {
         coins++;
     }
