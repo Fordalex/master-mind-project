@@ -278,6 +278,11 @@ h2,h4,h5,h6 {
 
 /* accessory shop */
 
+.expand-container {
+    display:flex;
+    justify-content:space-around;
+}
+
 .dropdown-arrow {
     font-size: 15px;
     margin-left:5px;
@@ -293,6 +298,8 @@ h2,h4,h5,h6 {
     background-color:red;
     padding:5px;
     text-align: center;
+    width:30%;
+    display:inline-block;
 }
 
 .shop-counter-container:hover {
@@ -302,6 +309,7 @@ h2,h4,h5,h6 {
 .shop-counter-container p {
     margin-bottom:10px;
 }
+
 
 /* inventory */
 

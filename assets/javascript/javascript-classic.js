@@ -1,9 +1,8 @@
-/* on load */
-
 $(document).ready(function () {
     $('#enterNameModal').modal('show');
     loop();
-    $('#player-coins').html(coins);
+    $('.expand-container').hide();
+    $('#player-coins').html(0);
 });
 
 /* drop down */
