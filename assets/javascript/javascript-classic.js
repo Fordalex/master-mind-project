@@ -6,6 +6,13 @@ $(document).ready(function () {
     $('#player-coins').html(coins);
 });
 
+/* drop down */
+
+$('.expand-button').on('click', function () {
+    $(this).next('div').slideToggle('slow');
+    console.log('press')
+})
+
 /* players name */
 
 var playerName = 'Player';
@@ -54,6 +61,10 @@ $('#hard').on('click', function() {
 });
 
 var difficultySetting = '';
+
+/* backgrounds */
+
+const spaceBackground = "url('../images/space-background.png')";
 
 /* audio */
 
