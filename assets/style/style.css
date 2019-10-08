@@ -210,6 +210,12 @@ h2,h4,h5,h6 {
     border:solid black 1px;
 }
 
+.not-in-use {
+    position:absolute;
+    color:rgb(173, 31, 31);
+    font-size: 25px;
+}
+
 /* chosen counter */
 
 .counter {

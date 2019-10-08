@@ -50,12 +50,18 @@ var masterLocationFour = 0;
 /* difficulty setting */
 
 $('#easy').on('click', function () {
+    $('.not-in-use').remove();
     difficultySetting = 'easy';
+    $('.easy-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
+    $('.medium-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
 });
 $('#medium').on('click', function () {
+    $('.not-in-use').remove();
     difficultySetting = 'medium';
+    $('.medium-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
 });
 $('#hard').on('click', function () {
+    $('.not-in-use').remove();
     difficultySetting = 'hard';
 });
 
@@ -126,70 +132,90 @@ function loop() {
 /* computer generated counters */
 
 function generateCounters() {
-    masterLocationOne = Math.floor(Math.random() * 7);
-    masterLocationTwo = Math.floor(Math.random() * 7);
-    masterLocationThree = Math.floor(Math.random() * 7);
-    masterLocationFour = Math.floor(Math.random() * 7);
-    if (masterLocationOne == 1) {
+    if (difficultySetting == 'hard') {
+        masterLocationOne = Math.floor(Math.random() * 7);
+        masterLocationTwo = Math.floor(Math.random() * 7);
+        masterLocationThree = Math.floor(Math.random() * 7);
+        masterLocationFour = Math.floor(Math.random() * 7);
+    } else if (difficultySetting == 'medium') {
+        masterLocationOne = Math.floor(Math.random() * 5);
+        masterLocationTwo = Math.floor(Math.random() * 5);
+        masterLocationThree = Math.floor(Math.random() * 5);
+        masterLocationFour = Math.floor(Math.random() * 5);
+    } else if (difficultySetting == 'easy') {
+        masterLocationOne = Math.floor(Math.random() * 3);
+        masterLocationTwo = Math.floor(Math.random() * 3);
+        masterLocationThree = Math.floor(Math.random() * 3);
+        masterLocationFour = Math.floor(Math.random() * 3);
+    }
+
+    if (masterLocationOne == 0) {
         $('#master-one').html(redCounter);
-    } else if (masterLocationOne == 2) {
+    } else if (masterLocationOne == 1) {
         $('#master-one').html(greenCounter);
-    } else if (masterLocationOne == 3) {
+    } else if (masterLocationOne == 2) {
         $('#master-one').html(yellowCounter);
-    } else if (masterLocationOne == 4) {
+    } else if (masterLocationOne == 3) {
         $('#master-one').html(blueCounter);
-    } else if (masterLocationOne == 5) {
+    } else if (masterLocationOne == 4) {
         $('#master-one').html(orangeCounter);
-    } else if (masterLocationOne == 6) {
+    } else if (masterLocationOne == 5) {
         $('#master-one').html(whiteCounter);
     } else {
         $('#master-one').html('');
     }
-    if (masterLocationTwo == 1) {
+
+    if (masterLocationTwo == 0) {
         $('#master-two').html(redCounter);
-    } else if (masterLocationTwo == 2) {
+    } else if (masterLocationTwo == 1) {
         $('#master-two').html(greenCounter);
-    } else if (masterLocationTwo == 3) {
+    } else if (masterLocationTwo == 2) {
         $('#master-two').html(yellowCounter);
-    } else if (masterLocationTwo == 4) {
+    } else if (masterLocationTwo == 3) {
         $('#master-two').html(blueCounter);
-    } else if (masterLocationTwo == 5) {
+    } else if (masterLocationTwo == 4) {
         $('#master-two').html(orangeCounter);
-    } else if (masterLocationTwo == 6) {
+    } else if (masterLocationTwo == 5) {
         $('#master-two').html(whiteCounter);
     } else {
         $('#master-two').html('');
     }
-    if (masterLocationThree == 1) {
+
+
+    if (masterLocationThree == 0) {
         $('#master-three').html(redCounter);
-    } else if (masterLocationThree == 2) {
+    } else if (masterLocationThree == 1) {
         $('#master-three').html(greenCounter);
-    } else if (masterLocationThree == 3) {
+    } else if (masterLocationThree == 2) {
         $('#master-three').html(yellowCounter);
-    } else if (masterLocationThree == 4) {
+    } else if (masterLocationThree == 3) {
         $('#master-three').html(blueCounter);
-    } else if (masterLocationThree == 5) {
+    } else if (masterLocationThree == 4) {
         $('#master-three').html(orangeCounter);
-    } else if (masterLocationThree == 6) {
+    } else if (masterLocationThree == 5) {
         $('#master-three').html(whiteCounter);
     } else {
         $('#master-three').html('');
     }
-    if (masterLocationFour == 1) {
+
+
+    if (masterLocationFour == 0) {
         $('#master-four').html(redCounter);
-    } else if (masterLocationFour == 2) {
+    } else if (masterLocationFour == 1) {
         $('#master-four').html(greenCounter);
-    } else if (masterLocationFour == 3) {
+    } else if (masterLocationFour == 2) {
         $('#master-four').html(yellowCounter);
-    } else if (masterLocationFour == 4) {
+    } else if (masterLocationFour == 3) {
         $('#master-four').html(blueCounter);
-    } else if (masterLocationFour == 5) {
+    } else if (masterLocationFour == 4) {
         $('#master-four').html(orangeCounter);
-    } else if (masterLocationFour == 6) {
+    } else if (masterLocationFour == 5) {
         $('#master-four').html(whiteCounter);
     } else {
         $('#master-four').html('');
     }
+
+
     console.log(masterLocationOne, masterLocationTwo, masterLocationThree, masterLocationFour)
 };
 
