@@ -14,7 +14,7 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/d4ed0579d0.js" crossorigin="anonymous"></script>
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Grenze|Roboto+Slab&display=swap" rel="stylesheet">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -28,10 +28,10 @@
         <div class="page-container">
             <h2 class="text-center mb-0">Master Mind</h2>
 
-            <div class="row m-0 p-0">
+            <div class="row m-0 p-0 my-2">
                 <div class="col-12 m-0 p-0 d-flex justify-content-center ready-button-container">
                     <div id="ready-start-button-container">
-                        <button onclick="start()" id="ready-button">Play!</button>
+                        <button onclick="start()" id="ready-button">Play!<i class="mx-2 fas fa-play"></i></button>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
 
                 <!-- Mastermind board -->
 
-                <div class="col-sm-12 col-lg-6 px-3 mb-4 d-flex justify-content-center">
+                <div class="col-sm-12 col-lg-6 p-0 mb-4 d-flex justify-content-center">
                     <div class="mastermind-board-container">
 
                         <div class="row m-0 p-0 answer-container">
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                             <div class="col-3 side-border-divider p-0 m-0">
-                                <h5 class="p-2 m-0 text-center">Choose Counter</h5>
+                                <h5 class="p-2 m-0 text-center text-dark">Choose Counter</h5>
                             </div>
                         </div>
 
@@ -275,7 +275,7 @@
                         <h4 class="text-center mb-2">Accessory Shop</h4>
                         <div class="row m-0 p-0">
                             <div class="col-12 m-0 p-0 d-flex justify-content-end">
-                                <p class="m-0"><i class="fas fa-coins mx-2 text-warning"></i>Coins:<span
+                                <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>Coins:<span
                                         id="player-coins" class="mx-2"></span></p>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
 
                         <div class="expand-button">
                             <h5 class="m-0 d-inline">Counters</h5>
-                            <i class="fas fa-arrow-circle-down dropdown-arrow"></i>
+                            <i class="fas fa-angle-double-down dropdown-arrow"></i>
                         </div>
 
 
@@ -306,7 +306,7 @@
 
                         <div class="expand-button">
                             <h5 class=" m-0 d-inline">Backgrounds</h5>
-                            <i class="fas fa-arrow-circle-down dropdown-arrow"></i>
+                            <i class="fas fa-angle-double-down dropdown-arrow"></i>
                         </div>
 
                         <div class="expand-container">
@@ -331,7 +331,7 @@
                         <h4 class="text-center">Inventory</h4>
                         <div class="expand-button">
                             <h5 class="d-inline">Counters</h5>
-                            <i class="fas fa-arrow-circle-down dropdown-arrow expand-button"></i>
+                            <i class="fas fa-angle-double-down dropdown-arrow"></i>
                         </div>
                         <div class="expand-container">
                             <p>C</p>
@@ -342,12 +342,18 @@
                         </div>
                         <div class="expand-button">
                             <h5 class="d-inline">Backgrounds</h5>
-                            <i class="fas fa-arrow-circle-down dropdown-arrow"></i>
+                            <i class="fas fa-angle-double-down dropdown-arrow"></i>
                         </div>
                         <div class="expand-container">
-                            <div class="Inventory-background"></div>
-                            <div class="Inventory-background"></div>
-                            <div class="Inventory-background"></div>
+                            <div class="shop-counter-container d-flex justify-content-center">
+                                <div class="Inventory-background"></div>
+                            </div>
+                            <div class="shop-counter-container d-flex justify-content-center">
+                                <div class="Inventory-background"></div>
+                            </div>
+                            <div class="shop-counter-container d-flex justify-content-center">
+                                <div class="Inventory-background"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -358,16 +364,19 @@
                         <div class="d-flex justify-content-around">
                             <table id="stats-table">
                                 <tr>
-                                    <th></th>
+                                    <th>Round</th>
                                     <th>Attempts</th>
                                     <th>Time</th>
                                     <th>Coins</th>
+                                    <th>Difficulty</th>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <button onclick="levelComplete()">Finish</button>
 
             <!-- // shop and ststa -->
 
@@ -386,9 +395,9 @@
                             <h6>Please Enter Your Name:</h6>
                             <input type="text" id="inputPlayerName">
                             <h6 class="mt-2">Please Select Your Difficulty:</h6>
-                            <label><input type="radio" name="difficulty" id="easy"> Easy</label>
-                            <label><input type="radio" name="difficulty" id="medium"> Medium</label>
-                            <label><input type="radio" name="difficulty" id="hard"> Hard</label>
+                            <label><input type="radio" name="difficulty" class="easy-difficulty"> Easy</label>
+                            <label><input type="radio" name="difficulty" class="medium-difficulty"> Medium</label>
+                            <label><input type="radio" name="difficulty" class="hard-difficulty"> Hard</label>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-success" data-dismiss="modal"
@@ -422,6 +431,10 @@
                                     id="difficulty-bonus" class="font-weight-bold"></span> Coins</p>
                             <p>Total coins for that round: <i class="fas fa-coins mx-2 text-warning"></i><span
                                     id="total-coins-round" class="font-weight-bold"></span> Coins</p>
+                            <h4>Try a different difficulty?</h4>
+                            <label><input type="radio" name="difficulty" class="easy-difficulty"> Easy</label>
+                            <label><input type="radio" name="difficulty" class="medium-difficulty"> Medium</label>
+                            <label><input type="radio" name="difficulty" class="hard-difficulty"> Hard</label>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal"

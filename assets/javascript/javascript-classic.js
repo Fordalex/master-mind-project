@@ -49,23 +49,27 @@ var masterLocationFour = 0;
 
 /* difficulty setting */
 
-$('#easy').on('click', function () {
+$('.easy-difficulty').on('click', function () {
     $('.not-in-use').remove();
     difficultySetting = 'easy';
+    difficultyStats = 'E';
     $('.easy-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
     $('.medium-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
 });
-$('#medium').on('click', function () {
+$('.medium-difficulty').on('click', function () {
     $('.not-in-use').remove();
     difficultySetting = 'medium';
+    difficultyStats = 'M';
     $('.medium-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
 });
-$('#hard').on('click', function () {
+$('.hard-difficulty').on('click', function () {
     $('.not-in-use').remove();
     difficultySetting = 'hard';
+    difficultyStats = 'H';
 });
 
 var difficultySetting = '';
+var difficultyStats = '';
 
 /* backgrounds */
 
@@ -125,7 +129,7 @@ function loop() {
                 loop();
                 generateCounters();
             }
-        }, 1000);
+        }, 200);
     }
 };
 
@@ -313,7 +317,7 @@ function removeCounter() {
 };
 
 function checkCounters() {
-    if (gameStarted == true) {
+    if (gameStarted == true && holeSelect == 5) {
         var blackPeg = '<img src="assets/images/black-peg.png" class="marker-peg">';
         var whitePeg = '<img src="assets/images/white-peg.png" class="marker-peg">';
 
@@ -421,7 +425,6 @@ function checkCounters() {
                 console.log(playerName);
                 $('#loserModal').modal('show');
             }, 200);
-
         }
 
         round++;
@@ -450,10 +453,11 @@ function levelComplete() {
     /* adding stats */
     $('#stats-table').append(`
      <tr>
-     <th>Round ${fullGames}</th>
+     <th>${fullGames}</th>
      <td>${round}</td>
      <td>0</td>
      <td>${totalRoundCoins}</td>
+     <td class="${difficultySetting}">${difficultyStats}</td>
      </tr>
      `);
 

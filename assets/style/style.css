@@ -1,11 +1,33 @@
 body {
-    background-color: rgb(208, 240, 240);
+    background-color: rgb(170, 170, 170);
     background-size: 100%;
 }
 
-h2,h4,h5,h6 {
+h1,h2,h3,h4 {
     font-family: 'Slabo 27px', serif;
-    color:#5D0B0B;
+    color:black;
+}
+
+h5,h6 {
+    font-family: 'Slabo 27px', serif;
+    color:rgb(11, 93, 90);
+}
+
+.difficulty-font {
+    font-family: 'Grenze', serif;
+    font-size:20px;
+}
+
+.easy {
+    color:greenyellow;
+}
+
+.medium {
+    color:orange;
+}
+
+.hard {
+    color:red;
 }
 
 .p-smaller-font {
@@ -19,7 +41,23 @@ h2,h4,h5,h6 {
 }
 
 #ready-button {
-    height:30px;
+    font-family: 'Grenze', serif;
+    height:40px;
+    width:100px;
+    background-image: linear-gradient(#dedede, rgb(207, 207, 207));
+    border:none;
+    border-radius:15px;
+    font-size:20px;
+    color:black;
+    border:solid silver 2px;
+}
+
+#ready-button:hover {
+    background-image: linear-gradient(rgb(207, 207, 207), #dedede);
+}
+
+#ready-button i {
+    font-size:15px;
 }
 
 .page-container {
@@ -31,10 +69,11 @@ h2,h4,h5,h6 {
 .mastermind-menu {
     width:100%;
     border-radius:10px;
-    border:solid #707070 1px;
+    border:solid #313131 1px;
     margin-bottom:32px;
-    background-color:white;
+    background-image: linear-gradient(rgb(216, 216, 216), #ffffff);
     padding:10px;
+    box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.2);
 }
 
 /* mastermind board */
@@ -132,20 +171,20 @@ h2,h4,h5,h6 {
 /* choose counter */
 
 .choose-button {
-    width:29px;
-    height:29px;
+    width:32px;
+    height:32px;
     border-radius:50%;
 }
 
 .choose-button:hover {
     cursor:pointer;
-    width:32px;
-    height:32px;
+    width:34px;
+    height:34px;
 }
 
 .choose-button:active {
-    width: 26px;
-    height: 26px;
+    width: 29px;
+    height: 29px;
 }
 
 .choose-red {
@@ -236,7 +275,6 @@ h2,h4,h5,h6 {
 
 /* marker peg  */
 
-
 .marker-container {
     width:32px;
     height:32px;
@@ -272,8 +310,6 @@ h2,h4,h5,h6 {
     transition-timing-function: ease-in-out;
 }
 
-
-
 .hole-selector-check {
     position:relative;
     top:0px;
@@ -284,9 +320,14 @@ h2,h4,h5,h6 {
     transition-timing-function: ease-in-out;
 }
 
-
-
 /* accessory shop */
+
+.coin-color {
+    animation-name:coinGlow;
+    animation-duration:3s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-in-out;
+}
 
 .expand-container {
     display:flex;
@@ -305,7 +346,8 @@ h2,h4,h5,h6 {
 .shop-counter-container {
     border-radius:solid black 1px;
     border-radius:10px;
-    background-color:red;
+    background-color:white;
+    border:solid black 1px;
     padding:5px;
     text-align: center;
     width:30%;
@@ -319,7 +361,6 @@ h2,h4,h5,h6 {
 .shop-counter-container p {
     margin-bottom:10px;
 }
-
 
 /* inventory */
 
@@ -388,4 +429,12 @@ td,th {
         left:-3px;
         color:rgba(150, 0, 0,1);
     }
+}
+
+@keyframes coinGlow {
+    0% {color: rgb(238, 233, 103);}
+    25% {color: rgb(243,233,103);}
+    50% {color: rgb(238,228,103);}
+    75% {color: rgb(238,240,108);}
+    100% {color: rgb(243,233,103);}
 }
