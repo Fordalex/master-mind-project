@@ -49,13 +49,13 @@ var masterLocationFour = 0;
 
 /* difficulty setting */
 
-$('#easy').on('click', function() {
+$('#easy').on('click', function () {
     difficultySetting = 'easy';
 });
-$('#medium').on('click', function() {
+$('#medium').on('click', function () {
     difficultySetting = 'medium';
 });
-$('#hard').on('click', function() {
+$('#hard').on('click', function () {
     difficultySetting = 'hard';
 });
 
@@ -291,7 +291,7 @@ function checkCounters() {
         var blackPeg = '<img src="assets/images/black-peg.png" class="marker-peg">';
         var whitePeg = '<img src="assets/images/white-peg.png" class="marker-peg">';
 
-        var countHoleSelector = '#r-' + round;
+        var countHoleSelector = '#peg-container-' + round;
         var playerLocationOneChecked = false;
         var playerLocationTwoChecked = false;
         var playerLocationThreeChecked = false;
@@ -307,25 +307,25 @@ function checkCounters() {
         /* check to see if the colour is correct and in the right location */
 
         if (masterLocationOne == playerLocationOne) {
-            $(countHoleSelector + '-m-one').html(blackPeg);
+            $(countHoleSelector).append(blackPeg);
             playerLocationOneChecked = true;
             masterLocationOneChecked = true;
 
         };
         if (masterLocationTwo == playerLocationTwo) {
-            $(countHoleSelector + '-m-two').html(blackPeg);
+            $(countHoleSelector).append(blackPeg);
             playerLocationTwoChecked = true;
             masterLocationTwoChecked = true;
 
         };
         if (masterLocationThree == playerLocationThree) {
-            $(countHoleSelector + '-m-three').html(blackPeg);
+            $(countHoleSelector).append(blackPeg);
             playerLocationThreeChecked = true;
             masterLocationThreeChecked = true;
 
         };
         if (masterLocationFour == playerLocationFour) {
-            $(countHoleSelector + '-m-four').html(blackPeg);
+            $(countHoleSelector).append(blackPeg);
             playerLocationFourChecked = true;
             masterLocationFourChecked = true;
         };
@@ -334,52 +334,52 @@ function checkCounters() {
 
         if (masterLocationOneChecked == false) {
             if (masterLocationOne == playerLocationTwo && playerLocationTwoChecked == false) {
-                $(countHoleSelector + '-m-one').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationTwoChecked = true;
             } else if (masterLocationOne == playerLocationThree && playerLocationThreeChecked == false) {
-                $(countHoleSelector + '-m-one').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationThreeChecked = true;
             } else if (masterLocationOne == playerLocationFour && playerLocationFourChecked == false) {
-                $(countHoleSelector + '-m-one').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationFourChecked = true;
             }
         };
 
         if (masterLocationTwoChecked == false) {
             if (masterLocationTwo == playerLocationOne && playerLocationOneChecked == false) {
-                $(countHoleSelector + '-m-two').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationOneChecked = true;
             } else if (masterLocationTwo == playerLocationThree && playerLocationThreeChecked == false) {
-                $(countHoleSelector + '-m-two').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationThreeChecked = true;
             } else if (masterLocationTwo == playerLocationFour && playerLocationFourChecked == false) {
-                $(countHoleSelector + '-m-two').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationFourChecked = true;
             }
         };
 
         if (masterLocationThreeChecked == false) {
             if (masterLocationThree == playerLocationOne && playerLocationOneChecked == false) {
-                $(countHoleSelector + '-m-three').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationOneChecked = true;
             } else if (masterLocationThree == playerLocationTwo && playerLocationTwoChecked == false) {
-                $(countHoleSelector + '-m-three').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationTwoChecked = true;
             } else if (masterLocationThree == playerLocationFour && playerLocationFourChecked == false) {
-                $(countHoleSelector + '-m-three').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationFourChecked = true;
             }
         };
 
         if (masterLocationFourChecked == false) {
             if (masterLocationFour == playerLocationOne && playerLocationOneChecked == false) {
-                $(countHoleSelector + '-m-four').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationOneChecked = true;
             } else if (masterLocationFour == playerLocationTwo && playerLocationTwoChecked == false) {
-                $(countHoleSelector + '-m-four').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationTwoChecked = true;
             } else if (masterLocationFour == playerLocationThree && playerLocationThreeChecked == false) {
-                $(countHoleSelector + '-m-four').html(whitePeg);
+                $(countHoleSelector).append(whitePeg);
                 playerLocationThreeChecked = true;
             }
         };
@@ -418,11 +418,11 @@ function levelComplete() {
         difficultyBonus = 150;
     };
     console.log(difficultySetting, difficultyBonus);
-    var difficultyBonus 
+    var difficultyBonus
     var roundCoinBonus = (10 - round + 1) * 10;
     var totalRoundCoins = 50 + roundCoinBonus + difficultyBonus;
-     /* adding stats */
-     $('#stats-table').append(`
+    /* adding stats */
+    $('#stats-table').append(`
      <tr>
      <th>Round ${fullGames}</th>
      <td>${round}</td>
@@ -440,7 +440,7 @@ function levelComplete() {
     gameStarted = false;
 
     /* adding coins */
-   
+
     for (i = 0; i < totalRoundCoins; i++) {
         coins++;
     }

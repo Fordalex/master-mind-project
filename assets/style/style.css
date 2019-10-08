@@ -71,14 +71,6 @@ h2,h4,h5,h6 {
     align-items:center;
 }
 
-.marker-container {
-    width:32px;
-    height:32px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
 .marker-black-hole {
     width:6px;
     height:6px;
@@ -238,14 +230,24 @@ h2,h4,h5,h6 {
 
 /* marker peg  */
 
+
+.marker-container {
+    width:32px;
+    height:32px;
+    transform: rotateZ(180deg);
+}
+
 .marker-peg {
     width:10px;
     height:10px;
     border-radius:50%;
-    position:relative;
     bottom:11px;
     right:2.5px;
     box-shadow:1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    margin:3px;
+    display:inline-block;
+    float:right;
+    transform: rotateZ(180deg);
 }
 
 /* hole selector */
