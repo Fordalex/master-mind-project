@@ -1,17 +1,13 @@
 body {
-    background-color: rgb(170, 170, 170);
+    background-color: rgb(170, 185, 200);
     background-size: 100%;
 }
 
-h1,h2,h3,h4 {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'Slabo 27px', serif;
     color:black;
 }
 
-h5,h6 {
-    font-family: 'Slabo 27px', serif;
-    color:rgb(11, 93, 90);
-}
 
 .difficulty-font {
     font-family: 'Grenze', serif;
@@ -29,6 +25,7 @@ h5,h6 {
 .hard {
     color:red;
 }
+
 
 .p-smaller-font {
     font-size:14px;
@@ -64,6 +61,10 @@ h5,h6 {
     max-width:1300px;
 }
 
+.padding-left {
+    padding-left:40px;
+}
+
 /* index.html */
 
 .mastermind-menu {
@@ -71,7 +72,7 @@ h5,h6 {
     border-radius:10px;
     border:solid #313131 1px;
     margin-bottom:32px;
-    background-image: linear-gradient(rgb(216, 216, 216), #ffffff);
+    background-image: linear-gradient(rgb(226, 226, 226), #ffffff);
     padding:10px;
     box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.2);
 }
@@ -82,13 +83,16 @@ h5,h6 {
     height:43px;
 }
 
+.fixed-width-section {
+    width:310px;
+}
+
 .mastermind-board-container {
-    width:280px;
+    width:310px;
     height:525px;
     border-radius:10px;
     background-image: url('../images/wood-background-two.png');
     background-size: 100% 100%;
-    border:solid 1px #707070;
     box-shadow:rgba(0,0,0,0.5) 4px 4px 8px;
 }
 
@@ -140,7 +144,7 @@ h5,h6 {
 }
 
 .master-mind-cover {
-    width:180px;
+    width:201px;
     height:70px;
     background: url('../images/mastermind-cover.png');
     background-size:100% 100%;
@@ -150,7 +154,7 @@ h5,h6 {
     align-items:center;
     position:absolute;
     top:12px;
-    left:1px;
+    left:2px;
     z-index:50;
 }
 
@@ -326,17 +330,22 @@ h5,h6 {
     animation-name:coinGlow;
     animation-duration:3s;
     animation-iteration-count: infinite;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: alternate;
 }
 
 .expand-container {
     display:flex;
     justify-content:space-around;
+    padding-top: 15px;
+    padding-bottom:15px;
+    padding-right:10px;
+    padding-left:10px;
 }
 
 .dropdown-arrow {
     font-size: 15px;
     margin-left:5px;
+    color:rgb(154, 207, 219);
 }
 
 .dropdown-arrow:hover {
@@ -380,6 +389,10 @@ h5,h6 {
 td,th {
     text-align:center;
     width:70px;
+}
+
+.colour-secondary {
+    color:rgb(86, 152, 167);
 }
 
 /* Animations */ 
@@ -432,9 +445,9 @@ td,th {
 }
 
 @keyframes coinGlow {
-    0% {color: rgb(238, 233, 103);}
-    25% {color: rgb(243,233,103);}
-    50% {color: rgb(238,228,103);}
-    75% {color: rgb(238,240,108);}
-    100% {color: rgb(243,233,103);}
+    0% {color: #ffc107;}
+    25% {color: #ffd000;}
+    50% {color: #ebdc11;}
+    75% {color: #e6d11b;}
+    100% {color: #ffc107;}
 }
