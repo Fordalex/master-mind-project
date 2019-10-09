@@ -86,6 +86,10 @@ Adding a modal using Jquery:
 
 * [Bootstrap modal methods and events](https://www.youtube.com/watch?v=1yrTszHY-mQ)
 
+Prevent the modal from opening:
+
+* [Stack overflow](https://stackoverflow.com/questions/16152073/prevent-bootstrap-modal-from-disappearing-when-clicking-outside-or-pressing-esca)
+
 All audio taken from:
 
 * [Adding Audio](https://www.youtube.com/watch?v=p4OHVJxd2FI)

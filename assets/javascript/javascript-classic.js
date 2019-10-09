@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    $('#enterNameModal').modal('show');
+    $('#enterNameModal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
     loop();
     $('.expand-container').hide();
     $('#player-coins').html(0);
@@ -12,14 +15,22 @@ $('.expand-button').on('click', function () {
     console.log('press')
 })
 
+/* entry modal */
+
+$('.difficuly-select-entry').on('click', function () {
+    $('#close-start-modal').html(`<Button type="submit" class="btn btn-success" onclick="addName()" data-dismiss="modal">Okay</Button>`);
+    $('#enter-name-message').html('<p class="text-success">Thank you, Enjoy!</p>');
+});
+
 /* players name */
 
 var playerName = 'Player';
 
-$('#firstModal').on('click', function () {
+function addName() {
     playerName = $('#inputPlayerName').val();
     $('#player-name-stats').text(playerName + "'s");
-});
+    console.log('add-name-working');
+};
 
 /* variables */
 
@@ -46,7 +57,6 @@ var masterLocationOne = 0;
 var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
-
 
 /* difficulty setting */
 
