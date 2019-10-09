@@ -47,6 +47,7 @@ var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
 
+
 /* difficulty setting */
 
 $('.easy-difficulty').on('click', function () {
@@ -117,6 +118,8 @@ function start() {
     setTimeout(function () {
         generateCounters();
         gameStarted = true;
+        timer = true;
+        timerFunction();
     }, 1500);
 }
 
@@ -439,6 +442,7 @@ function checkCounters() {
 };
 
 function levelComplete() {
+    timer = false;
     if (difficultySetting == 'easy') {
         difficultyBonus = 50;
     } else if (difficultySetting == 'medium') {
@@ -446,16 +450,26 @@ function levelComplete() {
     } else if (difficultySetting == 'hard') {
         difficultyBonus = 150;
     };
+    if (timerMin < 1) {
+        timerBonus = 50;
+    } else if (timerMin < 2) {
+        timerBonus = 35;
+    } else if (timerMin < 3) {
+        timerBonus = 15;
+    } else if (timerMin < 4) {
+        timerBonus = 0;
+    }
     console.log(difficultySetting, difficultyBonus);
+    var timerBonus;
     var difficultyBonus
     var roundCoinBonus = (10 - round + 1) * 10;
-    var totalRoundCoins = 50 + roundCoinBonus + difficultyBonus;
+    var totalRoundCoins = 50 + roundCoinBonus + difficultyBonus + timerBonus;
     /* adding stats */
     $('#stats-table').append(`
      <tr>
      <th>${fullGames}</th>
      <td>${round}</td>
-     <td>0</td>
+     <td>${timerMin} : ${timerSec}</td>
      <td>${totalRoundCoins}</td>
      <td class="${difficultySetting}">${difficultyStats}</td>
      </tr>
@@ -469,22 +483,53 @@ function levelComplete() {
     gameWon.play();
     gameStarted = false;
 
+    /* putting play button back */
+
+    $('#ready-start-button-container').html('<button onclick="start()" id="ready-button">Play!<i class="mx-2 fas fa-play"></i></button>');
+
     /* adding coins */
 
     for (i = 0; i < totalRoundCoins; i++) {
         coins++;
     }
+
     $('#round-coin-bonus').html(roundCoinBonus);
     $('#total-coins-round').html(totalRoundCoins);
     $('#player-coins').html(coins);
     $('#difficulty-bonus').html(difficultyBonus);
+    $('#timer-bonus').html(timerBonus);
 
     /* winner modal */
 
     setTimeout(function () {
         $('.hole-selector').remove();
         $('#player-name-winner').text(playerName);
+        $('#time-taken-min').html(timerMin);
+        $('#time-taken-sec').html(timerSec);
         $('#winnerModal').modal('show');
     }, 200);
 
 };
+
+/* Timer */
+
+var timerSec = 0;
+var timerMin = 0;
+var timer = false;
+
+function timerFunction() {
+    console.log('timer')
+    if (timer == true) {
+        setTimeout(function () {
+            timerSec++;
+            $('#timer-min').html(timerMin);
+            $('#timer-sec').html(timerSec);
+            if (timerSec == 60) {
+                timerSec = 0;
+                timerMin++;
+            }
+            timerFunction();
+        }, 1000);
+    }
+}
+
