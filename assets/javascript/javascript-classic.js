@@ -132,7 +132,7 @@ function loop() {
                 loop();
                 generateCounters();
             }
-        }, 200);
+        }, 250);
     }
 };
 
@@ -442,6 +442,9 @@ function checkCounters() {
 };
 
 function levelComplete() {
+    $('#round-counter').html(1);
+    $('.counter').remove();
+    $('.marker-peg').remove();
     timer = false;
     if (difficultySetting == 'easy') {
         difficultyBonus = 50;
@@ -507,6 +510,8 @@ function levelComplete() {
         $('#time-taken-min').html(timerMin);
         $('#time-taken-sec').html(timerSec);
         $('#winnerModal').modal('show');
+        $('#timer-min').html(0);
+        $('#timer-sec').html(0);
     }, 200);
 
 };
