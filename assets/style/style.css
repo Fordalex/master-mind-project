@@ -3,11 +3,15 @@ body {
     background-size: 100%;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5 {
     font-family: 'Slabo 27px', serif;
     color:black;
 }
 
+h6 {
+    font-family: 'Slabo 27px', serif;
+    color:rgb(47, 107, 102);
+}
 
 .difficulty-font {
     font-family: 'Grenze', serif;
@@ -75,6 +79,11 @@ h1,h2,h3,h4,h5,h6 {
     background-image: linear-gradient(rgb(226, 226, 226), #ffffff);
     padding:10px;
     box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+.rules-image {
+    border-radius:10px;
+    border:solid black 1px;
 }
 
 /* mastermind board */
