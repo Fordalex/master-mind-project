@@ -470,7 +470,7 @@ function levelComplete() {
     /* adding stats */
     $('#stats-table').append(`
      <tr>
-     <th>${fullGames}</th>
+     <th class="light-blue">${fullGames}</th>
      <td>${round}</td>
      <td>${timerMin} : ${timerSec}</td>
      <td>${totalRoundCoins}</td>
