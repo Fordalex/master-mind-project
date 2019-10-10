@@ -295,31 +295,32 @@
 
 
                             <div class="expand-container">
-                                <div class="shop-counter-container" id="">
+                                <div class="shop-counter-container p-2" id="">
                                     <p>Shapes</p>
-                                    <p class="m-0">600 Coins</p>
+                                    <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>600</p>
                                 </div>
 
-                                <div class="shop-counter-container">
+                                <div class="shop-counter-container p-2">
                                     <p>Swirl</p>
-                                    <p class="m-0">1000 Coins</p>
+                                    <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>900</p>
                                 </div>
 
-                                <div class="shop-counter-container">
+                                <div class="shop-counter-container p-2">
                                     <p>Gems</p>
-                                    <p class="m-0">2000 Coins</p>
+                                    <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>1200</p>
                                 </div>
                             </div>
 
                             <div class="expand-button">
-                                <h5 class=" m-0 d-inline">Backgrounds</h5>
+                                <h5 class=" m-0 d-inline">Themes</h5>
                                 <i class="fas fa-angle-double-down dropdown-arrow"></i>
                             </div>
 
                             <div class="expand-container">
                                 <div class="shop-counter-container p-2" id="space-background-purchase">
-                                    <p class="text-light">Space</p>
-                                    <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i><span class="text-light">200</span></p>
+                                    <p class="text-light">Shapes</p>
+                                    <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i><span
+                                            class="text-light">200</span></p>
                                 </div>
 
                                 <div class="shop-counter-container p-2" id="pink-background-purchase">
@@ -341,10 +342,11 @@
                                 <i class="fas fa-angle-double-down dropdown-arrow"></i>
                             </div>
                             <div class="expand-container">
-                                <div class="inventory-sections">
+                                <div class="inventory-sections" id="basic-counter-inventory-select">
                                     <div id="basic-counter-inventory"></div>
                                 </div>
-                                <div class="inventory-sections">
+                                <div class="inventory-sections inventory-sections-selected"
+                                    id="classic-counter-inventory-select">
                                     <div id="classic-counter-inventory"></div>
                                 </div>
                                 <div class="inventory-sections">
@@ -358,17 +360,18 @@
                                 </div>
                             </div>
                             <div class="expand-button">
-                                <h5 class="d-inline">Backgrounds</h5>
+                                <h5 class="d-inline">Themes</h5>
                                 <i class="fas fa-angle-double-down dropdown-arrow"></i>
                             </div>
                             <div class="expand-container">
-                                <div class="shop-counter-container d-flex justify-content-center">
+                                <div class="shop-theme-container d-flex justify-content-center basic-theme-inventory p-4"></div>
+                                <div class="shop-theme-container d-flex justify-content-center p-4">
                                     <i class="fas fa-lock"></i>
                                 </div>
-                                <div class="shop-counter-container d-flex justify-content-center">
+                                <div class="shop-theme-container d-flex justify-content-center p-4">
                                     <i class="fas fa-lock"></i>
                                 </div>
-                                <div class="shop-counter-container d-flex justify-content-center">
+                                <div class="shop-theme-container d-flex justify-content-center p-4">
                                     <i class="fas fa-lock"></i>
                                 </div>
                             </div>
@@ -445,9 +448,9 @@
                         <div class="modal-body p-4">
                             <p>Well Done <span id="player-name-winner"></span>!!</p>
                             <p>You worked it out in <span id="attempts-round"></span> attempts.</p>
-                            <p>It only took you <span id="time-taken-min"></span><span class="mx-1">Minute(s)
-                                    and</span><span id="time-taken-sec"></span> Seconds</p>
-                            <p>Mastermind has rewarded you with <i class="fas fa-coins mx-2 coin-color"></i>
+                            <p>It only took you <i class="fas fa-stopwatch mx-2 text-black-50"></i><span
+                                    id="time-taken-min"></span> : <span id="time-taken-sec"></span></p>
+                            <p>Mastermind has rewarded you with<i class="fas fa-coins mx-2 coin-color"></i>
                                 <b>50</b></p>
                             <p>Round Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="round-coin-bonus"
                                     class="font-weight-bold"></span></p>

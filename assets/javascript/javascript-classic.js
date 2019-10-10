@@ -29,7 +29,13 @@ var playerName = 'Player';
 function addName() {
     playerName = $('#inputPlayerName').val();
     $('#player-name-stats').text(playerName + "'s");
-    console.log('add-name-working');
+    if (playerName == 'cheat') {
+        for (i = 0; i < 8000; i++) {
+            coins++;
+        }
+        $('#player-coins').html(coins);
+        console.log('coins')
+    }
 };
 
 /* variables */
@@ -110,7 +116,7 @@ var orangeCounter = '<img src="assets/images/orange-counter.png" class="counter"
 var whiteCounter = '<img src="assets/images/white-counter.png" class="counter">';
 var holeCounter = '';
 
-$('#basic-counter-inventory').on('click', function () {
+$('#basic-counter-inventory-select').on('click', function () {
     if (gameStarted == false) {
         redCounter = '<div class="basic-red-counter basic-counter"></div>';
         greenCounter = '<div class="basic-green-counter basic-counter"></div>';
@@ -121,7 +127,7 @@ $('#basic-counter-inventory').on('click', function () {
     }
 });
 
-$('#classic-counter-inventory').on('click', function () {
+$('#classic-counter-inventory-select').on('click', function () {
     if (gameStarted == false) {
         redCounter = '<img src="assets/images/red-counter.png" class="counter">';
         greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
@@ -132,6 +138,13 @@ $('#classic-counter-inventory').on('click', function () {
     }
 });
 
+/* counter container selected */
+
+$('.inventory-sections').on('click', function() {
+    $('.inventory-sections').removeClass('inventory-sections-selected');
+    $(this).addClass('inventory-sections-selected');
+});
+
 /* buying counters */
 
 /* buying backgrounds */
@@ -139,7 +152,7 @@ $('#classic-counter-inventory').on('click', function () {
 spaceBackgroundPurchased = false;
 
 $('#space-background-purchase').on('click', function () {
-    if (coins >= 200) {
+    if (coins >= 200 && spaceBackgroundPurchased == false) {
         $('body').removeClass('pink-background');
         $('body').removeClass('ice-background');
         $('body').addClass('space-background');
@@ -147,13 +160,14 @@ $('#space-background-purchase').on('click', function () {
             coins--;
         };
         $('#player-coins').html(coins);
+        spaceBackgroundPurchased = true;
     }
 });
 
 pinkBackgroundPurchased = false;
 
 $('#pink-background-purchase').on('click', function () {
-    if (coins >= 300) {
+    if (coins >= 300 && pinkBackgroundPurchased == false) {
         $('body').removeClass('ice-background');
         $('body').removeClass('space-background');
         $('body').addClass('pink-background');
@@ -161,13 +175,14 @@ $('#pink-background-purchase').on('click', function () {
             coins--;
         };
         $('#player-coins').html(coins);
+        pinkBackgroundPurchased = true;
     }
 });
 
 iceBackgroundPurchased = false;
 
 $('#ice-background-purchase').on('click', function () {
-    if (coins >= 400) {
+    if (coins >= 400 && iceBackgroundPurchased == false) {
         $('body').removeClass('space-background');
         $('body').removeClass('pink-background');
         $('body').addClass('ice-background');
@@ -175,6 +190,7 @@ $('#ice-background-purchase').on('click', function () {
             coins--;
         };
         $('#player-coins').html(coins);
+        iceBackgroundPurchased = true;
     }
 });
 

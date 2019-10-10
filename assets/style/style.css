@@ -97,7 +97,7 @@ h6 {
 }
 
 .fixed-width-section {
-    width:310px;
+    width:340px;
 }
 
 .mastermind-board-container {
@@ -374,6 +374,7 @@ h6 {
     text-align: center;
     width:30%;
     display:inline-block;
+    box-shadow: inset 0px 0px 5px 5px rgba(255,255,255,0.5);
 }
 
 .shop-counter-container:hover {
@@ -384,15 +385,26 @@ h6 {
     margin-bottom:10px;
 }
 
+.shop-theme-container {
+    border-radius:solid black 1px;
+    border-radius:10px;
+    background-color:white;
+    border:solid black 1px;
+    text-align: center;
+    width:23.5%;
+    display:inline-block;
+    box-shadow: inset 0px 0px 5px 5px rgba(255,255,255,0.5);
+}
+
 /* backgrounds */
 
 #space-background-purchase {
-    background-image: url('../images/space-background.png');
+    background-image: url('../images/shapes-background.png');
     background-size: 150%;
 }
 
 .space-background {
-    background-image: url('../images/space-background.png');
+    background-image: url('../images/shapes-background.png');
     background-size: 100%;
 }
 
@@ -425,9 +437,15 @@ h6 {
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:white;
+    background-color:#bfcccf;
     padding:7px;
+    box-shadow: inset 0px 0px 5px 5px rgba(255,255,255,0.65);
 }
+
+.inventory-sections-selected {
+    box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.1);
+}
+
 
 #basic-counter-inventory {
     width:26px;
@@ -456,6 +474,11 @@ h6 {
 .Inventory-background:hover {
     cursor: pointer;
     background-color:lightblue;
+}
+/* themes */
+
+.basic-theme-inventory {
+    background-color:rgb(170, 185, 200);
 }
 
 /* counter types */
@@ -565,8 +588,20 @@ td,th {
     100% {color: #ffc107;}
 }
 
+/* media queries */
+
 @media (max-width:400px) {
     .mastermind-board-container {
         margin-right:0px;
+    }
+    .ice-background {
+        background-image: url('../images/ice-background-mobile.png');
+    }
+    .pink-background {
+        background-image: url('../images/pink-background.png');
+        background-size:200%;
+    }
+    .space-background {
+        background-size:200%;
     }
 } 
