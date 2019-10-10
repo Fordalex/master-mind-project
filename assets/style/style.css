@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(170, 185, 200);
+    background-color: white;
     background-size: 100%;
 }
 
@@ -66,6 +66,7 @@ h6 {
 
 .page-container {
     max-width:1300px;
+    background-color:rgb(170, 185, 200);
 }
 
 .padding-left {
@@ -107,6 +108,7 @@ h6 {
     background-image: url('../images/wood-background-two.png');
     background-size: 100% 100%;
     box-shadow:rgba(0,0,0,0.5) 4px 4px 8px;
+    margin-right:10px;
 }
 
 .counter-black-hole {
@@ -464,3 +466,9 @@ td,th {
     75% {color: #e6d11b;}
     100% {color: #ffc107;}
 }
+
+@media (max-width:400px) {
+    .mastermind-board-container {
+        margin-right:0px;
+    }
+} 

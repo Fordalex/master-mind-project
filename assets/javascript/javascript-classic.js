@@ -58,6 +58,8 @@ var masterLocationTwo = 0;
 var masterLocationThree = 0;
 var masterLocationFour = 0;
 
+var winnerBoolean = false;
+
 /* difficulty setting */
 
 $('.easy-difficulty').on('click', function () {
@@ -130,6 +132,7 @@ function start() {
         gameStarted = true;
         timer = true;
         timerFunction();
+        winnerBoolean = false;
     }, 1500);
 }
 
@@ -429,10 +432,12 @@ function checkCounters() {
 
         if (masterLocationOne == playerLocationOne && masterLocationTwo == playerLocationTwo && masterLocationThree == playerLocationThree && masterLocationFour == playerLocationFour) {
             levelComplete();
+            winnerBoolean = true;
         };
 
-        if (round == 10) {
+        if (round == 10 && winnerBoolean == false) {
             gameOverSound.play();
+            removeCoins();
             setTimeout(function () {
                 $('#player-name-loser').text(playerName);
                 console.log(playerName);
@@ -525,6 +530,13 @@ function levelComplete() {
     }, 200);
 
 };
+
+function removeCoins() {
+    for (i = 0; i < 50; i++) {
+        coins--;
+    };
+    $('#player-coins').html(coins);
+}
 
 /* Timer */
 
