@@ -76,10 +76,6 @@ $('.hard-difficulty').on('click', function () {
 var difficultySetting = '';
 var difficultyStats = '';
 
-/* backgrounds */
-
-const spaceBackground = "url('../images/space-background.png')";
-
 /* audio */
 
 var startSound = new Audio();
@@ -136,6 +132,51 @@ $('#classic-counter-inventory').on('click', function () {
     }
 });
 
+/* buying counters */
+
+/* buying backgrounds */
+
+spaceBackgroundPurchased = false;
+
+$('#space-background-purchase').on('click', function () {
+    if (coins >= 200) {
+        $('body').removeClass('pink-background');
+        $('body').removeClass('ice-background');
+        $('body').addClass('space-background');
+        for (i = 0; i < 200; i++) {
+            coins--;
+        };
+        $('#player-coins').html(coins);
+    }
+});
+
+pinkBackgroundPurchased = false;
+
+$('#pink-background-purchase').on('click', function () {
+    if (coins >= 300) {
+        $('body').removeClass('ice-background');
+        $('body').removeClass('space-background');
+        $('body').addClass('pink-background');
+        for (i = 0; i < 300; i++) {
+            coins--;
+        };
+        $('#player-coins').html(coins);
+    }
+});
+
+iceBackgroundPurchased = false;
+
+$('#ice-background-purchase').on('click', function () {
+    if (coins >= 400) {
+        $('body').removeClass('space-background');
+        $('body').removeClass('pink-background');
+        $('body').addClass('ice-background');
+        for (i = 0; i < 400; i++) {
+            coins--;
+        };
+        $('#player-coins').html(coins);
+    }
+});
 
 /* Functions */
 
@@ -466,7 +507,10 @@ function checkCounters() {
 
         if (round == 10 && winnerBoolean == false) {
             gameOverSound.play();
-            removeCoins();
+            for (i = 0; i < 50; i++) {
+                coins--;
+            };
+            $('#player-coins').html(coins);
             setTimeout(function () {
                 $('#player-name-loser').text(playerName);
                 console.log(playerName);
@@ -559,13 +603,6 @@ function levelComplete() {
     }, 200);
 
 };
-
-function removeCoins() {
-    for (i = 0; i < 50; i++) {
-        coins--;
-    };
-    $('#player-coins').html(coins);
-}
 
 /* Timer */
 

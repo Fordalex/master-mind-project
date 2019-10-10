@@ -66,7 +66,6 @@ h6 {
 
 .page-container {
     max-width:1300px;
-    background-color:rgb(170, 185, 200);
 }
 
 .padding-left {
@@ -372,7 +371,6 @@ h6 {
     border-radius:10px;
     background-color:white;
     border:solid black 1px;
-    padding:5px;
     text-align: center;
     width:30%;
     display:inline-block;
@@ -384,6 +382,38 @@ h6 {
 
 .shop-counter-container p {
     margin-bottom:10px;
+}
+
+/* backgrounds */
+
+#space-background-purchase {
+    background-image: url('../images/space-background.png');
+    background-size: 150%;
+}
+
+.space-background {
+    background-image: url('../images/space-background.png');
+    background-size: 100%;
+}
+
+#pink-background-purchase {
+    background-image: url('../images/pink-background.png');
+    background-size: 150%;
+}
+
+.pink-background {
+    background-image: url('../images/pink-background.png');
+    background-size: 100%;
+}
+
+#ice-background-purchase {
+    background-image: url('../images/ice-background.png');
+    background-size: 150%;
+}
+
+.ice-background {
+    background-image: url('../images/ice-background.png');
+    background-size: 100%;
 }
 
 /* inventory */
@@ -405,6 +435,7 @@ h6 {
     background-color:red;
     border-radius:50%;
     border:solid black 1px;
+    cursor:pointer;
 }
 
 #classic-counter-inventory {
@@ -413,6 +444,7 @@ h6 {
     background-image: url('../images/green-counter.png');
     background-size:100%;
     border-radius:50%;
+    cursor:pointer;
 }
 
 .Inventory-background {
@@ -446,7 +478,7 @@ h6 {
 }
 
 .basic-green-counter {
-    background-color:greenyellow;
+    background-color:rgb(148, 218, 44);
 }
 
 .basic-yellow-counter {
