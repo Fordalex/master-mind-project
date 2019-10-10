@@ -25,7 +25,7 @@
 <body>
 
     <div class="d-flex justify-content-center">
-        <div class="page-container p-5">
+        <div class="page-container">
             <h2 class="text-center mb-0">Master Mind</h2>
 
             <div class="row m-0 p-0 my-2">
@@ -341,11 +341,21 @@
                                 <i class="fas fa-angle-double-down dropdown-arrow"></i>
                             </div>
                             <div class="expand-container">
-                                <p>C</p>
-                                <p>C</p>
-                                <p>C</p>
-                                <p>C</p>
-                                <p>C</p>
+                                <div class="inventory-sections">
+                                    <div id="basic-counter-inventory"></div>
+                                </div>
+                                <div class="inventory-sections">
+                                    <div id="classic-counter-inventory"></div>
+                                </div>
+                                <div class="inventory-sections">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="inventory-sections">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="inventory-sections">
+                                    <i class="fas fa-lock"></i>
+                                </div>
                             </div>
                             <div class="expand-button">
                                 <h5 class="d-inline">Backgrounds</h5>
@@ -388,7 +398,7 @@
 
             <button onclick="levelComplete()">Finish</button>
 
-            <!-- // shop and ststa -->
+            <!-- // shop and stats -->
 
             <!-- First Modal for players name and difficulty -->
             <div class="modal fade" id="enterNameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -402,10 +412,13 @@
                             <h6>Please Enter Your Name:</h6>
                             <input type="text" id="inputPlayerName">
                             <h6 class="mt-2">Please Select Your Difficulty:</h6>
-                            <label class="difficuly-select-entry"><input type="radio" name="difficulty" class="easy-difficulty"> Easy</label>
-                            <label class="difficuly-select-entry"><input type="radio" name="difficulty" class="medium-difficulty">
+                            <label class="difficuly-select-entry"><input type="radio" name="difficulty"
+                                    class="easy-difficulty"> Easy</label>
+                            <label class="difficuly-select-entry"><input type="radio" name="difficulty"
+                                    class="medium-difficulty">
                                 Medium</label>
-                            <label class="difficuly-select-entry"><input type="radio" name="difficulty" class="hard-difficulty"> Hard</label>
+                            <label class="difficuly-select-entry"><input type="radio" name="difficulty"
+                                    class="hard-difficulty"> Hard</label>
                             <div id="enter-name-message" class="mt-2">
                                 <p class="text-danger">Please enter your name and select difficulty.</p>
                             </div>
@@ -471,11 +484,13 @@
                         <div class="modal-body p-4">
                             <p>Unfortunately<span id="player-name-loser"></span>, the computer outsmarted you this
                                 time!</p>
-                            <p>Mastermind took<i class="fas fa-coins mx-2 coin-color"></i><b class="text-danger">50</b> coins off you!</p>
+                            <p>Mastermind took<i class="fas fa-coins mx-2 coin-color"></i><b class="text-danger">50</b>
+                                coins off you!</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal">Try Again!</button>
-                    
+                            <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal">Try
+                                Again!</button>
+
                         </div>
                     </div>
                 </div>

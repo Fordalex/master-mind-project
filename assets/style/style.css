@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color:rgb(170, 185, 200);
     background-size: 100%;
 }
 
@@ -388,6 +388,33 @@ h6 {
 
 /* inventory */
 
+.inventory-sections {
+    width:19%;
+    border:solid black 1px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    padding:7px;
+}
+
+#basic-counter-inventory {
+    width:26px;
+    height:26px;
+    background-color:red;
+    border-radius:50%;
+    border:solid black 1px;
+}
+
+#classic-counter-inventory {
+    width:26px;
+    height:26px;
+    background-image: url('../images/green-counter.png');
+    background-size:100%;
+    border-radius:50%;
+}
+
 .Inventory-background {
     width:50px;
     height:50px;
@@ -397,6 +424,45 @@ h6 {
 .Inventory-background:hover {
     cursor: pointer;
     background-color:lightblue;
+}
+
+/* counter types */
+
+/* basic */
+
+.basic-counter {
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    position:relative;
+    right:6px;
+    bottom:4px;
+    border:solid black 1px;
+    border-radius:50%;
+}
+
+.basic-red-counter {
+    background-color:red;
+}
+
+.basic-green-counter {
+    background-color:greenyellow;
+}
+
+.basic-yellow-counter {
+    background-color:yellow;
+}
+
+.basic-blue-counter {
+    background-color:blue;
+}
+
+.basic-orange-counter {
+    background-color:orange;
+}
+
+.basic-white-counter {
+    background-color:white;
 }
 
 /* stats */

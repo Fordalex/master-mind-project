@@ -40,14 +40,6 @@ var gameStarted = false;
 var fullGames = 0;
 var coins = 0;
 
-const redCounter = '<img src="assets/images/red-counter.png" class="counter">';
-const greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
-const yellowCounter = '<img src="assets/images/yellow-counter.png" class="counter">';
-const blueCounter = '<img src="assets/images/blue-counter.png" class="counter">';
-const orangeCounter = '<img src="assets/images/orange-counter.png" class="counter">';
-const whiteCounter = '<img src="assets/images/white-counter.png" class="counter">';
-const holeCounter = '';
-
 var playerLocationOne = 0;
 var playerLocationTwo = 0;
 var playerLocationThree = 0;
@@ -112,11 +104,48 @@ gameOverSound.src = "assets/audio/classic--game-lose.wav";
 var lineCheckedSound = new Audio();
 lineCheckedSound.src = "assets/audio/classic--line-checked.wav";
 
+/* counter type  */
+
+var redCounter = '<img src="assets/images/red-counter.png" class="counter">';
+var greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
+var yellowCounter = '<img src="assets/images/yellow-counter.png" class="counter">';
+var blueCounter = '<img src="assets/images/blue-counter.png" class="counter">';
+var orangeCounter = '<img src="assets/images/orange-counter.png" class="counter">';
+var whiteCounter = '<img src="assets/images/white-counter.png" class="counter">';
+var holeCounter = '';
+
+$('#basic-counter-inventory').on('click', function () {
+    if (gameStarted == false) {
+        redCounter = '<div class="basic-red-counter basic-counter"></div>';
+        greenCounter = '<div class="basic-green-counter basic-counter"></div>';
+        yellowCounter = '<div class="basic-yellow-counter basic-counter"></div>';
+        blueCounter = '<div class="basic-blue-counter basic-counter"></div>';
+        orangeCounter = '<div class="basic-orange-counter basic-counter"></div>';
+        whiteCounter = '<div class="basic-white-counter basic-counter"></div>';
+    }
+});
+
+$('#classic-counter-inventory').on('click', function () {
+    if (gameStarted == false) {
+        redCounter = '<img src="assets/images/red-counter.png" class="counter">';
+        greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
+        yellowCounter = '<img src="assets/images/yellow-counter.png" class="counter">';
+        blueCounter = '<img src="assets/images/blue-counter.png" class="counter">';
+        orangeCounter = '<img src="assets/images/orange-counter.png" class="counter">';
+        whiteCounter = '<img src="assets/images/white-counter.png" class="counter">';
+    }
+});
+
+
 /* Functions */
 
 /* to start the game */
 
 function start() {
+    timerSec = 0;
+    timerMin = 0;
+    $('#timer-min').html(timerMin);
+    $('#timer-sec').html(timerSec);
     fullGames++;
     $('.counter').remove();
     $('.marker-peg').remove();
