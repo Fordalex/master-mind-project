@@ -140,9 +140,9 @@ $('#classic-counter-inventory-select').on('click', function () {
 
 /* counter container selected */
 
-$('.inventory-sections').on('click', function() {
-    $('.inventory-sections').removeClass('inventory-sections-selected');
-    $(this).addClass('inventory-sections-selected');
+$('.counters-unlocked').on('click', function() {
+    $('.counters-unlocked').removeClass('inventory-selected');
+    $(this).addClass('inventory-selected');
 });
 
 /* buying counters */

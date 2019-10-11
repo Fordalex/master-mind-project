@@ -399,12 +399,12 @@ h6 {
 /* backgrounds */
 
 #space-background-purchase {
-    background-image: url('../images/shapes-background.png');
+    background-image: url('../images/fruit-background.png');
     background-size: 150%;
 }
 
 .space-background {
-    background-image: url('../images/shapes-background.png');
+    background-image: url('../images/fruit-background.png');
     background-size: 100%;
 }
 
@@ -437,15 +437,13 @@ h6 {
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:#bfcccf;
     padding:7px;
     box-shadow: inset 0px 0px 5px 5px rgba(255,255,255,0.65);
 }
 
-.inventory-sections-selected {
+.inventory-selected {
     box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.1);
 }
-
 
 #basic-counter-inventory {
     width:26px;
@@ -602,6 +600,26 @@ td,th {
         background-size:200%;
     }
     .space-background {
+        background-image: url('../images/fruit-background-mobile.png');
         background-size:200%;
     }
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* themes */
+
+.inventory-background-classic-theme {
+    background-color:#bfcccf;
+}
+
