@@ -140,7 +140,7 @@ $('#classic-counter-inventory-select').on('click', function () {
 
 /* counter container selected */
 
-$('.counters-unlocked').on('click', function() {
+$('.counters-unlocked').on('click', function () {
     $('.counters-unlocked').removeClass('inventory-selected');
     $(this).addClass('inventory-selected');
 });
@@ -171,6 +171,15 @@ $('#pink-background-purchase').on('click', function () {
         $('body').removeClass('ice-background');
         $('body').removeClass('space-background');
         $('body').addClass('pink-background');
+        $('.theme').addClass('pink-theme');
+        $('.theme').removeClass('classic-theme');
+        $('.inventory-theme').addClass('inventory-background-pink-theme');
+        $('.inventory-theme').removeClass('inventory-background-classic-theme');
+        $('#player-name-stats').addClass('pink-theme');
+        $('#player-name-stats').removeClass('colour-secondary');
+        $('#select-pink-theme').addClass('pink-background-container');
+        $('#select-pink-theme').children().remove();
+        theme = 'pink-theme'
         for (i = 0; i < 300; i++) {
             coins--;
         };
@@ -193,6 +202,31 @@ $('#ice-background-purchase').on('click', function () {
         iceBackgroundPurchased = true;
     }
 });
+
+/* changing theme */
+
+var theme = 'classic-theme'
+
+$('#select-classic-theme').on('click', function () {
+    $('.theme').removeClass('pink-theme');
+    $('.theme').addClass('classic-theme');
+    $('body').removeClass('pink-background');
+    $('body').css('background-color', 'rgb(170, 185, 200)');
+});
+
+$('#select-pink-theme').on('click', function () {
+    if (pinkBackgroundPurchased == true) {
+        $('.theme').removeClass('classic-theme');
+        $('.theme').addClass('pink-theme');
+        $('body').addClass('pink-background');
+    }
+});
+
+
+
+
+
+
 
 /* Functions */
 
@@ -574,7 +608,7 @@ function levelComplete() {
     /* adding stats */
     $('#stats-table').append(`
      <tr>
-     <th class="light-blue">${fullGames}</th>
+     <th class="theme ${theme}">${fullGames}</th>
      <td>${round}</td>
      <td>${timerMin} : ${timerSec}</td>
      <td>${totalRoundCoins}</td>

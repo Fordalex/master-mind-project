@@ -359,7 +359,6 @@ h6 {
 .dropdown-arrow {
     font-size: 15px;
     margin-left:5px;
-    color:rgb(154, 207, 219);
 }
 
 .dropdown-arrow:hover {
@@ -408,7 +407,7 @@ h6 {
     background-size: 100%;
 }
 
-#pink-background-purchase {
+.pink-background-container {
     background-image: url('../images/pink-background.png');
     background-size: 150%;
 }
@@ -623,3 +622,14 @@ td,th {
     background-color:#bfcccf;
 }
 
+.classic-theme {
+    color:rgb(123, 182, 195);
+}
+
+.inventory-background-pink-theme {
+    background-color:rgb(238, 202, 223);
+}
+
+.pink-theme {
+    color:rgb(240, 114, 187);
+}
