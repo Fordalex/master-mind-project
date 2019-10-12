@@ -147,15 +147,15 @@ $('.counters-unlocked').on('click', function () {
 
 /* buying counters */
 
-/* buying backgrounds */
+/* buying themes */
 
-spaceBackgroundPurchased = false;
+fruitBackgroundPurchased = false;
 
-$('#space-background-purchase').on('click', function () {
-    if (coins >= 200 && spaceBackgroundPurchased == false) {
+$('#fruit-background-purchase').on('click', function () {
+    if (coins >= 200 && fruitBackgroundPurchased == false) {
         $('body').removeClass('pink-background');
         $('body').removeClass('ice-background');
-        $('body').addClass('space-background');
+        $('body').addClass('fruit-background');
         for (i = 0; i < 200; i++) {
             coins--;
         };
@@ -171,8 +171,9 @@ $('#pink-background-purchase').on('click', function () {
         $('body').removeClass('ice-background');
         $('body').removeClass('space-background');
         $('body').addClass('pink-background');
-        $('.theme').addClass('pink-theme');
         $('.theme').removeClass('classic-theme');
+        $('.theme').removeClass('ice-theme');
+        $('.theme').addClass('pink-theme');
         $('.inventory-theme').addClass('inventory-background-pink-theme');
         $('.inventory-theme').removeClass('inventory-background-classic-theme');
         $('#player-name-stats').addClass('pink-theme');
@@ -195,6 +196,17 @@ $('#ice-background-purchase').on('click', function () {
         $('body').removeClass('space-background');
         $('body').removeClass('pink-background');
         $('body').addClass('ice-background');
+        $('.theme').removeClass('classic-theme');
+        $('.theme').removeClass('pink-theme');
+        $('.theme').addClass('ice-theme');
+        $('.inventory-theme').removeClass('inventory-background-classic-theme');
+        $('.inventory-theme').removeClass('inventory-background-pink-theme');
+        $('.inventory-theme').addClass('inventory-background-ice-theme');
+        $('#player-name-stats').removeClass('colour-secondary');
+        $('#player-name-stats').removeClass('pink-theme');
+        $('#player-name-stats').addClass('ice-theme');
+        $('#select-ice-theme').addClass('ice-background-container');
+        $('#select-ice-theme').children().remove();
         for (i = 0; i < 400; i++) {
             coins--;
         };
@@ -208,21 +220,45 @@ $('#ice-background-purchase').on('click', function () {
 var theme = 'classic-theme'
 
 $('#select-classic-theme').on('click', function () {
+    $('body').removeClass('ice-background');
+    $('body').removeClass('pink-background');
+    $('body').css('background-color','rgb(170, 185, 200)');
+    $('.theme').removeClass('ice-theme');
     $('.theme').removeClass('pink-theme');
     $('.theme').addClass('classic-theme');
-    $('body').removeClass('pink-background');
-    $('body').css('background-color', 'rgb(170, 185, 200)');
+    $('#player-name-stats').removeClass('pink-secondary');
+    $('#player-name-stats').removeClass('ice-theme');
+    $('#player-name-stats').addClass('colour-secondary');
 });
+
 
 $('#select-pink-theme').on('click', function () {
     if (pinkBackgroundPurchased == true) {
-        $('.theme').removeClass('classic-theme');
-        $('.theme').addClass('pink-theme');
+        $('body').removeClass('ice-background');
+        $('body').removeClass('space-background');
         $('body').addClass('pink-background');
+        $('.theme').removeClass('classic-theme');
+        $('.theme').removeClass('ice-theme');
+        $('.theme').addClass('pink-theme');
+        $('#player-name-stats').removeClass('colour-secondary');
+        $('#player-name-stats').removeClass('ice-theme');
+        $('#player-name-stats').addClass('pink-theme');
     }
 });
 
-
+$('#select-ice-theme').on('click', function () {
+    if (iceBackgroundPurchased == true) {
+        $('body').removeClass('space-background');
+        $('body').removeClass('pink-background');
+        $('body').addClass('ice-background');
+        $('.theme').removeClass('classic-theme');
+        $('.theme').removeClass('pink-theme');
+        $('.theme').addClass('ice-theme');
+        $('#player-name-stats').removeClass('colour-secondary');
+        $('#player-name-stats').removeClass('pink-theme');
+        $('#player-name-stats').addClass('ice-theme');
+    }
+});
 
 
 

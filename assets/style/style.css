@@ -393,16 +393,17 @@ h6 {
     width:23.5%;
     display:inline-block;
     box-shadow: inset 0px 0px 5px 5px rgba(255,255,255,0.5);
+    cursor:pointer;
 }
 
 /* backgrounds */
 
-#space-background-purchase {
+#fruit-background-purchase {
     background-image: url('../images/fruit-background.png');
     background-size: 150%;
 }
 
-.space-background {
+.fruit-background {
     background-image: url('../images/fruit-background.png');
     background-size: 100%;
 }
@@ -417,7 +418,7 @@ h6 {
     background-size: 100%;
 }
 
-#ice-background-purchase {
+.ice-background-container {
     background-image: url('../images/ice-background.png');
     background-size: 150%;
 }
@@ -587,7 +588,7 @@ td,th {
 
 /* media queries */
 
-@media (max-width:400px) {
+@media (max-width:450px) {
     .mastermind-board-container {
         margin-right:0px;
     }
@@ -598,7 +599,7 @@ td,th {
         background-image: url('../images/pink-background.png');
         background-size:200%;
     }
-    .space-background {
+    .fruit-background {
         background-image: url('../images/fruit-background-mobile.png');
         background-size:200%;
     }
@@ -632,4 +633,8 @@ td,th {
 
 .pink-theme {
     color:rgb(240, 114, 187);
+}
+
+.ice-theme {
+    color:rgb(170, 170, 170);
 }
