@@ -398,7 +398,7 @@ h6 {
 
 /* backgrounds */
 
-#fruit-background-purchase {
+.fruit-background-container {
     background-image: url('../images/fruit-background.png');
     background-size: 150%;
 }
@@ -627,12 +627,25 @@ td,th {
     color:rgb(123, 182, 195);
 }
 
+.inventory-background-fruit-theme {
+    background-color:rgb(240, 245, 201);
+}
+
+.fruit-theme {
+    color:rgb(255, 179, 80);
+}
+
+
 .inventory-background-pink-theme {
-    background-color:rgb(238, 202, 223);
+    background-color:rgb(241, 221, 233);
 }
 
 .pink-theme {
     color:rgb(240, 114, 187);
+}
+
+.inventory-background-ice-theme {
+    background-color:rgb(223, 245, 244);
 }
 
 .ice-theme {

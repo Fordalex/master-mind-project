@@ -156,11 +156,23 @@ $('#fruit-background-purchase').on('click', function () {
         $('body').removeClass('pink-background');
         $('body').removeClass('ice-background');
         $('body').addClass('fruit-background');
+        $('.theme').removeClass('classic-theme');
+        $('.theme').removeClass('ice-theme');
+        $('.theme').addClass('fruit-theme');
+        $('.inventory-sections').removeClass('inventory-background-classic-theme');
+        $('.inventory-sections').removeClass('inventory-background-ice-theme');
+        $('.inventory-sections').removeClass('inventory-background-pink-theme');
+        $('.inventory-sections').addClass('inventory-background-fruit-theme');
+        $('#player-name-stats').removeClass('colour-secondary');
+        $('#player-name-stats').addClass('fruit-theme');
+        $('#select-fruit-theme').addClass('fruit-background-container');
+        $('#select-fruit-theme').children().remove();
+        theme = 'fruit-theme';
         for (i = 0; i < 200; i++) {
             coins--;
         };
         $('#player-coins').html(coins);
-        spaceBackgroundPurchased = true;
+        fruitBackgroundPurchased = true;
     }
 });
 
@@ -174,13 +186,15 @@ $('#pink-background-purchase').on('click', function () {
         $('.theme').removeClass('classic-theme');
         $('.theme').removeClass('ice-theme');
         $('.theme').addClass('pink-theme');
-        $('.inventory-theme').addClass('inventory-background-pink-theme');
-        $('.inventory-theme').removeClass('inventory-background-classic-theme');
+        $('.inventory-sections').removeClass('inventory-background-classic-theme');
+        $('.inventory-sections').removeClass('inventory-background-ice-theme');
+        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
+        $('.inventory-sections').addClass('inventory-background-pink-theme');
         $('#player-name-stats').addClass('pink-theme');
         $('#player-name-stats').removeClass('colour-secondary');
         $('#select-pink-theme').addClass('pink-background-container');
         $('#select-pink-theme').children().remove();
-        theme = 'pink-theme'
+        theme = 'pink-theme';
         for (i = 0; i < 300; i++) {
             coins--;
         };
@@ -199,14 +213,16 @@ $('#ice-background-purchase').on('click', function () {
         $('.theme').removeClass('classic-theme');
         $('.theme').removeClass('pink-theme');
         $('.theme').addClass('ice-theme');
-        $('.inventory-theme').removeClass('inventory-background-classic-theme');
-        $('.inventory-theme').removeClass('inventory-background-pink-theme');
-        $('.inventory-theme').addClass('inventory-background-ice-theme');
+        $('.inventory-sections').removeClass('inventory-background-classic-theme');
+        $('.inventory-sections').removeClass('inventory-background-pink-theme');
+        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
+        $('.inventory-sections').addClass('inventory-background-ice-theme');
         $('#player-name-stats').removeClass('colour-secondary');
         $('#player-name-stats').removeClass('pink-theme');
         $('#player-name-stats').addClass('ice-theme');
         $('#select-ice-theme').addClass('ice-background-container');
         $('#select-ice-theme').children().remove();
+        theme = 'ice-theme';
         for (i = 0; i < 400; i++) {
             coins--;
         };
@@ -217,32 +233,65 @@ $('#ice-background-purchase').on('click', function () {
 
 /* changing theme */
 
-var theme = 'classic-theme'
+var theme = 'classic-theme';
 
 $('#select-classic-theme').on('click', function () {
     $('body').removeClass('ice-background');
     $('body').removeClass('pink-background');
-    $('body').css('background-color','rgb(170, 185, 200)');
+    $('body').removeClass('fruit-background');
+    $('body').css('background-color', 'rgb(170, 185, 200)');
     $('.theme').removeClass('ice-theme');
     $('.theme').removeClass('pink-theme');
+    $('.theme').removeClass('fruit-theme');
     $('.theme').addClass('classic-theme');
-    $('#player-name-stats').removeClass('pink-secondary');
+    $('.inventory-sections').removeClass('inventory-background-pink-theme');
+    $('.inventory-sections').removeClass('inventory-background-ice-theme');
+    $('.inventory-sections').removeClass('inventory-background-fruit-theme');
+    $('.inventory-sections').addClass('inventory-background-classic-theme');
+    $('#player-name-stats').removeClass('pink-theme');
     $('#player-name-stats').removeClass('ice-theme');
+    $('#player-name-stats').removeClass('fruit-theme');
     $('#player-name-stats').addClass('colour-secondary');
+    theme = 'classic-theme';
 });
 
+$('#select-fruit-theme').on('click', function () {
+    if (fruitBackgroundPurchased == true) {
+        $('body').removeClass('ice-background');
+        $('body').removeClass('pink-background');
+        $('body').addClass('fruit-background');
+        $('.theme').removeClass('classic-theme');
+        $('.theme').removeClass('ice-theme');
+        $('.theme').removeClass('pink-theme');
+        $('.theme').addClass('fruit-theme');
+        $('.inventory-sections').removeClass('inventory-background-classic-theme');
+        $('.inventory-sections').removeClass('inventory-background-ice-theme');
+        $('.inventory-sections').removeClass('inventory-background-pink-theme');
+        $('.inventory-sections').addClass('inventory-background-fruit-theme');
+        $('#player-name-stats').removeClass('colour-secondary');
+        $('#player-name-stats').removeClass('ice-theme');
+        $('#player-name-stats').removeClass('pink-theme');
+        $('#player-name-stats').addClass('fruit-theme');
+        theme = 'fruit-theme';
+    }
+});
 
 $('#select-pink-theme').on('click', function () {
     if (pinkBackgroundPurchased == true) {
         $('body').removeClass('ice-background');
-        $('body').removeClass('space-background');
+        $('body').removeClass('fruit-background');
         $('body').addClass('pink-background');
         $('.theme').removeClass('classic-theme');
         $('.theme').removeClass('ice-theme');
         $('.theme').addClass('pink-theme');
+        $('.inventory-sections').removeClass('inventory-background-classic-theme');
+        $('.inventory-sections').removeClass('inventory-background-ice-theme');
+        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
+        $('.inventory-sections').addClass('inventory-background-pink-theme');
         $('#player-name-stats').removeClass('colour-secondary');
         $('#player-name-stats').removeClass('ice-theme');
         $('#player-name-stats').addClass('pink-theme');
+        theme = 'pink-theme';
     }
 });
 
@@ -254,15 +303,16 @@ $('#select-ice-theme').on('click', function () {
         $('.theme').removeClass('classic-theme');
         $('.theme').removeClass('pink-theme');
         $('.theme').addClass('ice-theme');
+        $('.inventory-sections').removeClass('inventory-background-classic-theme');
+        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
+        $('.inventory-sections').removeClass('inventory-background-pink-theme');
+        $('.inventory-sections').addClass('inventory-background-ice-theme');
         $('#player-name-stats').removeClass('colour-secondary');
         $('#player-name-stats').removeClass('pink-theme');
         $('#player-name-stats').addClass('ice-theme');
+        theme = 'ice-theme';
     }
 });
-
-
-
-
 
 /* Functions */
 
