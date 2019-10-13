@@ -118,12 +118,12 @@ var holeCounter = '';
 
 $('#basic-counter-inventory-select').on('click', function () {
     if (gameStarted == false) {
-        redCounter = '<div class="basic-red-counter basic-counter"></div>';
-        greenCounter = '<div class="basic-green-counter basic-counter"></div>';
-        yellowCounter = '<div class="basic-yellow-counter basic-counter"></div>';
-        blueCounter = '<div class="basic-blue-counter basic-counter"></div>';
-        orangeCounter = '<div class="basic-orange-counter basic-counter"></div>';
-        whiteCounter = '<div class="basic-white-counter basic-counter"></div>';
+        redCounter = '<div class="basic-red-counter basic-counter red-glow"></div>';
+        greenCounter = '<div class="basic-green-counter basic-counter green-glow"></div>';
+        yellowCounter = '<div class="basic-yellow-counter basic-counter yellow-glow"></div>';
+        blueCounter = '<div class="basic-blue-counter basic-counter blue-glow"></div>';
+        orangeCounter = '<div class="basic-orange-counter basic-counter orange-glow"></div>';
+        whiteCounter = '<div class="basic-white-counter basic-counter white-glow"></div>';
     }
 });
 
@@ -138,9 +138,19 @@ $('#classic-counter-inventory-select').on('click', function () {
     }
 });
 
+$('#fruit-counter-inventory-select').on('click', function () {
+    if (gameStarted == false) {  
+        redCounter = '<img src="assets/images/red-fruit-counter.png" class="counter-noshadow">';
+        greenCounter = '<img src="assets/images/green-fruit-counter.png" class="counter-noshadow">';
+        yellowCounter = '<img src="assets/images/yellow-fruit-counter.png" class="counter-noshadow">';
+        blueCounter = '<img src="assets/images/blue-fruit-counter.png" class="counter-noshadow">';
+        orangeCounter = '<img src="assets/images/orange-fruit-counter.png" class="counter-noshadow">';
+        whiteCounter = '<img src="assets/images/white-fruit-counter.png" class="counter-noshadow">';
+    }
+});
+
 $('#candy-counter-inventory-select').on('click', function () {
     if (gameStarted == false) {
-        $('.counter').css('box-shadow','')
         redCounter = '<img src="assets/images/red-candy-counter.png" class="counter">';
         greenCounter = '<img src="assets/images/green-candy-counter.png" class="counter">';
         yellowCounter = '<img src="assets/images/yellow-candy-counter.png" class="counter">';
@@ -152,13 +162,12 @@ $('#candy-counter-inventory-select').on('click', function () {
 
 $('#gem-counter-inventory-select').on('click', function () {
     if (gameStarted == false) {
-        $('.counter').css('box-shadow','')
-        redCounter = '<img src="assets/images/red-gem-counter.png" class="counter-gem">';
-        greenCounter = '<img src="assets/images/green-gem-counter.png" class="counter-gem">';
-        yellowCounter = '<img src="assets/images/yellow-gem-counter.png" class="counter-gem">';
-        blueCounter = '<img src="assets/images/blue-gem-counter.png" class="counter-gem">';
-        orangeCounter = '<img src="assets/images/orange-gem-counter.png" class="counter-gem">';
-        whiteCounter = '<img src="assets/images/white-gem-counter.png" class="counter-gem">';
+        redCounter = '<img src="assets/images/red-gem-counter.png" class="counter-noshadow">';
+        greenCounter = '<img src="assets/images/green-gem-counter.png" class="counter-noshadow">';
+        yellowCounter = '<img src="assets/images/yellow-gem-counter.png" class="counter-noshadow">';
+        blueCounter = '<img src="assets/images/blue-gem-counter.png" class="counter-noshadow">';
+        orangeCounter = '<img src="assets/images/orange-gem-counter.png" class="counter-noshadow">';
+        whiteCounter = '<img src="assets/images/white-gem-counter.png" class="counter-noshadow">';
     }
 });
 
