@@ -138,6 +138,17 @@ $('#classic-counter-inventory-select').on('click', function () {
     }
 });
 
+$('#candy-counter-inventory-select').on('click', function () {
+    if (gameStarted == false) {
+        $('.counter').css('box-shadow','')
+        redCounter = '<img src="assets/images/red-candy-counter.png" class="counter">';
+        greenCounter = '<img src="assets/images/green-candy-counter.png" class="counter">';
+        yellowCounter = '<img src="assets/images/yellow-candy-counter.png" class="counter">';
+        blueCounter = '<img src="assets/images/blue-candy-counter.png" class="counter">';
+        orangeCounter = '<img src="assets/images/orange-candy-counter.png" class="counter">';
+        whiteCounter = '<img src="assets/images/white-candy-counter.png" class="counter">';
+    }
+});
 
 $('#gem-counter-inventory-select').on('click', function () {
     if (gameStarted == false) {

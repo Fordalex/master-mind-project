@@ -406,6 +406,12 @@ h6 {
 
 /* counters */
 
+.candy-purchase-background {
+    background:url('../images/candy-background-purchase.png');
+    background-size: 100%;
+    background-position-y:100%;
+}
+
 .gem-purchase-background {
     background:url('../images/gem-background-purchase.png');
     background-size: 100%;
