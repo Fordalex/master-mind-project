@@ -404,7 +404,14 @@ h6 {
     cursor:pointer;
 }
 
-/* backgrounds */
+/* counters */
+
+.gem-purchase-background {
+    background:url('../images/gem-background-purchase.png');
+    background-size: 100%;
+}
+
+/* thems */
 
 .fruit-background-container {
     background-image: url('../images/fruit-background.png');
