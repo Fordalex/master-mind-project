@@ -1,6 +1,6 @@
 # Master Mind Project
 
-Mastermind is a vintage family game from my childhood. It is a game that requires a player to use logic, speculation and reasoning skills to determine the sequence of coloured pegs. The computer has secretly generated a sequence leaving players having 10 attempts to guess correctly, or the computer wins!
+Mastermind is a vintage family game from my childhood. It is a game that requires a player to use logic, speculation and reasoning skills to determine the sequence of coloured counters. The computer has secretly generated a sequence leaving players having 10 attempts to guess correctly, or the computer wins!
 
 ## Link
 
@@ -8,9 +8,9 @@ Can you beat the computer? Find out: [Mastermind](https://fordalex.github.io/mas
 
 ## UX
 
-I have tried to build this project to be very simple for the user to navigate through the webpages. The first page starts explaining how to play mastermind and a screenshot to make it easyier for the user to understand on how to play. After this information the player will see a large play button taking them to the next page.
+I have tried to build this project to be very simple for the user to navigate through the webpages. The first page starts explaining how to play mastermind and a screenshot to make it easyier for the user to understand on how to play. After this information the player will see a large 'play Mastermind' button taking them to the next page.
 
-The first modal that the user is faced with they cannot remove, click off, or press 'esc' this information needs to be filled in so that mastermind knows what to do next. Generating 3, 5 or 7 diffrent coloured counters to be later guessed by the player.
+The first modal that the user is faced with they cannot remove, click off, or press 'esc' this information needs to be filled in so that mastermind knows what to do next. Generating 3, 5 or 7 different coloured counters to be later guessed by the player.
 
 After this information has been entered the user will see that mastermind is generating diffrent coloured counters four times every second to show the user the multiple possibilities. The counters being genereated will depend on what level of difficulty that the user has selected.
 

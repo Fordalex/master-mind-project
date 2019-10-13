@@ -138,6 +138,19 @@ $('#classic-counter-inventory-select').on('click', function () {
     }
 });
 
+
+$('#gem-counter-inventory-select').on('click', function () {
+    if (gameStarted == false) {
+        $('.counter').css('box-shadow','')
+        redCounter = '<img src="assets/images/red-gem-counter.png" class="counter-gem">';
+        greenCounter = '<img src="assets/images/green-gem-counter.png" class="counter-gem">';
+        yellowCounter = '<img src="assets/images/yellow-gem-counter.png" class="counter-gem">';
+        blueCounter = '<img src="assets/images/blue-gem-counter.png" class="counter-gem">';
+        orangeCounter = '<img src="assets/images/orange-gem-counter.png" class="counter-gem">';
+        whiteCounter = '<img src="assets/images/white-gem-counter.png" class="counter-gem">';
+    }
+});
+
 /* counter container selected */
 
 $('.counters-unlocked').on('click', function () {
