@@ -1,18 +1,31 @@
 # Master Mind Project
 
-Mastermind is a vintage family game from my childhood. It is a game that requires a player to use logic, speculation and reasoning skills to determine the sequence of colored pegs. The computer has secretly generated a sequence leaving players having 10 attempts to guess correctly, or the computer wins!
+Mastermind is a vintage family game from my childhood. It is a game that requires a player to use logic, speculation and reasoning skills to determine the sequence of coloured pegs. The computer has secretly generated a sequence leaving players having 10 attempts to guess correctly, or the computer wins!
 
 ## Link
 
 Can you beat the computer? Find out: [Mastermind](https://fordalex.github.io/master-mind-project/)
 
 ## UX
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+I have tried to build this project to be very simple for the user to navigate through the webpages. The first page starts explaining how to play mastermind and a screenshot to make it easyier for the user to understand on how to play. After this information the player will see a large play button taking them to the next page.
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+The first modal that the user is faced with they cannot remove, click off, or press 'esc' this information needs to be filled in so that mastermind knows what to do next. Generating 3, 5 or 7 diffrent coloured counters to be later guessed by the player.
+
+After this information has been entered the user will see that mastermind is generating diffrent coloured counters four times every second to show the user the multiple possibilities. The counters being genereated will depend on what level of difficulty that the user has selected.
+
+
+Playing the game:
+
+After the user has pressed 'Play Mastermind' on the first page. Then inputted their name and difficulty level, the user is shown the board and flashing arrows at the top of the board saying 'play' indicating on what the user has to press next.
+
+I tested this game out on a few peple at work and didn't help them through testing it.
+
+* As a older user and someone who doesn't play games on his phone he was struggling on what to do next, so i have added larger moving, flashing arrows to catch the users eye and show them what to do next.
+
+* Also users with bigger hands were struggling with the size of the buttons so i have made sure to change the size of these making them easier to notice and press.
+
+
 
 ## Features
 
@@ -29,7 +42,14 @@ Also more categorys for items to be purchased keeping the user intrested for a l
 
 ## Testing and Bugs
 
-[Testing And Bugs]()
+[Testing And Bugs](https://github.com/Fordalex/master-mind-project/blob/master/testing-bugs.md)
+
+## Deployment
+
+This project is hosted on github, the first page the user will be taken to after they have press the link will be `index.html`. As github understand this being the main page, without this nothing will be displayed.
+
+
+
 
 ## Credits
 
