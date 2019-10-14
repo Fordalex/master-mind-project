@@ -64,6 +64,7 @@ $('.easy-difficulty').on('click', function () {
     $('.not-in-use').remove();
     difficultySetting = 'easy';
     difficultyStats = 'E';
+    difficultyGenerate = 3;
     $('.easy-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
     $('.medium-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
 });
@@ -71,16 +72,19 @@ $('.medium-difficulty').on('click', function () {
     $('.not-in-use').remove();
     difficultySetting = 'medium';
     difficultyStats = 'M';
+    difficultyGenerate = 5;
     $('.medium-counter-selector-container').append('<i class="fas fa-ban not-in-use"></i>');
 });
 $('.hard-difficulty').on('click', function () {
     $('.not-in-use').remove();
     difficultySetting = 'hard';
     difficultyStats = 'H';
+    difficultyGenerate = 7;
 });
 
 var difficultySetting = '';
 var difficultyStats = '';
+var difficultyGenerate;
 
 /* audio */
 
@@ -106,7 +110,14 @@ gameOverSound.src = "assets/audio/classic--game-lose.wav";
 var lineCheckedSound = new Audio();
 lineCheckedSound.src = "assets/audio/classic--line-checked.wav";
 
-/* counter type  */
+/* counter container selected drop down*/
+
+$('.counters-unlocked').on('click', function () {
+    $('.counters-unlocked').removeClass('inventory-selected');
+    $(this).addClass('inventory-selected');
+});
+
+/* buying counters */
 
 var redCounter = '<img src="assets/images/red-counter.png" class="counter">';
 var greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
@@ -115,6 +126,23 @@ var blueCounter = '<img src="assets/images/blue-counter.png" class="counter">';
 var orangeCounter = '<img src="assets/images/orange-counter.png" class="counter">';
 var whiteCounter = '<img src="assets/images/white-counter.png" class="counter">';
 var holeCounter = '';
+
+var fruitCounterPurchased = false;
+var candyCounterPurchased = false;
+var gemCounterPurchased = false;
+
+
+
+$('#candy-counters-purchase').on('click', function () {
+    if (coins >= 900 && candyCounterPurchased == false) {
+        buyCounters('candy')
+        candyCounterPurchased = true;
+    }
+});
+
+
+
+/* selecting counters */
 
 $('#basic-counter-inventory-select').on('click', function () {
     if (gameStarted == false) {
@@ -139,7 +167,7 @@ $('#classic-counter-inventory-select').on('click', function () {
 });
 
 $('#fruit-counter-inventory-select').on('click', function () {
-    if (gameStarted == false) {  
+    if (gameStarted == false && fruitCounterPurchased == true) {
         redCounter = '<img src="assets/images/red-fruit-counter.png" class="counter-noshadow">';
         greenCounter = '<img src="assets/images/green-fruit-counter.png" class="counter-noshadow">';
         yellowCounter = '<img src="assets/images/yellow-fruit-counter.png" class="counter-noshadow">';
@@ -150,7 +178,7 @@ $('#fruit-counter-inventory-select').on('click', function () {
 });
 
 $('#candy-counter-inventory-select').on('click', function () {
-    if (gameStarted == false) {
+    if (gameStarted == false && candyCounterPurchased == true) {
         redCounter = '<img src="assets/images/red-candy-counter.png" class="counter">';
         greenCounter = '<img src="assets/images/green-candy-counter.png" class="counter">';
         yellowCounter = '<img src="assets/images/yellow-candy-counter.png" class="counter">';
@@ -161,7 +189,7 @@ $('#candy-counter-inventory-select').on('click', function () {
 });
 
 $('#gem-counter-inventory-select').on('click', function () {
-    if (gameStarted == false) {
+    if (gameStarted == false && gemCounterPurchased == true) {
         redCounter = '<img src="assets/images/red-gem-counter.png" class="counter-noshadow">';
         greenCounter = '<img src="assets/images/green-gem-counter.png" class="counter-noshadow">';
         yellowCounter = '<img src="assets/images/yellow-gem-counter.png" class="counter-noshadow">';
@@ -171,183 +199,171 @@ $('#gem-counter-inventory-select').on('click', function () {
     }
 });
 
-/* counter container selected */
-
-$('.counters-unlocked').on('click', function () {
-    $('.counters-unlocked').removeClass('inventory-selected');
-    $(this).addClass('inventory-selected');
-});
-
-/* buying counters */
-
 /* buying themes */
 
-fruitBackgroundPurchased = false;
+var fruitBackgroundPurchased = false;
+var pinkBackgroundPurchased = false;
+var iceBackgroundPurchased = false;
 
-$('#fruit-background-purchase').on('click', function () {
-    if (coins >= 200 && fruitBackgroundPurchased == false) {
-        $('body').removeClass('pink-background');
+function buyTheme(themeName) {
+    themes = {
+        'classic': {
+            'cost': 0,
+            'background': 'classic-background',
+            'inventoryBackgroundTheme': 'inventory-background-classic-theme',
+            'themeStyle': 'classic-theme'
+        },
+        'fruit': {
+            'cost': 200,
+            'background': 'fruit-background',
+            'inventoryBackgroundTheme': 'inventory-background-fruit-theme',
+            'themeStyle': 'fruit-theme',
+            'themePurchased': fruitBackgroundPurchased,
+            'themeInventory': '#select-fruit-theme',
+            'inventoryBackgroundImage': 'fruit-background-container'
+        },
+        'pink': {
+            'cost': 300,
+            'background': 'pink-background',
+            'inventoryBackgroundTheme': 'inventory-background-pink-theme',
+            'themeStyle': 'pink-theme',
+            'themePurchased': pinkBackgroundPurchased,
+            'themeInventory': '#select-pink-theme',
+            'inventoryBackgroundImage': 'pink-background-container'
+        },
+        'ice': {
+            'cost': 400,
+            'background': 'ice-background',
+            'inventoryBackgroundTheme': 'inventory-background-ice-theme',
+            'themeStyle': 'ice-theme',
+            'themePurchased': iceBackgroundPurchased,
+            'themeInventory': '#select-ice-theme',
+            'inventoryBackgroundImage': 'ice-background-container'
+        },
+    }
+    theme = themes[themeName];
+
+    if (coins >= theme.cost && theme.themePurchased == false) {
         $('body').removeClass('ice-background');
-        $('body').addClass('fruit-background');
-        $('.theme').removeClass('classic-theme');
+        $('body').removeClass('pink-background');
+        $('body').removeClass('fruit-background');
+        $('body').addClass(theme.background);
         $('.theme').removeClass('ice-theme');
-        $('.theme').addClass('fruit-theme');
+        $('.theme').removeClass('pink-theme');
+        $('.theme').removeClass('fruit-theme');
+        $('.theme').addClass(theme.themeStyle);
         $('.inventory-sections').removeClass('inventory-background-classic-theme');
-        $('.inventory-sections').removeClass('inventory-background-ice-theme');
         $('.inventory-sections').removeClass('inventory-background-pink-theme');
-        $('.inventory-sections').addClass('inventory-background-fruit-theme');
+        $('.inventory-sections').removeClass('inventory-background-ice-theme');
+        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
+        $('.inventory-sections').addClass(theme.inventoryBackgroundTheme);
+        $('#player-name-stats').removeClass('pink-theme');
+        $('#player-name-stats').removeClass('ice-theme');
+        $('#player-name-stats').removeClass('fruit-theme');
         $('#player-name-stats').removeClass('colour-secondary');
-        $('#player-name-stats').addClass('fruit-theme');
-        $('#select-fruit-theme').addClass('fruit-background-container');
-        $('#select-fruit-theme').children().remove();
-        theme = 'fruit-theme';
-        for (i = 0; i < 200; i++) {
+        $('#player-name-stats').addClass(theme.themeStyle);
+        currentTheme = theme.themeStyle;
+        for (i = 0; i < theme.cost; i++) {
             coins--;
         };
         $('#player-coins').html(coins);
+        $(theme.themeInventory).children().remove();
+        $(theme.themeInventory).addClass(theme.inventoryBackgroundImage);
+    }
+};
+
+$('#fruit-background-purchase').on('click', function () {
+    if (coins >= 200) {
+        buyTheme('fruit');
         fruitBackgroundPurchased = true;
     }
 });
 
-pinkBackgroundPurchased = false;
-
 $('#pink-background-purchase').on('click', function () {
-    if (coins >= 300 && pinkBackgroundPurchased == false) {
-        $('body').removeClass('ice-background');
-        $('body').removeClass('space-background');
-        $('body').addClass('pink-background');
-        $('.theme').removeClass('classic-theme');
-        $('.theme').removeClass('ice-theme');
-        $('.theme').addClass('pink-theme');
-        $('.inventory-sections').removeClass('inventory-background-classic-theme');
-        $('.inventory-sections').removeClass('inventory-background-ice-theme');
-        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
-        $('.inventory-sections').addClass('inventory-background-pink-theme');
-        $('#player-name-stats').addClass('pink-theme');
-        $('#player-name-stats').removeClass('colour-secondary');
-        $('#select-pink-theme').addClass('pink-background-container');
-        $('#select-pink-theme').children().remove();
-        theme = 'pink-theme';
-        for (i = 0; i < 300; i++) {
-            coins--;
-        };
-        $('#player-coins').html(coins);
+    if (coins >= 300) {
+        buyTheme('pink');
         pinkBackgroundPurchased = true;
     }
 });
 
-iceBackgroundPurchased = false;
-
 $('#ice-background-purchase').on('click', function () {
-    if (coins >= 400 && iceBackgroundPurchased == false) {
-        $('body').removeClass('space-background');
-        $('body').removeClass('pink-background');
-        $('body').addClass('ice-background');
-        $('.theme').removeClass('classic-theme');
-        $('.theme').removeClass('pink-theme');
-        $('.theme').addClass('ice-theme');
-        $('.inventory-sections').removeClass('inventory-background-classic-theme');
-        $('.inventory-sections').removeClass('inventory-background-pink-theme');
-        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
-        $('.inventory-sections').addClass('inventory-background-ice-theme');
-        $('#player-name-stats').removeClass('colour-secondary');
-        $('#player-name-stats').removeClass('pink-theme');
-        $('#player-name-stats').addClass('ice-theme');
-        $('#select-ice-theme').addClass('ice-background-container');
-        $('#select-ice-theme').children().remove();
-        theme = 'ice-theme';
-        for (i = 0; i < 400; i++) {
-            coins--;
-        };
-        $('#player-coins').html(coins);
+    if (coins >= 400) {
+        buyTheme('ice');
         iceBackgroundPurchased = true;
     }
 });
 
-/* changing theme */
+/* selecting theme */
 
-var theme = 'classic-theme';
+var currentTheme = 'classic-theme';
 
-$('#select-classic-theme').on('click', function () {
+function changeTheme(themeName) {
+    themes = {
+        'classic': {
+            'background': 'classic-background',
+            'inventoryBackground': 'inventory-background-classic-theme',
+            'themeStyle': 'classic-theme'
+        },
+        'fruit': {
+            'background': 'fruit-background',
+            'inventoryBackground': 'inventory-background-fruit-theme',
+            'themeStyle': 'fruit-theme'
+        },
+        'pink': {
+            'background': 'pink-background',
+            'inventoryBackground': 'inventory-background-pink-theme',
+            'themeStyle': 'pink-theme'
+        },
+        'ice': {
+            'background': 'ice-background',
+            'inventoryBackground': 'inventory-background-ice-theme',
+            'themeStyle': 'ice-theme'
+        },
+    }
+    theme = themes[themeName]
+
     $('body').removeClass('ice-background');
     $('body').removeClass('pink-background');
     $('body').removeClass('fruit-background');
-    $('body').css('background-color', 'rgb(170, 185, 200)');
+    $('body').addClass(theme.background);
     $('.theme').removeClass('ice-theme');
     $('.theme').removeClass('pink-theme');
     $('.theme').removeClass('fruit-theme');
-    $('.theme').addClass('classic-theme');
+    $('.theme').addClass(theme.themeStyle);
+    $('.inventory-sections').removeClass('inventory-background-classic-theme');
     $('.inventory-sections').removeClass('inventory-background-pink-theme');
     $('.inventory-sections').removeClass('inventory-background-ice-theme');
     $('.inventory-sections').removeClass('inventory-background-fruit-theme');
-    $('.inventory-sections').addClass('inventory-background-classic-theme');
+    $('.inventory-sections').addClass(theme.inventoryBackground);
     $('#player-name-stats').removeClass('pink-theme');
     $('#player-name-stats').removeClass('ice-theme');
     $('#player-name-stats').removeClass('fruit-theme');
-    $('#player-name-stats').addClass('colour-secondary');
-    theme = 'classic-theme';
+    $('#player-name-stats').removeClass('colour-secondary');
+    $('#player-name-stats').addClass(theme.themeStyle);
+    currentTheme = theme.themeStyle;
+};
+
+$('#select-classic-theme').on('click', function () {
+    changeTheme('classic');
 });
 
 $('#select-fruit-theme').on('click', function () {
     if (fruitBackgroundPurchased == true) {
-        $('body').removeClass('ice-background');
-        $('body').removeClass('pink-background');
-        $('body').addClass('fruit-background');
-        $('.theme').removeClass('classic-theme');
-        $('.theme').removeClass('ice-theme');
-        $('.theme').removeClass('pink-theme');
-        $('.theme').addClass('fruit-theme');
-        $('.inventory-sections').removeClass('inventory-background-classic-theme');
-        $('.inventory-sections').removeClass('inventory-background-ice-theme');
-        $('.inventory-sections').removeClass('inventory-background-pink-theme');
-        $('.inventory-sections').addClass('inventory-background-fruit-theme');
-        $('#player-name-stats').removeClass('colour-secondary');
-        $('#player-name-stats').removeClass('ice-theme');
-        $('#player-name-stats').removeClass('pink-theme');
-        $('#player-name-stats').addClass('fruit-theme');
-        theme = 'fruit-theme';
+        changeTheme('fruit');
     }
 });
 
 $('#select-pink-theme').on('click', function () {
     if (pinkBackgroundPurchased == true) {
-        $('body').removeClass('ice-background');
-        $('body').removeClass('fruit-background');
-        $('body').addClass('pink-background');
-        $('.theme').removeClass('classic-theme');
-        $('.theme').removeClass('ice-theme');
-        $('.theme').addClass('pink-theme');
-        $('.inventory-sections').removeClass('inventory-background-classic-theme');
-        $('.inventory-sections').removeClass('inventory-background-ice-theme');
-        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
-        $('.inventory-sections').addClass('inventory-background-pink-theme');
-        $('#player-name-stats').removeClass('colour-secondary');
-        $('#player-name-stats').removeClass('ice-theme');
-        $('#player-name-stats').addClass('pink-theme');
-        theme = 'pink-theme';
+        changeTheme('pink');
     }
 });
 
 $('#select-ice-theme').on('click', function () {
     if (iceBackgroundPurchased == true) {
-        $('body').removeClass('space-background');
-        $('body').removeClass('pink-background');
-        $('body').addClass('ice-background');
-        $('.theme').removeClass('classic-theme');
-        $('.theme').removeClass('pink-theme');
-        $('.theme').addClass('ice-theme');
-        $('.inventory-sections').removeClass('inventory-background-classic-theme');
-        $('.inventory-sections').removeClass('inventory-background-fruit-theme');
-        $('.inventory-sections').removeClass('inventory-background-pink-theme');
-        $('.inventory-sections').addClass('inventory-background-ice-theme');
-        $('#player-name-stats').removeClass('colour-secondary');
-        $('#player-name-stats').removeClass('pink-theme');
-        $('#player-name-stats').addClass('ice-theme');
-        theme = 'ice-theme';
+        changeTheme('ice');
     }
 });
-
-/* Functions */
 
 /* to start the game */
 
@@ -367,7 +383,7 @@ function start() {
     $('#master-cover').addClass('fade-in');
     $('#ready-button').remove();
     setTimeout(function () {
-        generateCounters();
+        generateCounters(difficultyGenerate);
         gameStarted = true;
         timer = true;
         timerFunction();
@@ -382,7 +398,7 @@ function loop() {
         setTimeout(function () {
             if (gameStarted == false) {
                 loop();
-                generateCounters();
+                generateCounters(difficultyGenerate);
             }
         }, 250);
     }
@@ -390,23 +406,12 @@ function loop() {
 
 /* computer generated counters */
 
-function generateCounters() {
-    if (difficultySetting == 'hard') {
-        masterLocationOne = Math.floor(Math.random() * 7);
-        masterLocationTwo = Math.floor(Math.random() * 7);
-        masterLocationThree = Math.floor(Math.random() * 7);
-        masterLocationFour = Math.floor(Math.random() * 7);
-    } else if (difficultySetting == 'medium') {
-        masterLocationOne = Math.floor(Math.random() * 5);
-        masterLocationTwo = Math.floor(Math.random() * 5);
-        masterLocationThree = Math.floor(Math.random() * 5);
-        masterLocationFour = Math.floor(Math.random() * 5);
-    } else if (difficultySetting == 'easy') {
-        masterLocationOne = Math.floor(Math.random() * 3);
-        masterLocationTwo = Math.floor(Math.random() * 3);
-        masterLocationThree = Math.floor(Math.random() * 3);
-        masterLocationFour = Math.floor(Math.random() * 3);
-    }
+function generateCounters(difficulty) {
+    masterLocationOne = Math.floor(Math.random() * difficulty);
+    masterLocationTwo = Math.floor(Math.random() * difficulty);
+    masterLocationThree = Math.floor(Math.random() * difficulty);
+    masterLocationFour = Math.floor(Math.random() * difficulty);
+
 
     if (masterLocationOne == 0) {
         $('#master-one').html(redCounter);
@@ -701,6 +706,8 @@ function checkCounters() {
 function levelComplete() {
     $('#round-counter').html(1);
     $('.counter').remove();
+    $('.basic-counter').remove();
+    $('.counter-noshadow').remove();
     $('.marker-peg').remove();
     timer = false;
     if (difficultySetting == 'easy') {
@@ -727,7 +734,7 @@ function levelComplete() {
     /* adding stats */
     $('#stats-table').append(`
      <tr>
-     <th class="theme ${theme}">${fullGames}</th>
+     <th class="theme ${currentTheme}">${fullGames}</th>
      <td>${round}</td>
      <td>${timerMin} : ${timerSec}</td>
      <td>${totalRoundCoins}</td>
