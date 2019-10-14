@@ -87,7 +87,7 @@ h6 {
 .rules-image {
     border-radius:15px;
     border:solid black 1px;
-    width:100%;
+    width:270px;
 }
 
 /* mastermind board */
@@ -285,6 +285,12 @@ h6 {
     box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.counter-inventory {
+    width:27px;
+    height:27px;
+    border-radius:50%;
+}
+
 .counter-noshadow {
     width:26px;
     height:26px;
@@ -430,9 +436,14 @@ h6 {
 
 /* counters */
 
+.fruit-purchase-background {
+    background:url('../images/fruit-background-purchase.png');
+    background-size: 110%;
+}
+
 .candy-purchase-background {
     background:url('../images/candy-background-purchase.png');
-    background-size: 100%;
+    background-size: 110%;
 }
 
 .gem-purchase-background {
@@ -659,8 +670,6 @@ td,th {
 
 
 
-
-
 /* themes */
 
 .inventory-background-classic-theme {
@@ -672,7 +681,7 @@ td,th {
 }
 
 .inventory-background-fruit-theme {
-    background-color:rgb(240, 245, 201);
+    background-color:rgb(208, 215, 151);
 }
 
 .fruit-theme {
@@ -681,7 +690,7 @@ td,th {
 
 
 .inventory-background-pink-theme {
-    background-color:rgb(241, 221, 233);
+    background-color:rgb(225, 186, 209);
 }
 
 .pink-theme {
@@ -689,7 +698,7 @@ td,th {
 }
 
 .inventory-background-ice-theme {
-    background-color:rgb(223, 245, 244);
+    background-color:rgb(175, 213, 211);
 }
 
 .ice-theme {

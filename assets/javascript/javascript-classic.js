@@ -117,6 +117,11 @@ $('.counters-unlocked').on('click', function () {
     $(this).addClass('inventory-selected');
 });
 
+$('.theme-unlocked').on('click', function () {
+    $('.theme-unlocked').removeClass('inventory-selected');
+    $(this).addClass('inventory-selected');
+});
+
 /* buying counters */
 
 var redCounter = '<img src="assets/images/red-counter.png" class="counter">';
@@ -131,16 +136,45 @@ var fruitCounterPurchased = false;
 var candyCounterPurchased = false;
 var gemCounterPurchased = false;
 
-
-
-$('#candy-counters-purchase').on('click', function () {
-    if (coins >= 900 && candyCounterPurchased == false) {
-        buyCounters('candy')
-        candyCounterPurchased = true;
+$('#fruit-counters-purchase').on('click', function () {
+    if (coins >= 600 && fruitCounterPurchased == false) {
+        fruitCounterPurchased = true;
+        $('#fruit-counter-inventory-select').children().remove();
+        $('#fruit-counter-inventory-select').append('<div><img src="assets/images/yellow-fruit-counter.png" class="counter-inventory"></div>');
+        $('#fruit-counter-inventory-select').addClass('counters-unlocked');
+        for (i = 0; i < 600; i++) {
+            coins--;
+        };
+        $('#player-coins').html(coins);
+        $('#select-fruit-theme').addClass('theme-unlocked');
     }
 });
 
+$('#candy-counters-purchase').on('click', function () {
+    if (coins >= 900 && candyCounterPurchased == false) {
+        candyCounterPurchased = true;
+        $('#candy-counter-inventory-select').children().remove();
+        $('#candy-counter-inventory-select').append('<div><img src="assets/images/orange-candy-counter.png" class="counter-inventory"></div>');
+        $('#candy-counter-inventory-select').addClass('counters-unlocked');
+        for (i = 0; i < 900; i++) {
+            coins--;
+        };
+        $('#player-coins').html(coins);
+    }
+});
 
+$('#gem-counters-purchase').on('click', function () {
+    if (coins >= 1200 && gemCounterPurchased == false) {
+        gemCounterPurchased = true;
+        $('#gem-counter-inventory-select').children().remove();
+        $('#gem-counter-inventory-select').append('<div><img src="assets/images/blue-gem-counter.png" class="counter-inventory"></div>');
+        $('#gem-counter-inventory-select').addClass('counters-unlocked');
+        for (i = 0; i < 1200; i++) {
+            coins--;
+        };
+        $('#player-coins').html(coins);
+    }
+});
 
 /* selecting counters */
 
