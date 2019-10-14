@@ -721,6 +721,9 @@ function checkCounters() {
             $('#player-coins').html(coins);
             setTimeout(function () {
                 $('#player-name-loser').text(playerName);
+                $('.counter').remove();
+                $('.basic-counter').remove();
+                $('.counter-noshadow').remove();
                 console.log(playerName);
                 $('#loserModal').modal('show');
             }, 200);
