@@ -48,6 +48,7 @@ var holeSelect = 1;
 var gameStarted = false;
 var fullGames = 0;
 var coins = 0;
+var soundOn = true;
 
 var playerLocationOne = 0;
 var playerLocationTwo = 0;
@@ -60,6 +61,20 @@ var masterLocationThree = 0;
 var masterLocationFour = 0;
 
 var winnerBoolean = false;
+
+/* sound on/off */
+
+$('#sound-on-off').on('click', function () {
+    if (soundOn == true) {
+        soundOn = false;
+        $('#sound-on-off').children('i').remove();
+        $('#sound-on-off').append('<i class="fas fa-volume-mute mr-3"></i>');
+    } else {
+        soundOn = true;
+        $('#sound-on-off').children('i').remove();
+        $('#sound-on-off').append('<i class="fas fa-volume-up mr-3"></i>');
+    }
+});
 
 /* difficulty setting */
 
@@ -439,7 +454,9 @@ function start() {
     round = 1;
     holeSelect = 1;
     selectedHole();
-    startSound.play();
+    if (soundOn == true) {
+        startSound.play();
+    }
     $('#master-cover').removeClass('d-none');
     $('#master-cover').addClass('fade-in');
     $('#ready-button').remove();
@@ -575,15 +592,17 @@ function chooseColour(chosenColour, colourNum) {
 /* sound randomised for when the player places a counter */
 
 function counterDownSound() {
-    var pick = Math.floor(Math.random() * 3);
-    console.log('pick ', pick)
-    if (pick == 0) {
-        counterDown.play();
-    } else if (pick == 1) {
-        counterDownTwo.play();
-    } else if (pick == 2) {
-        counterDownThree.play();
-    };
+    if (soundOn == true) {
+        var pick = Math.floor(Math.random() * 3);
+        console.log('pick ', pick)
+        if (pick == 0) {
+            counterDown.play();
+        } else if (pick == 1) {
+            counterDownTwo.play();
+        } else if (pick == 2) {
+            counterDownThree.play();
+        }
+    }
 }
 
 /* A arrow showing the user where the next counter will go */
@@ -608,7 +627,9 @@ function selectedHole() {
 function removeCounter() {
     if (gameStarted == true) {
         var countHoleSelector = '#r-' + round;
-        removeCounterSound.play();
+        if (soundOn == true) {
+            removeCounterSound.play();
+        }
         if (holeSelect == 2) {
             $(countHoleSelector + '-c-one').html('');
             holeSelect--;
@@ -649,7 +670,9 @@ function checkCounters() {
         var masterLocationThreeChecked = false;
         var masterLocationFourChecked = false;
 
-        lineCheckedSound.play();
+        if (soundOn == true) {
+            lineCheckedSound.play();
+        }
 
         /* check to see if the colour is correct and in the right location */
 
@@ -737,7 +760,9 @@ function checkCounters() {
         };
 
         if (round == 10 && winnerBoolean == false) {
-            gameOverSound.play();
+            if (soundOn == true) {
+                gameOverSound.play();
+            }
             for (i = 0; i < 50; i++) {
                 coins--;
             };
@@ -806,7 +831,9 @@ function levelComplete() {
     $('#master-cover').removeClass('fade-in');
     $('#master-cover').addClass('d-none');
     $('.hole-selector').remove();
-    gameWon.play();
+    if (soundOn == true) {
+        gameWon.play();
+    }
     gameStarted = false;
 
     /* putting play button back */

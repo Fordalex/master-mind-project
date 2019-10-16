@@ -456,6 +456,12 @@ h6 {
     transition-timing-function: ease-in-out;
 }
 
+/* coin counter and sound */
+
+#sound-on-off:hover {
+    cursor:pointer;
+}
+
 /* accessory shop */
 
 .coin-color {
