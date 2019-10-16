@@ -157,7 +157,7 @@ $('#candy-counters-purchase').on('click', function () {
     if (coins >= 900 && candyCounterPurchased == false) {
         candyCounterPurchased = true;
         $('#candy-counter-inventory-select').children().remove();
-        $('#candy-counter-inventory-select').append('<div><img src="assets/images/orange-candy-counter.png" class="counter-inventory"></div>');
+        $('#candy-counter-inventory-select').append('<div><img src="assets/images/red-candy-counter.png" class="counter-inventory"></div>');
         $('#candy-counter-inventory-select').addClass('counters-unlocked');
         for (i = 0; i < 900; i++) {
             coins--;

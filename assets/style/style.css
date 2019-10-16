@@ -296,8 +296,8 @@ h6 {
 
 .not-in-use {
     position:absolute;
-    color:rgb(173, 31, 31);
-    font-size: 25px;
+    color:rgb(148, 42, 42);
+    font-size: 35px;
 }
 
 /* chosen counter */
@@ -413,12 +413,15 @@ h6 {
 }
 
 .expand-container {
-    display:flex;
-    justify-content:space-around;
     padding-top: 15px;
     padding-bottom:15px;
     padding-right:10px;
     padding-left:10px;
+}
+
+.justify-around {
+    display:flex;
+    justify-content: space-around;
 }
 
 .dropdown-arrow {
