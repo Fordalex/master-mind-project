@@ -250,12 +250,6 @@ var iceBackgroundPurchased = false;
 
 function buyTheme(themeName) {
     themes = {
-        'classic': {
-            'cost': 0,
-            'background': 'classic-background',
-            'inventoryBackgroundTheme': 'inventory-background-classic-theme',
-            'themeStyle': 'classic-theme'
-        },
         'fruit': {
             'cost': 100,
             'background': 'fruit-background',
@@ -264,7 +258,8 @@ function buyTheme(themeName) {
             'themePurchased': fruitBackgroundPurchased,
             'themeInventory': '#select-fruit-theme',
             'inventoryBackgroundImage': 'fruit-background-container',
-            'storeItemContainer' : '#fruit-background-purchase'
+            'storeItemContainer': '#fruit-background-purchase',
+            'playButton': 'play-button-fruit'
         },
         'pink': {
             'cost': 200,
@@ -274,7 +269,8 @@ function buyTheme(themeName) {
             'themePurchased': pinkBackgroundPurchased,
             'themeInventory': '#select-pink-theme',
             'inventoryBackgroundImage': 'pink-background-container',
-            'storeItemContainer' : '#pink-background-purchase'
+            'storeItemContainer': '#pink-background-purchase',
+            'playButton': 'play-button-pink'
         },
         'ice': {
             'cost': 300,
@@ -284,7 +280,8 @@ function buyTheme(themeName) {
             'themePurchased': iceBackgroundPurchased,
             'themeInventory': '#select-ice-theme',
             'inventoryBackgroundImage': 'ice-background-container',
-            'storeItemContainer' : '#ice-background-purchase'
+            'storeItemContainer': '#ice-background-purchase',
+            'playButton': 'play-button-ice'
         },
     }
     theme = themes[themeName];
@@ -308,7 +305,13 @@ function buyTheme(themeName) {
         $('#player-name-stats').removeClass('fruit-theme');
         $('#player-name-stats').removeClass('colour-secondary');
         $('#player-name-stats').addClass(theme.themeStyle);
+        $('#ready-button').removeClass('play-button-classic');
+        $('#ready-button').removeClass('play-button-fruit');
+        $('#ready-button').removeClass('play-button-ice');
+        $('#ready-button').removeClass('play-button-pink');
+        $('#ready-button').addClass(theme.playButton);
         currentTheme = theme.themeStyle;
+        currentThemePlayButton = theme.playButton;
         for (i = 0; i < theme.cost; i++) {
             coins--;
         };
@@ -344,32 +347,36 @@ $('#ice-background-purchase').on('click', function () {
 /* selecting theme */
 
 var currentTheme = 'classic-theme';
+var currentThemePlayButton = 'play-button-classic'
 
 function changeTheme(themeName) {
     themes = {
         'classic': {
             'background': 'classic-background',
             'inventoryBackground': 'inventory-background-classic-theme',
-            'themeStyle': 'classic-theme'
+            'themeStyle': 'classic-theme',
+            'playButton': 'play-button-classic'
         },
         'fruit': {
             'background': 'fruit-background',
             'inventoryBackground': 'inventory-background-fruit-theme',
-            'themeStyle': 'fruit-theme'
+            'themeStyle': 'fruit-theme',
+            'playButton': 'play-button-fruit'
         },
         'pink': {
             'background': 'pink-background',
             'inventoryBackground': 'inventory-background-pink-theme',
-            'themeStyle': 'pink-theme'
+            'themeStyle': 'pink-theme',
+            'playButton': 'play-button-pink'
         },
         'ice': {
             'background': 'ice-background',
             'inventoryBackground': 'inventory-background-ice-theme',
-            'themeStyle': 'ice-theme'
+            'themeStyle': 'ice-theme',
+            'playButton': 'play-button-ice'
         },
     }
     theme = themes[themeName]
-
     $('body').removeClass('ice-background');
     $('body').removeClass('pink-background');
     $('body').removeClass('fruit-background');
@@ -388,7 +395,13 @@ function changeTheme(themeName) {
     $('#player-name-stats').removeClass('fruit-theme');
     $('#player-name-stats').removeClass('colour-secondary');
     $('#player-name-stats').addClass(theme.themeStyle);
+    $('#ready-button').removeClass('play-button-classic');
+    $('#ready-button').removeClass('play-button-fruit');
+    $('#ready-button').removeClass('play-button-ice');
+    $('#ready-button').removeClass('play-button-pink');
+    $('#ready-button').addClass(theme.playButton);
     currentTheme = theme.themeStyle;
+    currentThemePlayButton = theme.playButton;
 };
 
 $('#select-classic-theme').on('click', function () {
@@ -800,7 +813,7 @@ function levelComplete() {
 
     $('#ready-start-button-container').html(`
         <i class="fas fa-long-arrow-alt-right left-play-arrow"></i>
-        <button onclick="start()" id="ready-button" class="play-button">Play!<i class="mx-2 fas fa-play"></i></button>
+        <button onclick="start()" id="ready-button" class="${currentThemePlayButton}">Play!<i class="mx-2 fas fa-play"></i></button>
         <i class="fas fa-long-arrow-alt-left right-play-arrow"></i>
     `);
 

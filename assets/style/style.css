@@ -48,7 +48,7 @@ h6 {
     align-items:center;
 }
 
-.play-button {
+.play-button-classic {
     font-family: 'Grenze', serif;
     height:40px;
     width:100px;
@@ -60,7 +60,60 @@ h6 {
     border:solid silver 2px;
 }
 
-.play-button:hover {
+.play-button-classic:hover {
+    color:gray;
+    text-decoration:none;
+}
+
+.play-button-fruit {
+    font-family: 'Grenze', serif;
+    height: 40px;
+    width: 100px;
+    background-image: linear-gradient(#ffe48c, rgb(168, 239, 160));
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    color: rgb(36, 113, 61);
+    border: solid rgb(86, 157, 86) 2px;
+}
+}
+
+.play-button-fruit:hover {
+    color:rgb(155, 139, 109);
+    text-decoration:none;
+}
+
+.play-button-pink {
+    font-family: 'Grenze', serif;
+    height: 40px;
+    width: 100px;
+    background-image: linear-gradient(#ffe7e7, rgb(255, 177, 177));
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #d87474;
+    border: solid #ff9696 2px;
+}
+
+.play-button-pink:hover {
+    color:gray;
+    text-decoration:none;
+}
+
+.play-button-ice {
+    font-family: 'Grenze', serif;
+    height: 40px;
+    width: 100px;
+    background-image: linear-gradient(#dae5e6, rgb(168, 210, 213));
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #4b8998;
+    border: solid #a4e1dd 2px;
+}
+}
+
+.play-button-ice:hover {
     color:gray;
     text-decoration:none;
 }
