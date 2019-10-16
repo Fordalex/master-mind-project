@@ -145,6 +145,8 @@ $('#fruit-counters-purchase').on('click', function () {
         $('#fruit-counter-inventory-select').children().remove();
         $('#fruit-counter-inventory-select').append('<div><img src="assets/images/yellow-fruit-counter.png" class="counter-inventory"></div>');
         $('#fruit-counter-inventory-select').addClass('counters-unlocked');
+        $('#fruit-counters-purchase').children('p').remove();
+        $('#fruit-counters-purchase').append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
         for (i = 0; i < 200; i++) {
             coins--;
         };
@@ -159,6 +161,8 @@ $('#candy-counters-purchase').on('click', function () {
         $('#candy-counter-inventory-select').children().remove();
         $('#candy-counter-inventory-select').append('<div><img src="assets/images/red-candy-counter.png" class="counter-inventory"></div>');
         $('#candy-counter-inventory-select').addClass('counters-unlocked');
+        $('#candy-counters-purchase').children('p').remove();
+        $('#candy-counters-purchase').append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
         for (i = 0; i < 350; i++) {
             coins--;
         };
@@ -172,6 +176,8 @@ $('#gem-counters-purchase').on('click', function () {
         $('#gem-counter-inventory-select').children().remove();
         $('#gem-counter-inventory-select').append('<div><img src="assets/images/blue-gem-counter.png" class="counter-inventory"></div>');
         $('#gem-counter-inventory-select').addClass('counters-unlocked');
+        $('#gem-counters-purchase').children('p').remove();
+        $('#gem-counters-purchase').append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
         for (i = 0; i < 500; i++) {
             coins--;
         };
@@ -257,7 +263,8 @@ function buyTheme(themeName) {
             'themeStyle': 'fruit-theme',
             'themePurchased': fruitBackgroundPurchased,
             'themeInventory': '#select-fruit-theme',
-            'inventoryBackgroundImage': 'fruit-background-container'
+            'inventoryBackgroundImage': 'fruit-background-container',
+            'storeItemContainer' : '#fruit-background-purchase'
         },
         'pink': {
             'cost': 200,
@@ -266,7 +273,8 @@ function buyTheme(themeName) {
             'themeStyle': 'pink-theme',
             'themePurchased': pinkBackgroundPurchased,
             'themeInventory': '#select-pink-theme',
-            'inventoryBackgroundImage': 'pink-background-container'
+            'inventoryBackgroundImage': 'pink-background-container',
+            'storeItemContainer' : '#pink-background-purchase'
         },
         'ice': {
             'cost': 300,
@@ -275,7 +283,8 @@ function buyTheme(themeName) {
             'themeStyle': 'ice-theme',
             'themePurchased': iceBackgroundPurchased,
             'themeInventory': '#select-ice-theme',
-            'inventoryBackgroundImage': 'ice-background-container'
+            'inventoryBackgroundImage': 'ice-background-container',
+            'storeItemContainer' : '#ice-background-purchase'
         },
     }
     theme = themes[themeName];
@@ -306,6 +315,8 @@ function buyTheme(themeName) {
         $('#player-coins').html(coins);
         $(theme.themeInventory).children().remove();
         $(theme.themeInventory).addClass(theme.inventoryBackgroundImage);
+        $(theme.storeItemContainer).children('p').remove();
+        $(theme.storeItemContainer).append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
     }
 };
 
@@ -812,7 +823,10 @@ function levelComplete() {
         $('#player-name-winner').text(playerName);
         $('#time-taken-min').html(timerMin);
         $('#time-taken-sec').html(timerSec);
-        $('#winnerModal').modal('show');
+        $('#winnerModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
         $('#timer-min').html(0);
         $('#timer-sec').html(0);
     }, 200);
