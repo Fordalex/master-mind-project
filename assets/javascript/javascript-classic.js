@@ -12,8 +12,12 @@ $(document).ready(function () {
 
 $('.expand-button').on('click', function () {
     $(this).next('div').slideToggle('slow');
-    console.log('press')
-})
+    if ($(this).children('i').css('transform') == "none") {
+        $(this).children('i').css('transform',"rotateZ(180deg)");
+    } else {
+        $(this).children('i').css('transform',"none");
+    }
+});
 
 /* entry modal */
 
@@ -34,7 +38,6 @@ function addName() {
             coins++;
         }
         $('#player-coins').html(coins);
-        console.log('coins')
     }
 };
 

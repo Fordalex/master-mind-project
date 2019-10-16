@@ -74,6 +74,10 @@ Adding a modal using Jquery:
 
 * [Bootstrap modal methods and events](https://www.youtube.com/watch?v=1yrTszHY-mQ)
 
+Used for rotating the drop down arrow:
+
+* [transfrom](https://stackoverflow.com/questions/21919044/css3-transition-on-click-using-pure-css)
+
 Prevent the modal from opening:
 
 * [Stack overflow](https://stackoverflow.com/questions/16152073/prevent-bootstrap-modal-from-disappearing-when-clicking-outside-or-pressing-esca)
