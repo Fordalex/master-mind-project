@@ -140,12 +140,12 @@ var candyCounterPurchased = false;
 var gemCounterPurchased = false;
 
 $('#fruit-counters-purchase').on('click', function () {
-    if (coins >= 600 && fruitCounterPurchased == false) {
+    if (coins >= 200 && fruitCounterPurchased == false) {
         fruitCounterPurchased = true;
         $('#fruit-counter-inventory-select').children().remove();
         $('#fruit-counter-inventory-select').append('<div><img src="assets/images/yellow-fruit-counter.png" class="counter-inventory"></div>');
         $('#fruit-counter-inventory-select').addClass('counters-unlocked');
-        for (i = 0; i < 600; i++) {
+        for (i = 0; i < 200; i++) {
             coins--;
         };
         $('#player-coins').html(coins);
@@ -154,12 +154,12 @@ $('#fruit-counters-purchase').on('click', function () {
 });
 
 $('#candy-counters-purchase').on('click', function () {
-    if (coins >= 900 && candyCounterPurchased == false) {
+    if (coins >= 350 && candyCounterPurchased == false) {
         candyCounterPurchased = true;
         $('#candy-counter-inventory-select').children().remove();
         $('#candy-counter-inventory-select').append('<div><img src="assets/images/red-candy-counter.png" class="counter-inventory"></div>');
         $('#candy-counter-inventory-select').addClass('counters-unlocked');
-        for (i = 0; i < 900; i++) {
+        for (i = 0; i < 350; i++) {
             coins--;
         };
         $('#player-coins').html(coins);
@@ -167,12 +167,12 @@ $('#candy-counters-purchase').on('click', function () {
 });
 
 $('#gem-counters-purchase').on('click', function () {
-    if (coins >= 1200 && gemCounterPurchased == false) {
+    if (coins >= 500 && gemCounterPurchased == false) {
         gemCounterPurchased = true;
         $('#gem-counter-inventory-select').children().remove();
         $('#gem-counter-inventory-select').append('<div><img src="assets/images/blue-gem-counter.png" class="counter-inventory"></div>');
         $('#gem-counter-inventory-select').addClass('counters-unlocked');
-        for (i = 0; i < 1200; i++) {
+        for (i = 0; i < 500; i++) {
             coins--;
         };
         $('#player-coins').html(coins);
@@ -251,7 +251,7 @@ function buyTheme(themeName) {
             'themeStyle': 'classic-theme'
         },
         'fruit': {
-            'cost': 200,
+            'cost': 100,
             'background': 'fruit-background',
             'inventoryBackgroundTheme': 'inventory-background-fruit-theme',
             'themeStyle': 'fruit-theme',
@@ -260,7 +260,7 @@ function buyTheme(themeName) {
             'inventoryBackgroundImage': 'fruit-background-container'
         },
         'pink': {
-            'cost': 300,
+            'cost': 200,
             'background': 'pink-background',
             'inventoryBackgroundTheme': 'inventory-background-pink-theme',
             'themeStyle': 'pink-theme',
@@ -269,7 +269,7 @@ function buyTheme(themeName) {
             'inventoryBackgroundImage': 'pink-background-container'
         },
         'ice': {
-            'cost': 400,
+            'cost': 300,
             'background': 'ice-background',
             'inventoryBackgroundTheme': 'inventory-background-ice-theme',
             'themeStyle': 'ice-theme',
@@ -310,21 +310,21 @@ function buyTheme(themeName) {
 };
 
 $('#fruit-background-purchase').on('click', function () {
-    if (coins >= 200) {
+    if (coins >= 100) {
         buyTheme('fruit');
         fruitBackgroundPurchased = true;
     }
 });
 
 $('#pink-background-purchase').on('click', function () {
-    if (coins >= 300) {
+    if (coins >= 200) {
         buyTheme('pink');
         pinkBackgroundPurchased = true;
     }
 });
 
 $('#ice-background-purchase').on('click', function () {
-    if (coins >= 400) {
+    if (coins >= 300) {
         buyTheme('ice');
         iceBackgroundPurchased = true;
     }
