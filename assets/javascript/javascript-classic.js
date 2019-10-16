@@ -13,9 +13,9 @@ $(document).ready(function () {
 $('.expand-button').on('click', function () {
     $(this).next('div').slideToggle('slow');
     if ($(this).children('i').css('transform') == "none") {
-        $(this).children('i').css('transform',"rotateZ(180deg)");
+        $(this).children('i').css('transform', "rotateZ(180deg)");
     } else {
-        $(this).children('i').css('transform',"none");
+        $(this).children('i').css('transform', "none");
     }
 });
 
@@ -419,6 +419,8 @@ function start() {
     $('#master-cover').removeClass('d-none');
     $('#master-cover').addClass('fade-in');
     $('#ready-button').remove();
+    $('.left-play-arrow').remove();
+    $('.right-play-arrow').remove();
     setTimeout(function () {
         generateCounters(difficultyGenerate);
         gameStarted = true;
@@ -448,7 +450,6 @@ function generateCounters(difficulty) {
     masterLocationTwo = Math.floor(Math.random() * difficulty);
     masterLocationThree = Math.floor(Math.random() * difficulty);
     masterLocationFour = Math.floor(Math.random() * difficulty);
-
 
     if (masterLocationOne == 0) {
         $('#master-one').html(redCounter);
@@ -482,7 +483,6 @@ function generateCounters(difficulty) {
         $('#master-two').html('');
     }
 
-
     if (masterLocationThree == 0) {
         $('#master-three').html(redCounter);
     } else if (masterLocationThree == 1) {
@@ -499,7 +499,6 @@ function generateCounters(difficulty) {
         $('#master-three').html('');
     }
 
-
     if (masterLocationFour == 0) {
         $('#master-four').html(redCounter);
     } else if (masterLocationFour == 1) {
@@ -515,9 +514,6 @@ function generateCounters(difficulty) {
     } else {
         $('#master-four').html('');
     }
-
-
-    console.log(masterLocationOne, masterLocationTwo, masterLocationThree, masterLocationFour)
 };
 
 function chooseColour(chosenColour, colourNum) {
@@ -727,7 +723,6 @@ function checkCounters() {
                 $('.counter').remove();
                 $('.basic-counter').remove();
                 $('.counter-noshadow').remove();
-                console.log(playerName);
                 $('#loserModal').modal('show');
             }, 200);
         }
@@ -792,7 +787,11 @@ function levelComplete() {
 
     /* putting play button back */
 
-    $('#ready-start-button-container').html('<button onclick="start()" id="ready-button">Play!<i class="mx-2 fas fa-play"></i></button>');
+    $('#ready-start-button-container').html(`
+        <i class="fas fa-long-arrow-alt-right left-play-arrow"></i>
+        <button onclick="start()" id="ready-button" class="play-button">Play!<i class="mx-2 fas fa-play"></i></button>
+        <i class="fas fa-long-arrow-alt-left right-play-arrow"></i>
+    `);
 
     /* adding coins */
 
@@ -827,7 +826,6 @@ var timerMin = 0;
 var timer = false;
 
 function timerFunction() {
-    console.log('timer')
     if (timer == true) {
         setTimeout(function () {
             timerSec++;

@@ -65,6 +65,23 @@ h6 {
     text-decoration:none;
 }
 
+.left-play-arrow {
+    position:relative;
+    animation-name:leftPlayArrow;
+    animation-duration:0.7s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-out;
+    animation-direction: alternate;
+}
+
+.right-play-arrow {
+    position:relative;
+    animation-name:rightPlayArrow;
+    animation-duration:0.7s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-out;
+    animation-direction: alternate;
+}
 
 #ready-button:hover {
     background-image: linear-gradient(rgb(207, 207, 207), #dedede);
@@ -656,6 +673,16 @@ td,th {
 @keyframes arrowRotate {
     0% {transform: rotateZ(0deg);}
     100% {transform: rotateZ(-180deg);}
+}
+
+@keyframes leftPlayArrow {
+    0% {right: 0px;}
+    100% {right: 50px;}
+}
+
+@keyframes rightPlayArrow {
+    0% {left: 0px;}
+    100% {left: 50px;}
 }
 
 /* media queries */
