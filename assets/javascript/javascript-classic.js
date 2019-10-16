@@ -462,6 +462,7 @@ function start() {
     $('#ready-button').remove();
     $('.left-play-arrow').remove();
     $('.right-play-arrow').remove();
+    $('#round-counter').html(round);
     setTimeout(function () {
         generateCounters(difficultyGenerate);
         gameStarted = true;
