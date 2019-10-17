@@ -12,7 +12,7 @@ I have tried to build this project to be very simple for the user to navigate th
 
 The first modal that the user is faced with they cannot remove, click off, or press 'esc' this information needs to be filled in so that mastermind knows what to do next. Generating 3, 5 or 7 different coloured counters to be later guessed by the player.
 
-After this information has been entered the user will see that mastermind is generating diffrent coloured counters four times every second to show the user the multiple possibilities. The counters being genereated will depend on what level of difficulty that the user has selected.
+After this information has been entered the user will see that mastermind is generating different coloured counters four times every second to show the user the multiple possibilities. The counters being genereated will depend on what level of difficulty that the user has selected.
 
 Playing the game:
 
@@ -64,7 +64,7 @@ HTML 5 - Used to add the content on the site.
 
 CSS 3 - Used to style to content and the responsive layout.
 
-Javascript - For a interactive design, used for the logic for the game.
+Javascript - For a interactive design, used for the logic for the game and drop down sections, buttons.. ect.
 
 jquery - Speed up the development process with javascript.
 
@@ -76,8 +76,25 @@ I achieved this by:
 
 1. clicking on the settings
 2. Scrolling down and selecting on the master branch
-![alt text](https://github.com/Fordalex/master-mind-project/readme/depolyment.png "Master branch")
 
+![Master Branch](https://github.com/Fordalex/master-mind-project/blob/master/readme/deployment.png "Master branch")
+3. A link at the top of the page will take you directly to mastermind
+
+### How to run locally:
+
+## Download:
+
+1. Go to https://github.com/Fordalex/master-mind-project
+2. Click on 
+![clone or download](https://github.com/Fordalex/master-mind-project/blob/master/readme/clone-or-download.png "clone or download")
+3. Click download zip.
+4. Extract zip file.
+5. Import in to preferred IDE.
+
+## Using Git:
+
+1. Open terminal in preferred IDE.
+2. Type "git clone https://github.com/Fordalex/master-mind-project"
 
 ## Credits
 
