@@ -78,23 +78,27 @@ I achieved this by:
 2. Scrolling down and selecting on the master branch
 
 ![Master Branch](https://github.com/Fordalex/master-mind-project/blob/master/readme/deployment.png "Master branch")
+
 3. A link at the top of the page will take you directly to mastermind
 
 ### How to run locally:
 
-## Download:
+#### Download:
 
 1. Go to https://github.com/Fordalex/master-mind-project
 2. Click on 
+
 ![clone or download](https://github.com/Fordalex/master-mind-project/blob/master/readme/clone-or-download.png "clone or download")
-3. Click download zip.
-4. Extract zip file.
-5. Import in to preferred IDE.
 
-## Using Git:
+3. Click download zip
+4. Extract zip file
+5. Import in to preferred IDE
 
-1. Open terminal in preferred IDE.
-2. Type "git clone https://github.com/Fordalex/master-mind-project"
+#### Using Git:
+
+1. Open terminal in preferred IDE
+2. Write "git clone https://github.com/Fordalex/master-mind-project"
+3. Press enter
 
 ## Credits
 
