@@ -8,16 +8,15 @@ Can you beat the computer? Find out: [Mastermind](https://fordalex.github.io/mas
 
 ## UX
 
-I have tried to build this project to be very simple for the user to navigate through the webpages. The first page starts explaining how to play mastermind and a screenshot to make it easyier for the user to understand on how to play. After this information the player will see a large 'play Mastermind' button taking them to the next page.
+I have tried to build this project to be very simple for the user to navigate through the webpages. The first page starts explaining how to play mastermind and a screenshot to make it easyier for the user to understand on how to play. After this information, the player will see a large 'play' button taking them to the next page.
 
 The first modal that the user is faced with they cannot remove, click off, or press 'esc' this information needs to be filled in so that mastermind knows what to do next. Generating 3, 5 or 7 different coloured counters to be later guessed by the player.
 
 After this information has been entered the user will see that mastermind is generating diffrent coloured counters four times every second to show the user the multiple possibilities. The counters being genereated will depend on what level of difficulty that the user has selected.
 
-
 Playing the game:
 
-After the user has pressed 'Play Mastermind' on the first page. Then inputted their name and difficulty level, the user is shown the board and flashing arrows at the top of the board saying 'play' indicating on what the user has to press next.
+After the user has pressed 'Play' on the first page. Then inputted their name and difficulty level, the user is shown the board and flashing arrows at the top of the board saying 'play' indicating on what the user has to press next.
 
 I tested this game out on a few peple at work and didn't help them through testing it.
 
@@ -25,13 +24,11 @@ I tested this game out on a few peple at work and didn't help them through testi
 
 * Also users with bigger hands were struggling with the size of the buttons so i have made sure to change the size of these making them easier to notice and press.
 
-
-
 ## Features
 
 Choosing Colours - The user is able to select the colours of the pegs and put them in order on the virtual board to allow the user to guess the computers coloured pegs, and remove them if a mistake is made.
 
-After a while the game doesn't seem to have a reason to keep playing, you can choose between two themes if you get bored. But the user doesn't get anything for doing better than the last round, I am implementing a feature where the player will receive coins. The faster you solve the masters counters and the few guesses it takes you, the more coins you will get. The coins will be used to buy different counters, if you lose the computer will take some coins back off you!
+After a while the game doesn't seem to have a reason to keep playing, I have added a system where the player will receive coins back after winning a game or lose coins for not getting the answer correct. The coins can be used to purchase different counters and themes while playing the game.
 
 ### Features Left to Implement
 
@@ -39,16 +36,47 @@ At the end of the game, if the user wins I would like counters to be generated o
 
 Also more categorys for items to be purchased keeping the user intrested for a longer time. 
 
+When the player wins or loses i would like it to show the player what the answer was as currently it just takes you straight to the modal.
 
 ## Testing and Bugs
 
 [Testing And Bugs](https://github.com/Fordalex/master-mind-project/blob/master/testing-bugs.md)
 
+## Technologies Used
+
+Adobe XD - Was used to build the wireframes to this project, and will be using for future projects as I didn't notice many limitations.
+
+Blender3D - I used this to create some of the counters and the board.
+
+Photoshop - Used for rescaling the images, also for cutting the fruit counters out and light adjustments to images.
+
+Font Awesome - Used for the icons.
+
+bootstrap4 - Used to speed up the building process and for some parts of the project using their grid layout.
+
+Pexels - Used for the free images.
+
+Unsplash - Used for the free images.
+
+Google Font - Added the different fonts using this program.
+
+HTML 5 - Used to add the content on the site.
+
+CSS 3 - Used to style to content and the responsive layout.
+
+Javascript - For a interactive design, used for the logic for the game.
+
+jquery - Speed up the development process with javascript.
+
 ## Deployment
 
-This project is hosted on github, the first page the user will be taken to after they have press the link will be `index.html`. As github understand this being the main page, without this nothing will be displayed.
+This project is hosted on github, the first page the user will be taken to after they have press the link will be `index.html`. As github understands this being the main page, without this nothing will be displayed.
 
+I achieved this by:
 
+1. clicking on the settings
+2. Scrolling down and selecting on the master branch
+![alt text](https://github.com/Fordalex/master-mind-project/readme/depolyment.png "Master branch")
 
 
 ## Credits
@@ -58,11 +86,11 @@ This project is hosted on github, the first page the user will be taken to after
 The photos used in this site were taken from:
 
 * [Pexels](https://www.pexels.com/)
+* [Unsplash](https://unsplash.com/)
 
 Audio was taken from:
 
 * [Free Sounds](https://freesound.org/)
-
 
 ### Acknowledgements
 
@@ -82,7 +110,7 @@ Prevent the modal from opening:
 
 * [Stack overflow](https://stackoverflow.com/questions/16152073/prevent-bootstrap-modal-from-disappearing-when-clicking-outside-or-pressing-esca)
 
-All audio taken from:
+Adding audio:
 
 * [Adding Audio](https://www.youtube.com/watch?v=p4OHVJxd2FI)
 

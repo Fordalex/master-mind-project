@@ -80,3 +80,8 @@ Currently, when the function is now called the 'if statement' will check the fir
 
 Easy fix, i just made sure that the user cannot press 'check' until the row is complete.
 
+## Bugs that need fixing
+
+* Currently, if the computer wins the stats aren't updated with anything.
+
+* 
