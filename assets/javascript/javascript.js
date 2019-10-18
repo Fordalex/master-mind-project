@@ -130,7 +130,8 @@ lineCheckedSound.src = "assets/audio/classic--line-checked.wav";
 
 /* counter container selected drop down*/
 
-$('.counters-unlocked').on('click', function () {
+
+$('body').on('click', '.counters-unlocked', function() {
     $('.counters-unlocked').removeClass('inventory-selected');
     $(this).addClass('inventory-selected');
 });
@@ -871,7 +872,6 @@ function levelComplete() {
         $('#timer-min').html(0);
         $('#timer-sec').html(0);
     }, 200);
-
 };
 
 /* Timer */
@@ -895,3 +895,12 @@ function timerFunction() {
     }
 }
 
+/* Total stats */
+
+var totalStatAttempts
+var totalStatTime
+var totalStatCoins
+
+function totalStats() {
+
+}

@@ -2,14 +2,21 @@
 
 For testing purposes, if you set your players name to 'cheat' with no capitals, you'll be given 8000 Coins to start the game with.
 
-I have been removing the masters cover by adding class 'd-none' and making sure that the pegs returned form the computer have been correct. 
-
 ### Checking if the counters are marked correctly:
+
+I have been removing the masters cover by adding class 'd-none' and making sure that the pegs returned from the computer have been correct. 
 
 Try clicking the 'check' button with nothing inputted, making sure a black peg will be return if there are any holes.
 
-'Add white counter' four times and press check. making sure the correct pegs are returned.
+Repeat this for each of the coulored counters. 
 
+After making thiat all the pges have been returned correctly refresh and start fresh.
+
+This time, Try clicking the 'check' with all the same coloured counters that mastermind has generated just in a different order.
+
+It should return four white pegs.
+
+Play the game mulitple times making should no incorrect pattern happen, 
 
 
 ### Buying new counters:
@@ -48,10 +55,7 @@ Try clicking on the classic theme in the inventory, the background image, icons 
 
 Repeat this in different orders, making sure that they still change correectly.
 
-
-
-
-The code is built using a mobile first appoach, to see more of the content the user just scrolls down the page. For the desktop view the board is on the left and the other content such as the accessory shop and the players stats are on the right. There is not loads of content wth this project so the layout was a easy problem to solve.
+The code is built using a mobile first appoach, to see more of the content the user just scrolls down the page. For the desktop view the board is on the left and the other content such as the accessory shop and the players stats are on the right. There are a few drop down section to keep the game looking simple, not too overwhelm the user. There is not loads of content with this project so the layout was a easy problem to solve.
 
 ## Bugs
 
@@ -80,8 +84,9 @@ Currently, when the function is now called the 'if statement' will check the fir
 
 Easy fix, i just made sure that the user cannot press 'check' until the row is complete.
 
-## Bugs that need fixing
+## Current Bugs
 
-* Currently, if the computer wins the stats aren't updated with anything.
+* If the computer wins the stats aren't updated with anything
 
-* 
+* If the player doesn't enter a name, then nothing is shown where i would like 'Player' to be shown
+

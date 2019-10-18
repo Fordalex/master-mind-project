@@ -76,7 +76,6 @@ h6 {
     color: rgb(36, 113, 61);
     border: solid rgb(86, 157, 86) 2px;
 }
-}
 
 .play-button-fruit:hover {
     color:rgb(155, 139, 109);
@@ -111,7 +110,7 @@ h6 {
     color: #4b8998;
     border: solid #a4e1dd 2px;
 }
-}
+
 
 .play-button-ice:hover {
     color:gray;
@@ -196,8 +195,8 @@ h6 {
     border-radius:50%;
     background-color:rgb(50,50,50);
     border:solid black 1px;
-    display: inline block;
-    float:left;
+    display: inline-block;
+    float: left;
     margin-right:14px;
 }
 
@@ -216,7 +215,7 @@ h6 {
     margin:4px;
     border-radius:50%;
     display:inline-block;
-    float:left;
+    float: left;
 }
 
 .check-round-button {
@@ -468,7 +467,7 @@ h6 {
     animation-name:coinGlow;
     animation-duration:3s;
     animation-iteration-count: infinite;
-    transition-timing-function: alternate;
+    animation-direction: alternate;
 }
 
 .expand-container {
@@ -495,8 +494,8 @@ h6 {
 }
 
 .shop-counter-container {
-    border-radius:solid black 1px;
-    border-radius:10px;
+    border:solid black 1px;
+    border-radius: 10px;
     background-color:white;
     border:solid black 1px;
     text-align: center;
@@ -514,7 +513,7 @@ h6 {
 }
 
 .shop-theme-container {
-    border-radius:solid black 1px;
+    border:solid black 1px;
     border-radius:10px;
     background-color:white;
     border:solid black 1px;
@@ -765,16 +764,6 @@ td,th {
         background-size:200%;
     }
 } 
-
-
-
-
-
-
-
-
-
-
 
 /* themes */
 
