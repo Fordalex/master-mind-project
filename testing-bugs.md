@@ -16,7 +16,7 @@ This time, Try clicking the 'check' with all the same coloured counters that mas
 
 It should return four white pegs.
 
-Play the game mulitple times making should no incorrect pattern happen, 
+Play the game mulitple times making should no incorrect patterns happen.
 
 
 ### Buying new counters:

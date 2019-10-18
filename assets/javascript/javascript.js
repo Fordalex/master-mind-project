@@ -897,9 +897,9 @@ function timerFunction() {
 
 /* Total stats */
 
-var totalStatAttempts
-var totalStatTime
-var totalStatCoins
+var totalStatAttempts;
+var totalStatTime;
+var totalStatCoins;
 
 function totalStats() {
 
