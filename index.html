@@ -33,21 +33,31 @@
                 <div class="col-lg-6 col-md-12 p-0 m-0 px-2 d-flex justify-content-center">
                     <div class="mastermind-menu p-3">
                         <h4>How To Play</h4>
-                        <h6 class="mt-3"><b>Aim Of The Game</b></h6>
-                        <p>Work out what sequence of coloured counters that Mastermind has hidden under cover.</p>
+                        <h6 class="mt-2"><b>Aim Of The Game</b></h6>
+                        <p>Mastermind is a game that requires a player to use logic, speculation and reasoning skills to
+                            determine the sequence of the coloured counters. The computer has secretly generated a sequence
+                            leaving players having 10 attempts to guess correctly, or the computer wins!.</p>
                         <h6><b>Step: 1</b></h6>
-                        <p>Place your first 4 counters by clicking on the counters to the side of the board, Then press
-                            'check'.
-                        </p>
+                        <p>Place your first 4 counters trying to workout what coloured counters the computer has generated. (You might want to start filling the first row with counters all of the same colour)</p>
                         <h6><b>Step: 2</b></h6>
-                        <p>If you got any coloured counters right, the computer will return black and white pegs.</p>
+                        <p>If you got any coloured counters right, the computer will return black and white pegs. (Black: Right colour, right place) (White: right colour, wrong place) or none if the colour is not in the hidden sequence.</p>
                         <h6><b>Step: 3</b></h6>
-                        <p>you have 10 attempts or the computer will win!</p>
+                        <p>Use a process of elimination to work out what is hidden under cover.</p>
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Video Explaination
-                        </button>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center mt-2">
+                                <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    Video Explaination
+                                </button>
+
+                            </div>
+                            <div class="col-12">
+                                <p class="m-0 my-2"><b>(Example Below)</b></p>
+                            </div>
+                        </div>
+
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -74,8 +84,8 @@
                             </div>
                         </div>
 
-                        <p><b>(Example Below)</b></p>
-                        <div class="col-12 m-0 p-0 d-flex mt-5 justify-content-center">
+
+                        <div class="col-12 m-0 p-0 d-flex justify-content-center">
                             <a href="classic-mastermind.html"
                                 class="play-button-classic d-flex justify-content-center align-items-center">Play<i
                                     class="mx-2 fas fa-play"></i></a>
