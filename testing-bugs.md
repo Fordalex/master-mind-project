@@ -88,7 +88,5 @@ Easy fix, i just made sure that the user cannot press 'check' until the row is c
 
 * If the computer wins the stats aren't updated with anything
 
-* If the player doesn't enter a name, then nothing is shown where i would like 'Player' to be shown
-
-* 
+* If the player doesn't enter a name, then nothing is shown where i would like 'Player' to be shown 
 
