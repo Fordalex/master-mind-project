@@ -131,12 +131,12 @@ lineCheckedSound.src = "assets/audio/classic--line-checked.wav";
 /* counter container selected drop down*/
 
 
-$('body').on('click', '.counters-unlocked', function() {
+$('body').on('click', '.counters-unlocked', function () {
     $('.counters-unlocked').removeClass('inventory-selected');
     $(this).addClass('inventory-selected');
 });
 
-$('body').on('click', '.themes-unlocked', function() {
+$('body').on('click', '.themes-unlocked', function () {
     $('.themes-unlocked').removeClass('inventory-selected');
     $(this).addClass('inventory-selected');
 });
@@ -767,17 +767,7 @@ function checkCounters() {
             if (soundOn == true) {
                 gameOverSound.play();
             }
-            for (i = 0; i < 50; i++) {
-                coins--;
-            };
-            $('#player-coins').html(coins);
-            setTimeout(function () {
-                $('#player-name-loser').text(playerName);
-                $('.counter').remove();
-                $('.basic-counter').remove();
-                $('.counter-noshadow').remove();
-                $('#loserModal').modal('show');
-            }, 200);
+            levelLost();
         }
 
         round++;
@@ -814,7 +804,6 @@ function levelComplete() {
     } else if (timerMin < 4) {
         timerBonus = 0;
     }
-    console.log(difficultySetting, difficultyBonus);
     var timerBonus;
     var difficultyBonus
     var roundCoinBonus = (10 - round + 1) * 10;
@@ -860,11 +849,11 @@ function levelComplete() {
     $('#difficulty-bonus').html(difficultyBonus);
     $('#timer-bonus').html(timerBonus);
 
-     /* total stats */
-     totalStatAttempts = addingTotalStats(round , totalStatAttempts);
-     $('#totalStatAttempts').html(totalStatAttempts);
-     totalStatCoins = addingTotalStats(totalRoundCoins , totalStatCoins);
-     $('#totalStatCoins').html(totalStatCoins);
+    /* total stats */
+    totalStatAttempts = addingTotalStats(round, totalStatAttempts);
+    $('#totalStatAttempts').html(totalStatAttempts);
+    totalStatCoins = addingTotalStats(totalRoundCoins, totalStatCoins);
+    $('#totalStatCoins').html(totalStatCoins);
 
     /* winner modal */
 
@@ -881,6 +870,36 @@ function levelComplete() {
         $('#timer-sec').html(0);
     }, 200);
 };
+
+function levelLost() {
+    timer = false;
+    gameStarted = false
+    $('#ready-start-button-container').html(`
+        <i class="fas fa-long-arrow-alt-right left-play-arrow"></i>
+        <button onclick="start()" id="ready-button" class="${currentThemePlayButton}">Play!<i class="mx-2 fas fa-play"></i></button>
+        <i class="fas fa-long-arrow-alt-left right-play-arrow"></i>
+    `);
+    for (i = 0; i < 50; i++) {
+        coins--;
+    };
+    $('#player-coins').html(coins);
+    $('.marker-peg').remove();
+    $('#round-counter').html(1);
+    $('#master-cover').addClass('d-none');
+    setTimeout(function () {
+        $('#player-name-loser').text(playerName);
+        $('.counter').remove();
+        $('.basic-counter').remove();
+        $('.counter-noshadow').remove();
+        $('#loserModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    }, 200);
+    totalStatAttempts = addingTotalStats(round, totalStatAttempts);
+    $('#totalStatAttempts').html(totalStatAttempts);
+
+}
 
 /* Timer */
 
