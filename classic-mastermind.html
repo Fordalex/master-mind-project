@@ -43,7 +43,7 @@
 
                 <!-- Mastermind board -->
 
-                <div class="col-sm-12 col-lg-6 p-0 mb-4 d-flex justify-content-center">
+                <div class="col-sm-12 col-md-6 p-0 mb-4 d-flex justify-content-center">
                     <div class="mastermind-board-container">
 
                         <div class="row m-0 p-0 answer-container">
@@ -279,7 +279,7 @@
 
                 <!-- shop and stats -->
 
-                <div class="col-sm-12 col-lg-6 px-3 d-flex justify-content-center">
+                <div class="col-sm-12 col-md-6 px-3 d-flex justify-content-center">
                     <div>
                         <div class="mastermind-menu mb-4">
                             <div class="row m-0 p-0">
@@ -289,7 +289,7 @@
                                 </div>
                                 <div class="col-6 m-0 p-0 d-flex justify-content-end align-items-center">
                                     <div id="sound-on-off">
-                                    <i class="fas fa-volume-up mr-3"></i>
+                                        <i class="fas fa-volume-up mr-3"></i>
                                     </div>
                                 </div>
                             </div>
@@ -429,129 +429,127 @@
                                     </tr>
                                 </table>
                             </div>
-                        <hr>
-                            <h4 class="text-center"><span id="player-name-stats" class="colour-secondary theme"></span>
-                                Total <span class="theme classic-theme">Stats</span>
-                            </h4>
+                            <hr>
 
-                            <div class="mx-5"></div>
-                            <div class="d-flex justify-content-around">
-                                <table >
+                            <div class=" d-flex justify-content-around ">
+                                <h4><span class="colour-secondary theme"></span>
+                                    Total <span class="theme classic-theme">Stats</span>
+                                </h4>
+                                <table>
                                     <tr>
                                         <th>Attempts</th>
-                                        <th>Time</th>
-                                        <th>Coins</th>      
+                                        <th>Coins</th>
                                     </tr>
-                                    <tr>    
+                                    <tr>
                                         <th id="totalStatAttempts">0</th>
-                                        <th id="totalStatTime">0</th>
-                                        <th is="totalStatCoins">0</th>  
+                                        <th id="totalStatCoins">0</th>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
+        </div>
 
-            <!-- // shop and stats -->
+        <!-- // shop and stats -->
 
-            <!-- First Modal for players name and difficulty -->
-            <div class="modal fade" id="enterNameModal" tabindex="-1" role="dialog" aria-labelledby="enterNameModal"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Welcome to Mastermind</h5>
-                        </div>
-                        <div class="modal-body pl-4 pt-4 pr-4">
-                            <h6>Please Enter Your Name:</h6>
-                            <input type="text" id="inputPlayerName" maxlength="15">
-                            <h6 class="mt-2">Please Select Your Difficulty:</h6>
-                            <p>The harder the difficulty the more you'll be rewarded.</p>
-                            <label class="difficuly-select-entry"><input type="radio" name="difficulty"
-                                    class="easy-difficulty"> Easy</label>
-                            <label class="difficuly-select-entry"><input type="radio" name="difficulty"
-                                    class="medium-difficulty">
-                                Medium</label>
-                            <label class="difficuly-select-entry"><input type="radio" name="difficulty"
-                                    class="hard-difficulty"> Hard</label>
-                            <div id="enter-name-message" class="mt-2">
-                                <p class="text-danger">Please enter your name and select difficulty.</p>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer" id="close-start-modal">
-                            <Button class="btn btn-secondary">Nope</Button>
+        <!-- First Modal for players name and difficulty -->
+        <div class="modal fade" id="enterNameModal" tabindex="-1" role="dialog" aria-labelledby="enterNameModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Welcome to Mastermind</h5>
+                    </div>
+                    <div class="modal-body pl-4 pt-4 pr-4">
+                        <h6>Please Enter Your Name:</h6>
+                        <input type="text" id="inputPlayerName" maxlength="15">
+                        <h6 class="mt-2">Please Select Your Difficulty:</h6>
+                        <p>The harder the difficulty the more you'll be rewarded.</p>
+                        <label class="difficuly-select-entry"><input type="radio" name="difficulty"
+                                class="easy-difficulty"> Easy</label>
+                        <label class="difficuly-select-entry"><input type="radio" name="difficulty"
+                                class="medium-difficulty">
+                            Medium</label>
+                        <label class="difficuly-select-entry"><input type="radio" name="difficulty"
+                                class="hard-difficulty"> Hard</label>
+                        <div id="enter-name-message" class="mt-2">
+                            <p class="text-danger">Please enter your name and select difficulty.</p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Winner modal -->
-            <div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="winnerModal"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Winner</h5>
-
-                        </div>
-                        <div class="modal-body p-4">
-                            <p>Well Done <span id="player-name-winner"></span>!!</p>
-                            <p>You worked it out in <span id="attempts-round"></span> attempts.</p>
-                            <p>It only took you <i class="fas fa-stopwatch mx-2 text-black-50"></i><span
-                                    id="time-taken-min"></span> : <span id="time-taken-sec"></span></p>
-                            <p>Mastermind has rewarded you with<i class="fas fa-coins mx-2 coin-color"></i>
-                                <b>50</b></p>
-                            <p>Round Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="round-coin-bonus"
-                                    class="font-weight-bold"></span></p>
-                            <p>Time Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="timer-bonus"
-                                    class="font-weight-bold"></span></p>
-                            <p>Difficulty Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="difficulty-bonus"
-                                    class="font-weight-bold"></span></p>
-                            <p>Total coins for that round: <i class="fas fa-coins mx-2 coin-color"></i><span
-                                    id="total-coins-round" class="font-weight-bold"></span> Coins</p>
-                            <h4>Try a different difficulty?</h4>
-                            <label><input type="radio" name="difficulty" class="easy-difficulty"> Easy</label>
-                            <label><input type="radio" name="difficulty" class="medium-difficulty"> Medium</label>
-                            <label><input type="radio" name="difficulty" class="hard-difficulty"> Hard</label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal"
-                                onclick="loop()">Okay!</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Loser modal -->
-            <div class="modal fade" id="loserModal" tabindex="-1" role="dialog" aria-labelledby="loserModal"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Loser</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body p-4">
-                            <p>Unfortunately<span id="player-name-loser"></span>, the computer outsmarted you this
-                                time!</p>
-                            <p>Mastermind took<i class="fas fa-coins mx-2 coin-color"></i><b class="text-danger">50</b>
-                                coins off you!</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Try
-                                Again!</button>
-
-                        </div>
+                    <div class="modal-footer" id="close-start-modal">
+                        <Button class="btn btn-secondary">Nope</Button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Winner modal -->
+        <div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="winnerModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Winner</h5>
+
+                    </div>
+                    <div class="modal-body p-4">
+                        <p>Well Done <span id="player-name-winner"></span>!!</p>
+                        <p>You worked it out in <span id="attempts-round"></span> attempts.</p>
+                        <p>It only took you <i class="fas fa-stopwatch mx-2 text-black-50"></i><span
+                                id="time-taken-min"></span> : <span id="time-taken-sec"></span></p>
+                        <p>Mastermind has rewarded you with<i class="fas fa-coins mx-2 coin-color"></i>
+                            <b>50</b></p>
+                        <p>Round Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="round-coin-bonus"
+                                class="font-weight-bold"></span></p>
+                        <p>Time Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="timer-bonus"
+                                class="font-weight-bold"></span></p>
+                        <p>Difficulty Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="difficulty-bonus"
+                                class="font-weight-bold"></span></p>
+                        <p>Total coins for that round: <i class="fas fa-coins mx-2 coin-color"></i><span
+                                id="total-coins-round" class="font-weight-bold"></span> Coins</p>
+                        <h4>Try a different difficulty?</h4>
+                        <label><input type="radio" name="difficulty" class="easy-difficulty"> Easy</label>
+                        <label><input type="radio" name="difficulty" class="medium-difficulty"> Medium</label>
+                        <label><input type="radio" name="difficulty" class="hard-difficulty"> Hard</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal"
+                            onclick="loop()">Okay!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loser modal -->
+        <div class="modal fade" id="loserModal" tabindex="-1" role="dialog" aria-labelledby="loserModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Loser</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <p>Unfortunately<span id="player-name-loser"></span>, the computer outsmarted you this
+                            time!</p>
+                        <p>Mastermind took<i class="fas fa-coins mx-2 coin-color"></i><b class="text-danger">50</b>
+                            coins off you!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Try
+                            Again!</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <!-- link to javascript -->

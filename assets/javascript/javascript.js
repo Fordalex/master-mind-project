@@ -858,6 +858,14 @@ function levelComplete() {
     $('#difficulty-bonus').html(difficultyBonus);
     $('#timer-bonus').html(timerBonus);
 
+     /* total stats */
+     totalStatAttempts = addingTotalStats(round , totalStatAttempts);
+     $('#totalStatAttempts').html(totalStatAttempts);
+
+     totalStatCoins = addingTotalStats(totalRoundCoins , totalStatCoins);
+     $('#totalStatCoins').html(totalStatCoins);
+     
+    
     /* winner modal */
 
     setTimeout(function () {
@@ -897,10 +905,9 @@ function timerFunction() {
 
 /* Total stats */
 
-var totalStatAttempts;
-var totalStatTime;
-var totalStatCoins;
+var totalStatAttempts = 0;
+var totalStatCoins = 0;
 
-function totalStats() {
-
-}
+function addingTotalStats(numOne, numTwo) {
+    return numOne + numTwo;
+};
