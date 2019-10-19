@@ -136,10 +136,11 @@ $('body').on('click', '.counters-unlocked', function() {
     $(this).addClass('inventory-selected');
 });
 
-$('.theme-unlocked').on('click', function () {
-    $('.theme-unlocked').removeClass('inventory-selected');
+$('body').on('click', '.themes-unlocked', function() {
+    $('.themes-unlocked').removeClass('inventory-selected');
     $(this).addClass('inventory-selected');
 });
+
 
 /* buying counters */
 
@@ -334,6 +335,7 @@ function buyTheme(themeName) {
         $('#player-coins').html(coins);
         $(theme.themeInventory).children().remove();
         $(theme.themeInventory).addClass(theme.inventoryBackgroundImage);
+        $(theme.themeInventory).addClass('themes-unlocked');
         $(theme.storeItemContainer).children('p').remove();
         $(theme.storeItemContainer).append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
     }
@@ -861,11 +863,9 @@ function levelComplete() {
      /* total stats */
      totalStatAttempts = addingTotalStats(round , totalStatAttempts);
      $('#totalStatAttempts').html(totalStatAttempts);
-
      totalStatCoins = addingTotalStats(totalRoundCoins , totalStatCoins);
      $('#totalStatCoins').html(totalStatCoins);
-     
-    
+
     /* winner modal */
 
     setTimeout(function () {
