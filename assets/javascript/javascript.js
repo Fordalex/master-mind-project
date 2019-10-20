@@ -7,7 +7,7 @@ $(document).ready(function () {
     if (playerName == null) {
         playerName = 'Player';
     }
-    $('#inputPlayerName').attr('value',playerName)
+    $('#inputPlayerName').attr('value',playerName);
     loop();
     $('.expand-container').hide();
     $('#player-coins').html(0);
@@ -595,7 +595,6 @@ function chooseColour(chosenColour, colourNum) {
             playerLocationFour = colourNum;
         }
         selectedHole();
-        console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector);
     }
 }
 
@@ -604,7 +603,6 @@ function chooseColour(chosenColour, colourNum) {
 function counterDownSound() {
     if (soundOn == true) {
         var pick = Math.floor(Math.random() * 3);
-        console.log('pick ', pick);
         if (pick == 0) {
             counterDown.play();
         } else if (pick == 1) {
@@ -631,7 +629,6 @@ function selectedHole() {
     } else if (holeSelect == 5) {
         $('#check-round-arrow').append('<i class="fas fa-long-arrow-alt-right hole-selector hole-selector-check"></i>');
     }
-    console.log(holeSelect);
 }
 
 function removeCounter() {
