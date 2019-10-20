@@ -24,11 +24,19 @@ I tested this game out on a few peple at work and didn't help them through testi
 
 * Also users with bigger hands were struggling with the size of the buttons so i have made sure to change the size of these making them easier to notice and press.
 
+Also i reduced the image size for mobiles for a quicker responce time when changing themes.
+
 ## Features
 
 Choosing Colours - The user is able to select the colours of the pegs and put them in order on the virtual board to allow the user to guess the computers coloured pegs, and remove them if a mistake is made.
 
 After a while the game doesn't seem to have a reason to keep playing, I have added a system where the player will receive coins back after winning a game or lose coins for not getting the answer correct. The coins can be used to purchase different counters and themes while playing the game.
+
+The audio when the user places a counter will change rnadomly between three audio files so the sound doesn't get too repetitive.
+
+The stats are shown at the bottom of the game for mobile and to the right for desktop/table. This is so the player can watch their progresstion.
+
+When the user returns to the game, mastermind will remember their name but not the coins and purchased good, yet.
 
 ### Features Left to Implement
 
@@ -37,6 +45,12 @@ At the end of the game, if the user wins I would like counters to be generated o
 Also more categorys for items to be purchased keeping the user intrested for a longer time. 
 
 When the player wins or loses i would like it to show the player what the answer was as currently it just takes you straight to the modal.
+
+Also added local storage for the counters and themes purchase aswell as remaining coins.
+
+When the player stays on the game for a set amount of time i would like them to be rewarded with X amount of coins for there stay. The same when the user plays so many games, to reward them again to keep the user playing.
+
+On index.html it shows '(Example Below)' for mobile and for desktop and table this should change to (Example Right).
 
 ## Testing and Bugs
 

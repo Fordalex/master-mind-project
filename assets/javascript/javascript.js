@@ -223,45 +223,45 @@ $('#basic-counter-inventory-select').on('click', function () {
 
 $('#classic-counter-inventory-select').on('click', function () {
     if (gameStarted == false) {
-        redCounter = '<img src="assets/images/red-counter.png" class="counter">';
-        greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
-        yellowCounter = '<img src="assets/images/yellow-counter.png" class="counter">';
-        blueCounter = '<img src="assets/images/blue-counter.png" class="counter">';
-        orangeCounter = '<img src="assets/images/orange-counter.png" class="counter">';
-        whiteCounter = '<img src="assets/images/white-counter.png" class="counter">';
+        redCounter = '<img src="assets/images/red-counter.png" alt="red-counter" class="counter">';
+        greenCounter = '<img src="assets/images/green-counter.png" alt="green-counter" class="counter">';
+        yellowCounter = '<img src="assets/images/yellow-counter.png" alt="yellow-counter" class="counter">';
+        blueCounter = '<img src="assets/images/blue-counter.png" alt="blue-counter" class="counter">';
+        orangeCounter = '<img src="assets/images/orange-counter.png" alt="orange-counter" class="counter">';
+        whiteCounter = '<img src="assets/images/white-counter.png" alt="white-counter" class="counter">';
     }
 });
 
 $('#fruit-counter-inventory-select').on('click', function () {
     if (gameStarted == false && fruitCounterPurchased == true) {
-        redCounter = '<img src="assets/images/red-fruit-counter.png" class="counter-noshadow">';
-        greenCounter = '<img src="assets/images/green-fruit-counter.png" class="counter-noshadow">';
-        yellowCounter = '<img src="assets/images/yellow-fruit-counter.png" class="counter-noshadow">';
-        blueCounter = '<img src="assets/images/blue-fruit-counter.png" class="counter-noshadow">';
-        orangeCounter = '<img src="assets/images/orange-fruit-counter.png" class="counter-noshadow">';
-        whiteCounter = '<img src="assets/images/white-fruit-counter.png" class="counter-noshadow">';
+        redCounter = '<img src="assets/images/red-fruit-counter.png" alt="red-counter" class="counter-noshadow">';
+        greenCounter = '<img src="assets/images/green-fruit-counter.png" alt="green-counter" class="counter-noshadow">';
+        yellowCounter = '<img src="assets/images/yellow-fruit-counter.png" alt="yellow-counter" class="counter-noshadow">';
+        blueCounter = '<img src="assets/images/blue-fruit-counter.png" alt="blue-counter" class="counter-noshadow">';
+        orangeCounter = '<img src="assets/images/orange-fruit-counter.png" alt="orange-counter" class="counter-noshadow">';
+        whiteCounter = '<img src="assets/images/white-fruit-counter.png" alt="white-counter" class="counter-noshadow">';
     }
 });
 
 $('#candy-counter-inventory-select').on('click', function () {
     if (gameStarted == false && candyCounterPurchased == true) {
-        redCounter = '<img src="assets/images/red-candy-counter.png" class="counter">';
-        greenCounter = '<img src="assets/images/green-candy-counter.png" class="counter">';
-        yellowCounter = '<img src="assets/images/yellow-candy-counter.png" class="counter">';
-        blueCounter = '<img src="assets/images/blue-candy-counter.png" class="counter">';
-        orangeCounter = '<img src="assets/images/orange-candy-counter.png" class="counter">';
-        whiteCounter = '<img src="assets/images/white-candy-counter.png" class="counter">';
+        redCounter = '<img src="assets/images/red-candy-counter.png" alt="red-counter" class="counter">';
+        greenCounter = '<img src="assets/images/green-candy-counter.png" alt="green-counter" class="counter">';
+        yellowCounter = '<img src="assets/images/yellow-candy-counter.png" alt="yellow-counter" class="counter">';
+        blueCounter = '<img src="assets/images/blue-candy-counter.png" alt="blue-counter" class="counter">';
+        orangeCounter = '<img src="assets/images/orange-candy-counter.png" alt="orange-counter" class="counter">';
+        whiteCounter = '<img src="assets/images/white-candy-counter.png" alt="white-counter" class="counter">';
     }
 });
 
 $('#gem-counter-inventory-select').on('click', function () {
     if (gameStarted == false && gemCounterPurchased == true) {
-        redCounter = '<img src="assets/images/red-gem-counter.png" class="counter-noshadow">';
-        greenCounter = '<img src="assets/images/green-gem-counter.png" class="counter-noshadow">';
-        yellowCounter = '<img src="assets/images/yellow-gem-counter.png" class="counter-noshadow">';
-        blueCounter = '<img src="assets/images/blue-gem-counter.png" class="counter-noshadow">';
-        orangeCounter = '<img src="assets/images/orange-gem-counter.png" class="counter-noshadow">';
-        whiteCounter = '<img src="assets/images/white-gem-counter.png" class="counter-noshadow">';
+        redCounter = '<img src="assets/images/red-gem-counter.png" alt="red-counter" class="counter-noshadow">';
+        greenCounter = '<img src="assets/images/green-gem-counter.png" alt="green-counter" class="counter-noshadow">';
+        yellowCounter = '<img src="assets/images/yellow-gem-counter.png" alt="yellow-counter" class="counter-noshadow">';
+        blueCounter = '<img src="assets/images/blue-gem-counter.png" alt="blue-counter" class="counter-noshadow">';
+        orangeCounter = '<img src="assets/images/orange-gem-counter.png" alt="orange-counter" class="counter-noshadow">';
+        whiteCounter = '<img src="assets/images/white-gem-counter.png" alt="white-counter" class="counter-noshadow">';
     }
 });
 
