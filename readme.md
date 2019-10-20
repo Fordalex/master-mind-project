@@ -149,4 +149,11 @@ Adding audio:
 
 * [Adding Audio](https://www.youtube.com/watch?v=p4OHVJxd2FI)
 
+video used for the explanation:
+
+* [video](https://www.youtube.com/watch?v=dMHxyulGrEk)
+
+Extra Information:
+
+* [wiki](https://www.wikihow.com/Play-Mastermind)
 
