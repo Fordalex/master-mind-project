@@ -3,6 +3,11 @@ $(document).ready(function () {
         backdrop: 'static',
         keyboard: false
     });
+    playerName = localStorage.getItem('playerName');
+    if (playerName == null) {
+        playerName = 'Player';
+    }
+    $('#inputPlayerName').attr('value',playerName)
     loop();
     $('.expand-container').hide();
     $('#player-coins').html(0);
@@ -28,18 +33,19 @@ $('.difficuly-select-entry').on('click', function () {
 
 /* players name */
 
-var playerName = 'Player';
+var playerName;
 
 function addName() {
     playerName = $('#inputPlayerName').val();
     $('#player-name-stats').text(playerName + "'s");
     if (playerName == 'cheat') {
-        for (i = 0; i < 8000; i++) {
+        for (let i = 0; i < 8000; i++) {
             coins++;
         }
-        $('#player-coins').html(coins);
     }
-};
+    $('#player-coins').html(coins);
+    localStorage.setItem('playerName', playerName);
+}
 
 /* variables */
 
@@ -144,12 +150,12 @@ $('body').on('click', '.themes-unlocked', function () {
 
 /* buying counters */
 
-var redCounter = '<img src="assets/images/red-counter.png" class="counter">';
-var greenCounter = '<img src="assets/images/green-counter.png" class="counter">';
-var yellowCounter = '<img src="assets/images/yellow-counter.png" class="counter">';
-var blueCounter = '<img src="assets/images/blue-counter.png" class="counter">';
-var orangeCounter = '<img src="assets/images/orange-counter.png" class="counter">';
-var whiteCounter = '<img src="assets/images/white-counter.png" class="counter">';
+var redCounter = '<img src="assets/images/red-counter.png" alt="red-counter" class="counter">';
+var greenCounter = '<img src="assets/images/green-counter.png" alt="green-counter" class="counter">';
+var yellowCounter = '<img src="assets/images/yellow-counter.png" alt="yellow-counter" class="counter">';
+var blueCounter = '<img src="assets/images/blue-counter.png" alt="blue-counter" class="counter">';
+var orangeCounter = '<img src="assets/images/orange-counter.png" alt="orange-counter" class="counter">';
+var whiteCounter = '<img src="assets/images/white-counter.png" alt="white-counter" class="counter">';
 var holeCounter = '';
 
 var fruitCounterPurchased = false;
@@ -160,13 +166,13 @@ $('#fruit-counters-purchase').on('click', function () {
     if (coins >= 200 && fruitCounterPurchased == false) {
         fruitCounterPurchased = true;
         $('#fruit-counter-inventory-select').children().remove();
-        $('#fruit-counter-inventory-select').append('<div><img src="assets/images/yellow-fruit-counter.png" class="counter-inventory"></div>');
+        $('#fruit-counter-inventory-select').append('<div><img src="assets/images/yellow-fruit-counter.png" alt="yellow-counter" class="counter-inventory"></div>');
         $('#fruit-counter-inventory-select').addClass('counters-unlocked');
         $('#fruit-counters-purchase').children('p').remove();
         $('#fruit-counters-purchase').append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
-        for (i = 0; i < 200; i++) {
+        for (let i = 0; i < 200; i++) {
             coins--;
-        };
+        }
         $('#player-coins').html(coins);
         $('#select-fruit-theme').addClass('theme-unlocked');
     }
@@ -176,13 +182,13 @@ $('#candy-counters-purchase').on('click', function () {
     if (coins >= 350 && candyCounterPurchased == false) {
         candyCounterPurchased = true;
         $('#candy-counter-inventory-select').children().remove();
-        $('#candy-counter-inventory-select').append('<div><img src="assets/images/red-candy-counter.png" class="counter-inventory"></div>');
+        $('#candy-counter-inventory-select').append('<div><img src="assets/images/red-candy-counter.png" alt="red-counter" class="counter-inventory"></div>');
         $('#candy-counter-inventory-select').addClass('counters-unlocked');
         $('#candy-counters-purchase').children('p').remove();
         $('#candy-counters-purchase').append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
-        for (i = 0; i < 350; i++) {
+        for (let i = 0; i < 350; i++) {
             coins--;
-        };
+        }
         $('#player-coins').html(coins);
     }
 });
@@ -195,9 +201,9 @@ $('#gem-counters-purchase').on('click', function () {
         $('#gem-counter-inventory-select').addClass('counters-unlocked');
         $('#gem-counters-purchase').children('p').remove();
         $('#gem-counters-purchase').append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
-        for (i = 0; i < 500; i++) {
+        for (let i = 0; i < 500; i++) {
             coins--;
-        };
+        }
         $('#player-coins').html(coins);
     }
 });
@@ -266,7 +272,7 @@ var pinkBackgroundPurchased = false;
 var iceBackgroundPurchased = false;
 
 function buyTheme(themeName) {
-    themes = {
+    let themes = {
         'fruit': {
             'cost': 100,
             'background': 'fruit-background',
@@ -300,8 +306,8 @@ function buyTheme(themeName) {
             'storeItemContainer': '#ice-background-purchase',
             'playButton': 'play-button-ice'
         },
-    }
-    theme = themes[themeName];
+    };
+    let theme = themes[themeName];
 
     if (coins >= theme.cost && theme.themePurchased == false) {
         $('body').removeClass('ice-background');
@@ -329,9 +335,9 @@ function buyTheme(themeName) {
         $('#ready-button').addClass(theme.playButton);
         currentTheme = theme.themeStyle;
         currentThemePlayButton = theme.playButton;
-        for (i = 0; i < theme.cost; i++) {
+        for (let i = 0; i < theme.cost; i++) {
             coins--;
-        };
+        }
         $('#player-coins').html(coins);
         $(theme.themeInventory).children().remove();
         $(theme.themeInventory).addClass(theme.inventoryBackgroundImage);
@@ -339,7 +345,7 @@ function buyTheme(themeName) {
         $(theme.storeItemContainer).children('p').remove();
         $(theme.storeItemContainer).append('<p class="text-success"><b>Purchased</b></p><i class="fas fa-check text-success"></i>');
     }
-};
+}
 
 $('#fruit-background-purchase').on('click', function () {
     if (coins >= 100) {
@@ -365,10 +371,10 @@ $('#ice-background-purchase').on('click', function () {
 /* selecting theme */
 
 var currentTheme = 'classic-theme';
-var currentThemePlayButton = 'play-button-classic'
+var currentThemePlayButton = 'play-button-classic';
 
 function changeTheme(themeName) {
-    themes = {
+    let themes = {
         'classic': {
             'background': 'classic-background',
             'inventoryBackground': 'inventory-background-classic-theme',
@@ -393,8 +399,8 @@ function changeTheme(themeName) {
             'themeStyle': 'ice-theme',
             'playButton': 'play-button-ice'
         },
-    }
-    theme = themes[themeName]
+    };
+    let theme = themes[themeName];
     $('body').removeClass('ice-background');
     $('body').removeClass('pink-background');
     $('body').removeClass('fruit-background');
@@ -420,7 +426,7 @@ function changeTheme(themeName) {
     $('#ready-button').addClass(theme.playButton);
     currentTheme = theme.themeStyle;
     currentThemePlayButton = theme.playButton;
-};
+}
 
 $('#select-classic-theme').on('click', function () {
     changeTheme('classic');
@@ -486,7 +492,7 @@ function loop() {
             }
         }, 250);
     }
-};
+}
 
 /* computer generated counters */
 
@@ -559,7 +565,7 @@ function generateCounters(difficulty) {
     } else {
         $('#master-four').html('');
     }
-};
+}
 
 function chooseColour(chosenColour, colourNum) {
     if (gameStarted == true) {
@@ -587,18 +593,18 @@ function chooseColour(chosenColour, colourNum) {
             $('#check-round-arrow').append('<i class="fas fa-long-arrow-alt-right hole-selector hole-selector-check"></i>');
             holeSelect++;
             playerLocationFour = colourNum;
-        };
+        }
         selectedHole();
         console.log(playerLocationOne, playerLocationTwo, playerLocationThree, playerLocationFour, countHoleSelector);
     }
-};
+}
 
 /* sound randomised for when the player places a counter */
 
 function counterDownSound() {
     if (soundOn == true) {
         var pick = Math.floor(Math.random() * 3);
-        console.log('pick ', pick)
+        console.log('pick ', pick);
         if (pick == 0) {
             counterDown.play();
         } else if (pick == 1) {
@@ -624,9 +630,9 @@ function selectedHole() {
         $(countHoleSelector + '-c-four').append('<i class="fas fa-long-arrow-alt-down hole-selector"></i>');
     } else if (holeSelect == 5) {
         $('#check-round-arrow').append('<i class="fas fa-long-arrow-alt-right hole-selector hole-selector-check"></i>');
-    };
+    }
     console.log(holeSelect);
-};
+}
 
 function removeCounter() {
     if (gameStarted == true) {
@@ -656,7 +662,7 @@ function removeCounter() {
 
         }
     }
-};
+}
 
 function checkCounters() {
     if (gameStarted == true && holeSelect == 5) {
@@ -685,24 +691,24 @@ function checkCounters() {
             playerLocationOneChecked = true;
             masterLocationOneChecked = true;
 
-        };
+        }
         if (masterLocationTwo == playerLocationTwo) {
             $(countHoleSelector).append(blackPeg);
             playerLocationTwoChecked = true;
             masterLocationTwoChecked = true;
 
-        };
+        }
         if (masterLocationThree == playerLocationThree) {
             $(countHoleSelector).append(blackPeg);
             playerLocationThreeChecked = true;
             masterLocationThreeChecked = true;
 
-        };
+        }
         if (masterLocationFour == playerLocationFour) {
             $(countHoleSelector).append(blackPeg);
             playerLocationFourChecked = true;
             masterLocationFourChecked = true;
-        };
+        }
 
         /* check if the correct colour in the wrong loction  */
 
@@ -717,7 +723,7 @@ function checkCounters() {
                 $(countHoleSelector).append(whitePeg);
                 playerLocationFourChecked = true;
             }
-        };
+        }
 
         if (masterLocationTwoChecked == false) {
             if (masterLocationTwo == playerLocationOne && playerLocationOneChecked == false) {
@@ -730,7 +736,7 @@ function checkCounters() {
                 $(countHoleSelector).append(whitePeg);
                 playerLocationFourChecked = true;
             }
-        };
+        }
 
         if (masterLocationThreeChecked == false) {
             if (masterLocationThree == playerLocationOne && playerLocationOneChecked == false) {
@@ -743,7 +749,7 @@ function checkCounters() {
                 $(countHoleSelector).append(whitePeg);
                 playerLocationFourChecked = true;
             }
-        };
+        }
 
         if (masterLocationFourChecked == false) {
             if (masterLocationFour == playerLocationOne && playerLocationOneChecked == false) {
@@ -756,12 +762,12 @@ function checkCounters() {
                 $(countHoleSelector).append(whitePeg);
                 playerLocationThreeChecked = true;
             }
-        };
+        }
 
         if (masterLocationOne == playerLocationOne && masterLocationTwo == playerLocationTwo && masterLocationThree == playerLocationThree && masterLocationFour == playerLocationFour) {
             levelComplete();
             winnerBoolean = true;
-        };
+        }
 
         if (round == 10 && winnerBoolean == false) {
             if (soundOn == true) {
@@ -779,7 +785,7 @@ function checkCounters() {
         playerLocationFour = 0;
         selectedHole();
     }
-};
+}
 
 function levelComplete() {
     $('#round-counter').html(1);
@@ -794,7 +800,7 @@ function levelComplete() {
         difficultyBonus = 100;
     } else if (difficultySetting == 'hard') {
         difficultyBonus = 150;
-    };
+    }
     if (timerMin < 1) {
         timerBonus = 50;
     } else if (timerMin < 2) {
@@ -805,7 +811,7 @@ function levelComplete() {
         timerBonus = 0;
     }
     var timerBonus;
-    var difficultyBonus
+    var difficultyBonus;
     var roundCoinBonus = (10 - round + 1) * 10;
     var totalRoundCoins = 50 + roundCoinBonus + difficultyBonus + timerBonus;
     /* adding stats */
@@ -839,7 +845,7 @@ function levelComplete() {
 
     /* adding coins */
 
-    for (i = 0; i < totalRoundCoins; i++) {
+    for (let i = 0; i < totalRoundCoins; i++) {
         coins++;
     }
 
@@ -869,19 +875,19 @@ function levelComplete() {
         $('#timer-min').html(0);
         $('#timer-sec').html(0);
     }, 200);
-};
+}
 
 function levelLost() {
     timer = false;
-    gameStarted = false
+    gameStarted = false;
     $('#ready-start-button-container').html(`
         <i class="fas fa-long-arrow-alt-right left-play-arrow"></i>
         <button onclick="start()" id="ready-button" class="${currentThemePlayButton}">Play!<i class="mx-2 fas fa-play"></i></button>
         <i class="fas fa-long-arrow-alt-left right-play-arrow"></i>
     `);
-    for (i = 0; i < 50; i++) {
+    for (let i = 0; i < 50; i++) {
         coins--;
-    };
+    }
     $('#player-coins').html(coins);
     $('.marker-peg').remove();
     $('#round-counter').html(1);
@@ -929,4 +935,4 @@ var totalStatCoins = 0;
 
 function addingTotalStats(numOne, numTwo) {
     return numOne + numTwo;
-};
+}
