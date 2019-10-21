@@ -593,6 +593,39 @@ h6 {
     background-size: 100%;
 }
 
+.inventory-background-classic-theme {
+    background-color:#bfcccf;
+}
+
+.classic-theme {
+    color:rgb(123, 182, 195);
+}
+
+.inventory-background-fruit-theme {
+    background-color:rgb(208, 215, 151);
+}
+
+.fruit-theme {
+    color:rgb(255, 179, 80);
+}
+
+
+.inventory-background-pink-theme {
+    background-color:rgb(225, 186, 209);
+}
+
+.pink-theme {
+    color:rgb(240, 114, 187);
+}
+
+.inventory-background-ice-theme {
+    background-color:rgb(175, 213, 211);
+}
+
+.ice-theme {
+    color:rgb(170, 170, 170);
+}
+
 /* inventory */
 
 .inventory-sections {
@@ -785,38 +818,3 @@ td,th {
         background-size:200%;
     }
 } 
-
-/* themes */
-
-.inventory-background-classic-theme {
-    background-color:#bfcccf;
-}
-
-.classic-theme {
-    color:rgb(123, 182, 195);
-}
-
-.inventory-background-fruit-theme {
-    background-color:rgb(208, 215, 151);
-}
-
-.fruit-theme {
-    color:rgb(255, 179, 80);
-}
-
-
-.inventory-background-pink-theme {
-    background-color:rgb(225, 186, 209);
-}
-
-.pink-theme {
-    color:rgb(240, 114, 187);
-}
-
-.inventory-background-ice-theme {
-    background-color:rgb(175, 213, 211);
-}
-
-.ice-theme {
-    color:rgb(170, 170, 170);
-}
