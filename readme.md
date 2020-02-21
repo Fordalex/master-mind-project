@@ -4,7 +4,7 @@ Mastermind is a vintage family game from my childhood. It is a game that require
 
 ## Link
 
-Can you beat the computer? Find out: [Mastermind](https://fordalex.github.io/master-mind-project/)
+Can you beat the computer? Find out: [Mastermind](https://fordalex.github.io/mastermind-project/)
 
 ## UX
 
