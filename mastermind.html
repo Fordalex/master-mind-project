@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- link to css -->
     <link rel="stylesheet" href="assets/style/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,17 +15,16 @@
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Grenze|Roboto+Slab&display=swap" rel="stylesheet">
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <title>Master Mind</title>
 
 </head>
 
-<body class="p-2">
+<body>
 
     <div class="d-flex justify-content-center">
         <div class="page-container">
-                <a class="how-to-play ml-2" href="index.html">Rules</a>
+            <a class="how-to-play ml-2" href="index.html">Rules</a>
             <div>
                 <h2 class="text-center m-0 title-font-size"><b>Master Mind</b></h2>
             </div>
@@ -267,8 +265,7 @@
                                     <p class="p-smaller-font m-0">Attempts: <span id="round-counter">1</span></p>
                                     <div class="d-flex justify-content-center align-items-center">
                                         <i class="fas fa-stopwatch mx-1 text-black-50"></i>
-                                        <p class="p-smaller-font m-0"><span id="timer-min"></span><span
-                                                class="mx-1">:</span><span id="timer-sec"></span></p>
+                                        <p class="p-smaller-font m-0"><span id="timer-min"></span><span class="mx-1">:</span><span id="timer-sec"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -286,8 +283,7 @@
                         <div class="mastermind-menu mb-4">
                             <div class="row m-0 p-0">
                                 <div class="col-6 m-0 p-0 d-flex justify-content-start">
-                                    <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i><span id="player-coins"
-                                            class="mr-2 font-weight-bold"></span>Coins</p>
+                                    <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i><span id="player-coins" class="mr-2 font-weight-bold"></span>Coins</p>
                                 </div>
                                 <div class="col-6 m-0 p-0 d-flex justify-content-end align-items-center">
                                     <div id="sound-on-off">
@@ -309,20 +305,17 @@
 
 
                             <div class="expand-container justify-around">
-                                <div class="shop-counter-container p-2 fruit-purchase-background"
-                                    id="fruit-counters-purchase">
+                                <div class="shop-counter-container p-2 fruit-purchase-background" id="fruit-counters-purchase">
                                     <p><b>Fruit</b><i class="fas fa-lemon ml-2 text-warning"></i></p>
                                     <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>200</p>
                                 </div>
 
-                                <div class="shop-counter-container p-2 candy-purchase-background"
-                                    id="candy-counters-purchase">
+                                <div class="shop-counter-container p-2 candy-purchase-background" id="candy-counters-purchase">
                                     <p><b>Candy</b><i class="fas fa-candy-cane ml-2 text-danger"></i></p>
                                     <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>350</p>
                                 </div>
 
-                                <div class="shop-counter-container p-2 gem-purchase-background"
-                                    id="gem-counters-purchase">
+                                <div class="shop-counter-container p-2 gem-purchase-background" id="gem-counters-purchase">
                                     <p><b>Gems</b><i class="far fa-snowflake ml-2 text-light"></i></p>
                                     <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>500</p>
                                 </div>
@@ -334,20 +327,17 @@
                             </div>
 
                             <div class="expand-container justify-around">
-                                <div class="shop-counter-container p-2 fruit-background-container"
-                                    id="fruit-background-purchase">
+                                <div class="shop-counter-container p-2 fruit-background-container" id="fruit-background-purchase">
                                     <p><b>Fruit</b><i class="fas fa-lemon ml-2 text-warning"></i></p>
                                     <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i><span>100</span></p>
                                 </div>
 
-                                <div class="shop-counter-container p-2 pink-background-container"
-                                    id="pink-background-purchase">
+                                <div class="shop-counter-container p-2 pink-background-container" id="pink-background-purchase">
                                     <p><b>Pink</b><i class="fas fa-candy-cane ml-2 text-danger"></i></p>
                                     <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>200</p>
                                 </div>
 
-                                <div class="shop-counter-container p-2 ice-background-container"
-                                    id="ice-background-purchase">
+                                <div class="shop-counter-container p-2 ice-background-container" id="ice-background-purchase">
                                     <p><b>Ice</b><i class="far fa-snowflake ml-2 text-light"></i></p>
                                     <p class="m-0"><i class="fas fa-coins mx-2 coin-color"></i>300</p>
                                 </div>
@@ -365,24 +355,19 @@
                             </div>
                             <div class="expand-container">
                                 <div class="justify-around">
-                                    <div class="counters-unlocked inventory-sections inventory-background-classic-theme"
-                                        id="basic-counter-inventory-select">
+                                    <div class="counters-unlocked inventory-sections inventory-background-classic-theme" id="basic-counter-inventory-select">
                                         <div id="basic-counter-inventory"></div>
                                     </div>
-                                    <div class="counters-unlocked inventory-sections inventory-background-classic-theme inventory-selected"
-                                        id="classic-counter-inventory-select">
+                                    <div class="counters-unlocked inventory-sections inventory-background-classic-theme inventory-selected" id="classic-counter-inventory-select">
                                         <div id="classic-counter-inventory"></div>
                                     </div>
-                                    <div class="inventory-sections inventory-background-classic-theme"
-                                        id="fruit-counter-inventory-select">
+                                    <div class="inventory-sections inventory-background-classic-theme" id="fruit-counter-inventory-select">
                                         <i class="fas fa-lock"></i>
                                     </div>
-                                    <div class="inventory-sections inventory-background-classic-theme"
-                                        id="candy-counter-inventory-select">
+                                    <div class="inventory-sections inventory-background-classic-theme" id="candy-counter-inventory-select">
                                         <i class="fas fa-lock"></i>
                                     </div>
-                                    <div class="inventory-sections inventory-background-classic-theme"
-                                        id="gem-counter-inventory-select">
+                                    <div class="inventory-sections inventory-background-classic-theme" id="gem-counter-inventory-select">
                                         <i class="fas fa-lock"></i>
                                     </div>
                                 </div>
@@ -395,28 +380,23 @@
                                 <i class="fas fa-angle-double-down dropdown-arrow theme classic-theme"></i>
                             </div>
                             <div class="expand-container justify-around">
-                                <div class="themes-unlocked inventory-selected shop-theme-container d-flex justify-content-center basic-theme-inventory p-4"
-                                    id="select-classic-theme">
+                                <div class="themes-unlocked inventory-selected shop-theme-container d-flex justify-content-center basic-theme-inventory p-4" id="select-classic-theme">
 
                                 </div>
-                                <div class="shop-theme-container d-flex justify-content-center p-4"
-                                    id="select-fruit-theme">
+                                <div class="shop-theme-container d-flex justify-content-center p-4" id="select-fruit-theme">
                                     <i class="fas fa-lock"></i>
                                 </div>
-                                <div class="shop-theme-container d-flex justify-content-center p-4"
-                                    id="select-pink-theme">
+                                <div class="shop-theme-container d-flex justify-content-center p-4" id="select-pink-theme">
                                     <i class="fas fa-lock"></i>
                                 </div>
-                                <div class="shop-theme-container d-flex justify-content-center p-4"
-                                    id="select-ice-theme">
+                                <div class="shop-theme-container d-flex justify-content-center p-4" id="select-ice-theme">
                                     <i class="fas fa-lock"></i>
                                 </div>
                             </div>
                         </div>
 
                         <div class="my-4 mastermind-menu fixed-width-section">
-                            <h4 class="text-center"><span id="player-name-stats" class="colour-secondary theme"></span>
-                                Stats
+                            <h4 class="text-center"><span id="player-name-stats" class="colour-secondary theme"></span> Stats
                             </h4>
 
                             <div class="mx-5"></div>
@@ -434,8 +414,7 @@
                             <hr>
 
                             <div class=" d-flex justify-content-around align-items-center">
-                                <h4><span class="colour-secondary theme"></span>
-                                    Total <span class="theme classic-theme">Stats</span>
+                                <h4><span class="colour-secondary theme"></span> Total <span class="theme classic-theme">Stats</span>
                                 </h4>
                                 <table>
                                     <tr>
@@ -489,8 +468,7 @@
         </div>
 
         <!-- Winner modal -->
-        <div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="winnerModal"
-            aria-hidden="true">
+        <div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="winnerModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -500,44 +478,36 @@
                     <div class="modal-body p-4">
                         <p>Well Done <span id="player-name-winner"></span>!!</p>
                         <p>You worked it out in <span id="attempts-round"></span> attempts.</p>
-                        <p>It only took you <i class="fas fa-stopwatch mx-2 text-black-50"></i><span
-                                id="time-taken-min"></span> : <span id="time-taken-sec"></span></p>
+                        <p>It only took you <i class="fas fa-stopwatch mx-2 text-black-50"></i><span id="time-taken-min"></span> : <span id="time-taken-sec"></span></p>
                         <p>Mastermind has rewarded you with<i class="fas fa-coins mx-2 coin-color"></i>
                             <b>50</b></p>
-                        <p>Round Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="round-coin-bonus"
-                                class="font-weight-bold"></span></p>
-                        <p>Time Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="timer-bonus"
-                                class="font-weight-bold"></span></p>
-                        <p>Difficulty Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="difficulty-bonus"
-                                class="font-weight-bold"></span></p>
-                        <p>Total coins for that round: <i class="fas fa-coins mx-2 coin-color"></i><span
-                                id="total-coins-round" class="font-weight-bold"></span> Coins</p>
+                        <p>Round Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="round-coin-bonus" class="font-weight-bold"></span></p>
+                        <p>Time Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="timer-bonus" class="font-weight-bold"></span></p>
+                        <p>Difficulty Bonus: <i class="fas fa-coins mx-2 coin-color"></i><span id="difficulty-bonus" class="font-weight-bold"></span></p>
+                        <p>Total coins for that round: <i class="fas fa-coins mx-2 coin-color"></i><span id="total-coins-round" class="font-weight-bold"></span> Coins</p>
                         <h4>Try a different difficulty?</h4>
                         <label><input type="radio" name="difficulty" class="easy-difficulty"> Easy</label>
                         <label><input type="radio" name="difficulty" class="medium-difficulty"> Medium</label>
                         <label><input type="radio" name="difficulty" class="hard-difficulty"> Hard</label>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal"
-                            onclick="loop()">Okay!</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="firstModal" onclick="loop()">Okay!</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Loser modal -->
-        <div class="modal fade" id="loserModal" tabindex="-1" role="dialog" aria-labelledby="loserModal"
-            aria-hidden="true">
+        <div class="modal fade" id="loserModal" tabindex="-1" role="dialog" aria-labelledby="loserModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Loser</h5>
                     </div>
                     <div class="modal-body p-4">
-                        <p>Unfortunately <span id="player-name-loser"></span>, the computer outsmarted you this
-                            time!</p>
-                        <p>Mastermind took<i class="fas fa-coins mx-2 coin-color"></i><b class="text-danger">50</b>
-                            coins off you!</p>
+                        <p>Unfortunately <span id="player-name-loser"></span>, the computer outsmarted you this time!
+                        </p>
+                        <p>Mastermind took<i class="fas fa-coins mx-2 coin-color"></i><b class="text-danger">50</b> coins off you!</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" data-dismiss="modal" onclick="loop()">Try
@@ -553,12 +523,8 @@
     <script src="assets/javascript/javascript.js"></script>
 
     <!-- Bootstrap js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 
